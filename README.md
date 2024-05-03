@@ -11,4 +11,4 @@ https://shanjai1511.github.io/shanjai.github.io/
 8. Publications: Provides links to Shanjai's publications, including Enhanced Chemistry Lab Learning Management System - ECLLMS, Chemistry Lab Experiment Collaborative Teaching System - CLECTS, and Multiple Restaurant Table Booking System.
 9. Honors and Awards: Lists Shanjai's Hi5 award from PromptCloud.
 10. Hobbies: Displays Shanjai's hobbies, including watching movies, exploring nature, trying new dishes, and water activities.
-1. Contact: Provides links to Shanjai's email, Instagram, GitHub, and LinkedIn profiles.
+11. Contact: Provides links to Shanjai's email, Instagram, GitHub, and LinkedIn profiles.
