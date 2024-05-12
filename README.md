@@ -12,3 +12,5 @@ https://shanjai1511.github.io/shanjai.github.io/
 9. Honors and Awards: Lists Shanjai's Hi5 award from PromptCloud.
 10. Hobbies: Displays Shanjai's hobbies, including watching movies, exploring nature, trying new dishes, and water activities.
 11. Contact: Provides links to Shanjai's email, Instagram, GitHub, and LinkedIn profiles.
+
+This portfolio is embedded with google analytics for my personal regardings and to make my career towards data analytics
