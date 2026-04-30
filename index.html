@@ -18,6 +18,9 @@
     <meta name="description" content="Software Engineer at PromptCloud | M.Tech Data Science & Engineering at BITS Pilani. Building scalable data pipelines and intelligent systems." />
     <meta name="google-adsense-account" content="ca-pub-1169116962313138">
     <link rel="icon" href="assets/me/n.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <!-- Open Graph -->
     <meta property="og:type"        content="website">
@@ -41,12 +44,67 @@
     <script>
         (function () {
             const t = localStorage.getItem('theme');
-            document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+            if (t) {
+                document.documentElement.setAttribute('data-theme', t);
+            } else {
+                const h = new Date().getHours();
+                document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
+            }
         })();
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shanjai R",
+      "url": "https://shanjai1511.github.io/",
+      "image": "https://shanjai1511.github.io/assets/me/DSC_0688_c.JPG",
+      "jobTitle": "Software Engineer I",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "PromptCloud / 42Signals",
+        "url": "https://www.promptcloud.com/"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Birla Institute of Technology and Science, Pilani"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Sri Shakthi Institute of Engineering and Technology"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Coimbatore",
+        "addressCountry": "IN"
+      },
+      "email": "shanjai1511@gmail.com",
+      "knowsAbout": ["Python", "Data Science", "Web Scraping", "Elasticsearch", "MySQL", "Scrapy", "BeautifulSoup"],
+      "sameAs": [
+        "https://www.linkedin.com/in/shanjai/",
+        "https://github.com/shanjai1511",
+        "https://www.instagram.com/r.shanjai/"
+      ]
+    }
     </script>
 </head>
 
 <body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">S.R</div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar" id="preloaderBar"></div>
+            </div>
+            <p class="preloader-tag">Loading Portfolio</p>
+        </div>
+    </div>
 
     <!-- Custom cursor -->
     <div class="cursor-ring" id="cursorRing"></div>
@@ -77,16 +135,55 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+                <button type="button" class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </nav>
+
+    <!-- ══════════ FUN FACTS TICKER (fixed below nav) ══════════ -->
+    <div class="ticker-wrap" id="tickerBar" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">☕ Runs on ice cream</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧠 Bigger picture first — details follow naturally</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💜 BTS fan — NORMAL &amp; GO GO on loop</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🔄 Refines until it feels right — not just done</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌊 Poovar Island &gt; any city sunset</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">⚡ Fixes what's broken, not just what's assigned</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🐍 Python is my first love</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🚀 Quietly ambitious, deeply intentional</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎮 Found the Easter egg? ↑↑↓↓↑↓↑↓</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧭 Depth over speed — understanding matters more</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">📸 Photographer at heart, Engineer by trade</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💡 Sees patterns and connections everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🏆 6 awards and counting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Ownership comes naturally — no waiting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌏 Coimbatore → Everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Real impact over appearance, always</span><span class="ticker-sep">✦</span>
+            <!-- duplicate for seamless loop -->
+            <span class="ticker-item">☕ Runs on ice cream</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧠 Bigger picture first — details follow naturally</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💜 BTS fan — NORMAL &amp; GO GO on loop</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🔄 Refines until it feels right — not just done</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌊 Poovar Island &gt; any city sunset</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">⚡ Fixes what's broken, not just what's assigned</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🐍 Python is my first love</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🚀 Quietly ambitious, deeply intentional</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎮 Found the Easter egg? ↑↑↓↓↑↓↑↓</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧭 Depth over speed — understanding matters more</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">📸 Photographer at heart, Engineer by trade</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💡 Sees patterns and connections everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🏆 6 awards and counting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Ownership comes naturally — no waiting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌏 Coimbatore → Everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Real impact over appearance, always</span><span class="ticker-sep">✦</span>
+        </div>
+    </div>
 
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="mobile-nav" id="mobileNav">
@@ -114,6 +211,7 @@
                         <span class="avail-dot"></span>
                         Available for opportunities
                     </div>
+                    <div class="local-time" id="localTime">🕐 &mdash; · Coimbatore, IN</div>
                     <p class="greeting">Hello, I'm</p>
                     <h1 class="hero-name gradient-text" id="type-title" data-text="Shanjai R"> </h1>
                     <p class="hero-role" id="type-subtitle" data-text="Software Engineer @ PromptCloud"> </p>
@@ -127,9 +225,12 @@
                     </div>
                     <div class="hero-cta">
                         <a href="https://docs.google.com/document/d/1CuNf3c0HqHSQjyJzvckA4KE_3--v1WsG9807g1U0QyU/edit?usp=sharing" target="_blank" class="btn btn-primary">View Resume</a>
+                        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
                         <div class="socials">
-                            <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn" class="social-btn"><i class="lni lni-linkedin-original"></i></a>
-                            <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"   class="social-btn"><i class="lni lni-github-original"></i></a>
+                            <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn"  class="social-btn"><i class="lni lni-linkedin-original"></i></a>
+                            <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"    class="social-btn"><i class="lni lni-github-original"></i></a>
+                            <a href="https://www.instagram.com/r.shanjai/" target="_blank" aria-label="Instagram" class="social-btn"><i class="lni lni-instagram-original"></i></a>
+                            <button type="button" class="social-btn" id="shareBtn" aria-label="Share portfolio"><i class="lni lni-share"></i></button>
                         </div>
                     </div>
                 </div>
@@ -140,7 +241,7 @@
                         <div class="photo-ring r2"></div>
                         <div class="photo-dots"></div>
                         <img src="assets/me/DSC_0688_c.JPG" alt="Shanjai R" class="hero-photo"
-                            loading="lazy"
+                            fetchpriority="high"
                             onerror="this.style.display='none';this.parentElement.classList.add('photo-fallback')">
                         <div class="photo-glow"></div>
                     </div>
@@ -183,7 +284,7 @@
                 <!-- Quote -->
                 <div class="glass-card ab-quote">
                     <div class="quote-mark">"</div>
-                    <blockquote>Turning complex data challenges into strategic opportunities for growth.</blockquote>
+                    <blockquote>A systems thinker trying to turn life into a coherent story — not just a sequence of achievements.</blockquote>
                 </div>
 
                 <!-- Languages -->
@@ -313,16 +414,16 @@
                     <div class="glass-card story-pillar-card">
                         <div class="pillar-icon">🎯</div>
                         <h3>My Vision</h3>
-                        <p>To bridge the gap between raw data and real business decisions by building intelligent, scalable, and impactful data-driven systems.</p>
+                        <p>Build systems that solve real problems people actually face — not just what looks impressive. Clarity, structure, and long-term impact over short-term noise.</p>
                     </div>
                     <div class="glass-card story-pillar-card">
                         <div class="pillar-icon">🚀</div>
                         <h3>My Mission</h3>
-                        <p>To continuously learn, innovate, and create technology solutions that solve meaningful real-world problems while growing into a leader in Data Science and Engineering.</p>
+                        <p>Take ownership. Refine until it's right. Grow into someone who doesn't just contribute — but leads, shapes outcomes, and makes things meaningfully better.</p>
                     </div>
                     <div class="glass-card story-belief-card">
                         <div class="quote-mark">"</div>
-                        <blockquote>Growth begins when we step beyond what we thought we could never become.</blockquote>
+                        <blockquote>I don't just complete work — I refine it until it feels right. Ownership isn't assigned to me. It comes naturally.</blockquote>
                     </div>
                 </div>
             </div>
@@ -339,18 +440,18 @@
             <div class="exp-layout">
                 <!-- Tab buttons -->
                 <div class="exp-tabs" role="tablist">
-                    <button class="exp-tab active" data-panel="ep0" role="tab" aria-selected="true">
+                    <button type="button" class="exp-tab active" data-panel="ep0" role="tab" aria-selected="true">
                         <span class="tab-role">Software Engineer I</span>
                         <span class="tab-co">PromptCloud / 42Signals</span>
                         <span class="tab-date">Jan 2025 – Present</span>
                         <span class="tab-badge">Current</span>
                     </button>
-                    <button class="exp-tab" data-panel="ep1" role="tab" aria-selected="false">
+                    <button type="button" class="exp-tab" data-panel="ep1" role="tab" aria-selected="false">
                         <span class="tab-role">Associate Software Engineer</span>
                         <span class="tab-co">PromptCloud</span>
                         <span class="tab-date">Jul – Dec 2024</span>
                     </button>
-                    <button class="exp-tab" data-panel="ep2" role="tab" aria-selected="false">
+                    <button type="button" class="exp-tab" data-panel="ep2" role="tab" aria-selected="false">
                         <span class="tab-role">Software Engineering Intern</span>
                         <span class="tab-co">PromptCloud</span>
                         <span class="tab-date">Jul 2023 – Jun 2024</span>
@@ -416,8 +517,15 @@
                 <div class="s-rule"></div>
             </div>
 
+            <div class="learning-badge">
+                <span class="lb-dot"></span>
+                <span class="lb-label">Currently Learning</span>
+                <span class="lb-sep">·</span>
+                <span class="lb-tech">Applied Data Science for Market Intelligence using Web Data</span>
+            </div>
+
             <div class="skill-graph-wrap">
-                <canvas id="skillGraph" aria-label="Interactive skill relationship graph"></canvas>
+                <canvas id="skillGraph" role="img" aria-label="Interactive skill relationship graph"></canvas>
                 <div class="graph-legend">
                     <span class="gl-item gl-lang">Languages</span>
                     <span class="gl-item gl-scrape">Data &amp; Scraping</span>
@@ -824,7 +932,7 @@
                         <span class="post-tag post-tag--academic">🎓 Academic</span>
                     </div>
                     <div class="post-body">
-                        <span class="post-date">Dec 2024</span>
+                        <div class="post-meta"><span class="post-date">Dec 2024</span><span class="post-read">2 min read</span></div>
                         <p class="post-excerpt">Balancing MTech in Data Science at BITS Pilani alongside full-time work at PromptCloud forced a shift in how I approach learning. What made this semester different wasn't just the coursework — it was proving to myself that growth has no off switch.</p>
                         <div class="post-footer">
                             <span class="post-li-logo"><i class="lni lni-linkedin-original"></i> Read on LinkedIn</span>
@@ -841,15 +949,15 @@
                         <img src="assets/posts/post-poovar-3.jpg" alt="Poovar 3" loading="lazy" class="pc-slide">
                         <img src="assets/posts/post-poovar-4.jpg" alt="Poovar 4" loading="lazy" class="pc-slide">
                         <img src="assets/posts/post-poovar-5.jpg" alt="Poovar 5" loading="lazy" class="pc-slide">
-                        <button class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
-                        <button class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
+                        <button type="button" class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
+                        <button type="button" class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
                         <div class="pc-dots">
                             <span class="pc-dot active"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span>
                         </div>
                         <span class="post-tag post-tag--life">✈️ Life & Travel</span>
                     </div>
                     <div class="post-body">
-                        <span class="post-date">Feb 2025</span>
+                        <div class="post-meta"><span class="post-date">Feb 2025</span><span class="post-read">3 min read</span></div>
                         <p class="post-excerpt">"Some moments in life feel so right that you wish they could last forever." Three days at Poovar Island, late-night conversations, and a personal breakthrough at Varkala — facing fears and discovering a lighter, braver version of myself.</p>
                         <div class="post-footer">
                             <span class="post-likes">❤️ 78</span>
@@ -866,7 +974,7 @@
                         <span class="post-tag post-tag--culture">🏢 Team & Culture</span>
                     </div>
                     <div class="post-body">
-                        <span class="post-date">Sep 2024</span>
+                        <div class="post-meta"><span class="post-date">Sep 2024</span><span class="post-read">2 min read</span></div>
                         <p class="post-excerpt">A week of memories at our Udaipur corporate retreat — exploring Sanjangarh Palace, Lake Pichola, and sessions on company vision and personal growth. A reminder that even in the fast-paced world of work, human connection is everything.</p>
                         <div class="post-footer">
                             <span class="post-likes">❤️ 48</span>
@@ -882,15 +990,15 @@
                         <img src="assets/posts/post-graduation-1.jpg" alt="Graduation 1" loading="lazy" class="pc-slide active">
                         <img src="assets/posts/post-graduation-2.jpg" alt="Graduation 2" loading="lazy" class="pc-slide">
                         <img src="assets/posts/post-graduation-3.jpg" alt="Graduation 3" loading="lazy" class="pc-slide">
-                        <button class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
-                        <button class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
+                        <button type="button" class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
+                        <button type="button" class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
                         <div class="pc-dots">
                             <span class="pc-dot active"></span><span class="pc-dot"></span><span class="pc-dot"></span>
                         </div>
                         <span class="post-tag post-tag--milestone">🏆 Milestone</span>
                     </div>
                     <div class="post-body">
-                        <span class="post-date">Jul 2024</span>
+                        <div class="post-meta"><span class="post-date">Jul 2024</span><span class="post-read">4 min read</span></div>
                         <p class="post-excerpt">From Zoom classes during lockdown to cap and gown — four years of pandemic-era learning, personal growth, a tough job search, and finally landing my first Software Engineering role at PromptCloud. Endlessly grateful for every step of the journey.</p>
                         <div class="post-footer">
                             <span class="post-likes">❤️ 197 &nbsp;·&nbsp; 💬 12</span>
@@ -910,15 +1018,15 @@
                         <img src="assets/posts/post-promptcloud-5.jpg" alt="PromptCloud 5" loading="lazy" class="pc-slide">
                         <img src="assets/posts/post-promptcloud-6.jpg" alt="PromptCloud 6" loading="lazy" class="pc-slide">
                         <img src="assets/posts/post-promptcloud-7.jpg" alt="PromptCloud 7" loading="lazy" class="pc-slide">
-                        <button class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
-                        <button class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
+                        <button type="button" class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
+                        <button type="button" class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
                         <div class="pc-dots">
                             <span class="pc-dot active"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span>
                         </div>
                         <span class="post-tag post-tag--career">💼 Career</span>
                     </div>
                     <div class="post-body">
-                        <span class="post-date">Mar 2024</span>
+                        <div class="post-meta"><span class="post-date">Mar 2024</span><span class="post-read">1 min read</span></div>
                         <p class="post-excerpt">PromptCloud's spotlight on me: "Meet Shanjai Ravi, our intern in the Data Delivery team — known for problem-solving prowess and tackling web scraping challenges creatively." A moment I'll always look back on with pride.</p>
                         <div class="post-footer">
                             <span class="post-likes">❤️ 18</span>
@@ -931,10 +1039,88 @@
             </div>
         </section>
 
+        <!-- ══════════ BEYOND WORK ══════════ -->
+        <section id="hobbies" class="fade-in-up">
+            <div class="section-header">
+                <p class="s-eyebrow"><span>✦</span> Beyond Work</p>
+                <h2>When I'm Not Coding</h2>
+                <div class="s-rule"></div>
+            </div>
+            <div class="hobbies-bento">
+
+                <div class="glass-card hb-card hb-travel">
+                    <span class="hb-icon">✈️</span>
+                    <h3>Travel</h3>
+                    <p>Chasing sunsets in Poovar, palace views in Udaipur — experiences that shift perspective more than any textbook ever could.</p>
+                    <div class="hb-tags">
+                        <span>Poovar Island</span><span>Udaipur</span><span>More coming</span>
+                    </div>
+                </div>
+
+                <div class="glass-card hb-card hb-photo">
+                    <span class="hb-icon">📸</span>
+                    <h3>Photography</h3>
+                    <p>Capturing candid moments and landscapes. Every frame holds a memory worth keeping.</p>
+                </div>
+
+                <div class="glass-card hb-card hb-mentor">
+                    <span class="hb-icon">🎓</span>
+                    <h3>Mentoring</h3>
+                    <p>Mock interviews for college juniors — resumes, Python, logical thinking. Giving back what I wish I had at the start.</p>
+                    <span class="hb-stat">10+ sessions</span>
+                </div>
+
+                <div class="glass-card hb-card hb-music">
+                    <div class="hb-music-header">
+                        <span class="hb-icon">🎵</span>
+                        <div>
+                            <h3>Music I Love</h3>
+                            <span class="hb-spotify-tag">Artists &amp; songs</span>
+                        </div>
+                        <span class="hb-spotify-logo">♫</span>
+                    </div>
+
+                    <div class="hb-music-artists">
+                        <div class="hb-artist-chip hb-group">
+                            <span class="hb-artist-label">Group</span>
+                            <span class="hb-artist-name">BTS</span>
+                            <span class="hb-artist-genre">K-pop</span>
+                        </div>
+                        <div class="hb-artist-chip hb-solo">
+                            <span class="hb-artist-label">Solo</span>
+                            <span class="hb-artist-name">Shreya Ghoshal</span>
+                            <span class="hb-artist-genre">Bollywood</span>
+                        </div>
+                    </div>
+
+                    <div class="hb-song-row">
+                        <div class="hb-song hb-song-alltime">
+                            <span class="hb-song-tag">All-time fav</span>
+                            <span class="hb-song-name">🔁 GO GO</span>
+                            <span class="hb-song-by">BTS</span>
+                        </div>
+                        <div class="hb-song hb-song-current">
+                            <span class="hb-song-tag">Current fav</span>
+                            <span class="hb-song-name">▶ NORMAL</span>
+                            <span class="hb-song-by">BTS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card hb-card hb-read">
+                    <span class="hb-icon">📖</span>
+                    <h3>Currently Reading</h3>
+                    <p class="hb-book-title"><em>Designing Data-Intensive Applications</em></p>
+                    <span class="hb-author">— Martin Kleppmann</span>
+                </div>
+
+            </div>
+        </section>
+
         <!-- ══════════ CONTACT ══════════ -->
         <section id="contact" class="fade-in-up">
             <div class="section-header">
-                <p class="s-eyebrow"><span>09</span> Contact</p>
+                <p class="s-eyebrow"><span>10</span> Contact</p>
                 <h2>Get In Touch</h2>
                 <div class="s-rule"></div>
             </div>
@@ -944,9 +1130,10 @@
                     <h3 class="contact-heading">Let's build something <em class="gold-em">amazing</em> together.</h3>
                     <p class="contact-sub">I'm open to new projects, creative ideas, or opportunities. Whether you have a question or just want to say hello — my inbox is always open.</p>
                     <div class="contact-links">
-                        <a href="mailto:shanjai1511@gmail.com" class="clink">
+                        <a href="mailto:shanjai1511@gmail.com" class="clink" id="emailClink">
                             <span class="clink-icon"><i class="lni lni-envelope"></i></span>
                             <span class="clink-text">shanjai1511@gmail.com</span>
+                            <span class="clink-copy-hint">Click to copy</span>
                             <i class="lni lni-arrow-top-right clink-arrow"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/shanjai/" target="_blank" class="clink">
@@ -957,6 +1144,11 @@
                         <a href="https://github.com/shanjai1511" target="_blank" class="clink">
                             <span class="clink-icon"><i class="lni lni-github-original"></i></span>
                             <span class="clink-text">github.com/shanjai1511</span>
+                            <i class="lni lni-arrow-top-right clink-arrow"></i>
+                        </a>
+                        <a href="https://www.instagram.com/r.shanjai/" target="_blank" class="clink">
+                            <span class="clink-icon"><i class="lni lni-instagram-original"></i></span>
+                            <span class="clink-text">instagram.com/r.shanjai</span>
                             <i class="lni lni-arrow-top-right clink-arrow"></i>
                         </a>
                     </div>
@@ -980,15 +1172,92 @@
     <footer>
         <div class="footer-inner">
             <p>&copy; 2024–<span id="footerYear"></span> Shanjai R &mdash; Designed with Tritonic Royal Elegance.</p>
+            <span class="konami-hint" id="konamiHint" title="Try ↑↑↓↓↑↓↑↓">🎮</span>
             <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn"><i class="lni lni-linkedin-original"></i></a>
-                <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"  ><i class="lni lni-github-original"></i></a>
-                <a href="mailto:shanjai1511@gmail.com"          aria-label="Email"                  ><i class="lni lni-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
+                <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
+                <a href="https://www.instagram.com/r.shanjai/" target="_blank" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
+                <a href="mailto:shanjai1511@gmail.com"                          aria-label="Email"   ><i class="lni lni-envelope"></i></a>
             </div>
         </div>
     </footer>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <!-- Music Player Popup -->
+    <div class="mp-overlay" id="mpOverlay">
+        <div class="mp-card glass-card">
+            <button type="button" class="mp-close" id="mpClose" aria-label="Close player">✕</button>
+            <div class="mp-header">
+                <div class="mp-eq" id="mpEq">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="mp-meta">
+                    <div class="mp-song" id="mpSongName">GO GO</div>
+                    <div class="mp-artist">BTS</div>
+                </div>
+            </div>
+            <!-- HTML5 audio (GO GO & NORMAL) -->
+            <div class="mp-audio-wrap" id="mpAudioWrap">
+                <audio id="mpAudio" preload="none"></audio>
+                <div class="mp-controls">
+                    <button type="button" class="mp-playpause" id="mpPlayPause" aria-label="Play or pause">▶</button>
+                    <div class="mp-progress">
+                        <span class="mp-time" id="mpCur">0:00</span>
+                        <input type="range" class="mp-seek" id="mpSeek" value="0" min="0" max="100" step="0.1" aria-label="Seek audio">
+                        <span class="mp-time" id="mpDur">0:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating ringtone button -->
+    <div class="music-float" id="musicFloat">
+        <div class="mf-tooltip">Play vibes while you explore 🎵</div>
+        <button type="button" class="mf-btn" id="mfBtn" aria-label="Toggle background music">
+            <div class="mf-eq-mini">
+                <i></i><i></i><i></i><i></i>
+            </div>
+        </button>
+        <audio id="ringtoneAudio" src="assets/music/bts_normal.mp3" loop preload="none"></audio>
+    </div>
+
+    <!-- Section dot navigator -->
+    <nav class="dot-nav" id="dotNav" aria-label="Section navigation">
+        <a href="#home"         class="dot-link" data-label="Home"        ><span class="dn-dot"></span></a>
+        <a href="#about"        class="dot-link" data-label="About"       ><span class="dn-dot"></span></a>
+        <a href="#story"        class="dot-link" data-label="My Story"    ><span class="dn-dot"></span></a>
+        <a href="#experience"   class="dot-link" data-label="Experience"  ><span class="dn-dot"></span></a>
+        <a href="#skills"       class="dot-link" data-label="Skills"      ><span class="dn-dot"></span></a>
+        <a href="#education"    class="dot-link" data-label="Education"   ><span class="dn-dot"></span></a>
+        <a href="#awards"       class="dot-link" data-label="Awards"      ><span class="dn-dot"></span></a>
+        <a href="#projects"     class="dot-link" data-label="Projects"    ><span class="dn-dot"></span></a>
+        <a href="#publications" class="dot-link" data-label="Publications"><span class="dn-dot"></span></a>
+        <a href="#posts"        class="dot-link" data-label="Posts"       ><span class="dn-dot"></span></a>
+        <a href="#hobbies"      class="dot-link" data-label="Beyond Work" ><span class="dn-dot"></span></a>
+        <a href="#contact"      class="dot-link" data-label="Contact"     ><span class="dn-dot"></span></a>
+    </nav>
+
+    <!-- Floating Hire Me pill -->
+    <a href="#contact" class="hire-pill" id="hirePill">
+        <span class="hire-dot"></span>
+        Hire Me
+    </a>
+
+    <!-- Toast notification -->
+    <div class="copy-toast" id="copyToast">📋 Email copied!</div>
+
+    <!-- Konami egg overlay -->
+    <div class="konami-overlay" id="konamiOverlay" aria-hidden="true">
+        <div class="konami-box glass-card">
+            <button type="button" class="konami-close" id="konamiClose" aria-label="Close">✕</button>
+            <div class="konami-emoji">🎮</div>
+            <h3 class="konami-title">You Found the Easter Egg!</h3>
+            <p class="konami-msg">Here's a secret — I went from <strong>hating computers in school</strong> to building data pipelines that process millions of records. Never stop surprising yourself.</p>
+            <p class="konami-code-hint">↑ ↑ ↓ ↓ ↑ ↓ ↑ ↓</p>
+        </div>
+    </div>
+
+    <button type="button" class="scroll-top" id="scrollTop" aria-label="Scroll to top">
         <i class="lni lni-chevron-up"></i>
     </button>
 
@@ -1051,12 +1320,19 @@
     const progressBar = document.getElementById('scrollProgress');
     const mainNav     = document.getElementById('mainNav');
     const scrollTopBtn = document.getElementById('scrollTop');
+    const heroPhotoEl = document.querySelector('.hero-photo');
+    const tickerBar   = document.getElementById('tickerBar');
     window.addEventListener('scroll', () => {
         const s = window.scrollY;
         const m = document.documentElement.scrollHeight - window.innerHeight;
         progressBar.style.width = (s / m * 100) + '%';
         mainNav.classList.toggle('scrolled', s > 60);
+        tickerBar?.classList.toggle('ticker-scrolled', s > 60);
         scrollTopBtn.classList.toggle('visible', s > 400);
+        hirePill?.classList.toggle('hire-visible', s > 500);
+        if (heroPhotoEl && s < window.innerHeight) {
+            heroPhotoEl.style.transform = `translateY(${s * 0.12}px)`;
+        }
     }, { passive: true });
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     document.getElementById('footerYear').textContent = new Date().getFullYear();
@@ -1083,6 +1359,19 @@
         });
     }, { rootMargin: '-40% 0px -50% 0px' });
     document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+    // ─── Section dot navigator ───────────────────────────
+    const dotLinks = document.querySelectorAll('.dot-link');
+    const dotSecObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                dotLinks.forEach(d => d.classList.remove('dn-active'));
+                const a = document.querySelector(`.dot-link[href="#${e.target.id}"]`);
+                if (a) a.classList.add('dn-active');
+            }
+        });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    document.querySelectorAll('section[id]').forEach(s => dotSecObs.observe(s));
 
     // ─── Stat counter ────────────────────────────────────────
     setTimeout(() => {
@@ -1303,8 +1592,13 @@
             ctx.restore();
         }
 
-        function loop() { tick(); draw(); requestAnimationFrame(loop); }
+        let rafId;
+        function loop() { tick(); draw(); rafId = requestAnimationFrame(loop); }
         loop();
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancelAnimationFrame(rafId);
+            else loop();
+        });
 
         function getPos(e) {
             const r = canvas.getBoundingClientRect();
@@ -1332,6 +1626,264 @@
         canvas.addEventListener('mouseleave', () => { hovered = null; dragging = null; canvas.style.cursor='default'; });
 
         document.getElementById('darkToggle').addEventListener('click', () => setTimeout(draw, 60));
+    })();
+
+    // ─── Preloader ───────────────────────────────────────
+    (function () {
+        const loader = document.getElementById('preloader');
+        if (sessionStorage.getItem('pl_done')) { loader.style.display = 'none'; return; }
+        setTimeout(() => { document.getElementById('preloaderBar').style.width = '100%'; }, 60);
+        setTimeout(() => {
+            loader.classList.add('preloader-out');
+            sessionStorage.setItem('pl_done', '1');
+            setTimeout(() => { loader.style.display = 'none'; }, 500);
+        }, 1300);
+    })();
+
+    // ─── Local time (Coimbatore IST) ─────────────────────
+    function updateLocalTime() {
+        const now = new Date();
+        const ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+        const h = ist.getHours(), m = ist.getMinutes().toString().padStart(2, '0');
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        const h12 = (h % 12 || 12).toString().padStart(2, '0');
+        const el = document.getElementById('localTime');
+        if (el) el.textContent = `🕐 ${h12}:${m} ${ampm} · Coimbatore, IN`;
+    }
+    updateLocalTime();
+    setInterval(updateLocalTime, 60000);
+
+    // ─── Logo micro-interaction ───────────────────────────
+    let logoClicks = 0, logoTimer;
+    document.querySelector('.logo').addEventListener('click', function (e) {
+        if (this.getAttribute('href') === '#home') e.preventDefault();
+        logoClicks++;
+        clearTimeout(logoTimer);
+        if (logoClicks >= 5) {
+            logoClicks = 0;
+            this.classList.add('logo-spin');
+            showToast('✨ You unlocked the logo!');
+            setTimeout(() => this.classList.remove('logo-spin'), 700);
+        } else {
+            logoTimer = setTimeout(() => { logoClicks = 0; }, 700);
+        }
+    });
+
+    // ─── Share portfolio ──────────────────────────────────
+    document.getElementById('shareBtn')?.addEventListener('click', async () => {
+        const payload = {
+            title: 'Shanjai R | Software Engineer & Data Scientist',
+            text: 'Check out this portfolio — Software Engineer at PromptCloud, M.Tech @ BITS Pilani.',
+            url: 'https://shanjai1511.github.io/'
+        };
+        if (navigator.share) {
+            try { await navigator.share(payload); } catch (_) {}
+        } else {
+            navigator.clipboard.writeText(payload.url).then(() => showToast('🔗 Portfolio link copied!'));
+        }
+    });
+
+    // ─── Toast helper ────────────────────────────────────
+    function showToast(msg) {
+        const t = document.getElementById('copyToast');
+        t.textContent = msg;
+        t.classList.add('toast-visible');
+        setTimeout(() => t.classList.remove('toast-visible'), 2200);
+    }
+
+    // ─── Copy email on click ──────────────────────────────
+    const emailClink = document.getElementById('emailClink');
+    if (emailClink) {
+        emailClink.addEventListener('click', e => {
+            e.preventDefault();
+            navigator.clipboard.writeText('shanjai1511@gmail.com')
+                .then(() => showToast('📋 Email copied to clipboard!'))
+                .catch(() => { window.location.href = 'mailto:shanjai1511@gmail.com'; });
+        });
+    }
+
+    // ─── Confetti on "Let's Talk" ─────────────────────────
+    document.querySelector('.btn-ghost[href="#contact"]')?.addEventListener('click', () => {
+        confetti({ particleCount: 90, spread: 70, origin: { y: 0.55 },
+            colors: ['#D4AF37', '#f5d770', '#ffffff', '#FFD700', '#FFC0CB'] });
+    });
+
+    // ─── Hire Me pill (handled in main scroll listener) ──
+    const hirePill = document.getElementById('hirePill');
+
+    // ─── Hidden Easter eggs ───────────────────────────────
+
+    // 1. Click hero photo → wiggle
+    document.querySelector('.hero-photo')?.addEventListener('click', function () {
+        const wrap = this.closest('.photo-wrap');
+        wrap?.classList.add('photo-wiggle');
+        showToast('📸 Hey, that\'s me! — Shanjai R');
+        setTimeout(() => wrap?.classList.remove('photo-wiggle'), 700);
+    });
+
+    // 2. Click availability chip → confetti + text flip
+    const availChip = document.querySelector('.availability-chip');
+    if (availChip) {
+        availChip.style.cursor = 'pointer';
+        availChip.addEventListener('click', function () {
+            confetti({ particleCount: 55, spread: 65, origin: { y: 0.25 },
+                colors: ['#D4AF37', '#22c55e', '#ffffff'] });
+            const orig = this.innerHTML;
+            this.innerHTML = '<span class="avail-dot"></span> Thanks! Let\'s connect 🙌';
+            setTimeout(() => { this.innerHTML = orig; }, 2500);
+        });
+    }
+
+    // 3. Click "● Now" in timeline → current status
+    document.querySelector('.tl-year-now')?.addEventListener('click', function () {
+        showToast('🟢 Right now: Building pipelines · Studying LLMs · Mentoring juniors · Listening to NORMAL');
+    });
+
+    // 4. Click BTS song cards → handled by music player below
+
+    // 5. Click footer copyright → site age in days
+    const footerP = document.querySelector('footer p');
+    let fClicks = 0;
+    if (footerP) {
+        footerP.style.cursor = 'pointer';
+        footerP.addEventListener('click', function () {
+            fClicks++;
+            const days = Math.floor((Date.now() - new Date('2024-01-01')) / 86400000);
+            if (fClicks === 1) showToast(`🗓️ This portfolio is ${days} days old — and still growing!`);
+            else if (fClicks >= 4) { fClicks = 0; showToast('😄 Stop clicking the footer!'); }
+        });
+    }
+
+    // 6. Idle 30s → nudge toast
+    let idleTimer, idleShown = false;
+    function resetIdle() {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+            if (!idleShown) {
+                idleShown = true;
+                showToast('👀 Still exploring? Take your time!');
+                setTimeout(() => { idleShown = false; }, 6000);
+            }
+        }, 30000);
+    }
+    ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(ev =>
+        document.addEventListener(ev, resetIdle, { passive: true })
+    );
+    resetIdle();
+
+    // ─── Music Player ────────────────────────────────────
+    (function () {
+        const overlay  = document.getElementById('mpOverlay');
+        const eq       = document.getElementById('mpEq');
+        const audioWrap = document.getElementById('mpAudioWrap');
+        const audio    = document.getElementById('mpAudio');
+        const playBtn  = document.getElementById('mpPlayPause');
+        const seekBar  = document.getElementById('mpSeek');
+        const curEl    = document.getElementById('mpCur');
+        const durEl    = document.getElementById('mpDur');
+        const nameEl   = document.getElementById('mpSongName');
+
+        function fmt(s) {
+            const m = Math.floor(s / 60), ss = Math.floor(s % 60).toString().padStart(2, '0');
+            return `${m}:${ss}`;
+        }
+
+        function open(type) {
+            audio.pause();
+            audio.currentTime = 0;
+            playBtn.textContent = '▶';
+            nameEl.textContent = type === 'gogo' ? 'GO GO' : 'NORMAL';
+            audio.src = type === 'gogo' ? 'assets/music/go_go.mp3' : 'assets/music/bts-normal-ringtonesk.com.mp3';
+            audio.play().then(() => { eq.classList.add('eq-on'); playBtn.textContent = '⏸'; }).catch(() => {});
+            overlay.classList.add('mp-open');
+        }
+
+        function close() {
+            overlay.classList.remove('mp-open');
+            audio.pause();
+            eq.classList.remove('eq-on');
+            playBtn.textContent = '▶';
+        }
+
+        document.getElementById('mpClose').addEventListener('click', close);
+        overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) { audio.play(); playBtn.textContent = '⏸'; eq.classList.add('eq-on'); }
+            else { audio.pause(); playBtn.textContent = '▶'; eq.classList.remove('eq-on'); }
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (!audio.duration) return;
+            seekBar.value = (audio.currentTime / audio.duration) * 100;
+            curEl.textContent = fmt(audio.currentTime);
+        });
+        audio.addEventListener('loadedmetadata', () => { durEl.textContent = fmt(audio.duration); });
+        audio.addEventListener('ended', () => { playBtn.textContent = '▶'; eq.classList.remove('eq-on'); });
+        seekBar.addEventListener('input', () => {
+            if (audio.duration) audio.currentTime = (seekBar.value / 100) * audio.duration;
+        });
+
+        document.querySelectorAll('.hb-song').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function () {
+                const nm = this.querySelector('.hb-song-name')?.textContent || '';
+                open(nm.includes('GO GO') ? 'gogo' : 'normal');
+                this.classList.add('song-playing');
+                setTimeout(() => this.classList.remove('song-playing'), 1500);
+            });
+        });
+    })();
+
+    // ─── Floating ringtone button ─────────────────────────
+    (function () {
+        const btn      = document.getElementById('mfBtn');
+        const ringtone = document.getElementById('ringtoneAudio');
+        if (!btn || !ringtone) return;
+        ringtone.volume = 0.4;
+        let on = false;
+        btn.addEventListener('click', () => {
+            on = !on;
+            btn.classList.toggle('mf-on', on);
+            if (on) ringtone.play().catch(() => {});
+            else ringtone.pause();
+            showToast(on ? '🎵 Vibes on — enjoy browsing!' : '🔇 Music paused');
+        });
+    })();
+
+    // ─── Konami code Easter egg ───────────────────────────
+    (function () {
+        const KONAMI = 'ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowUp,ArrowDown,ArrowUp,ArrowDown';
+        let keys = [];
+
+        function showKonami() {
+            document.getElementById('konamiOverlay').classList.add('konami-active');
+        }
+        function closeKonami() {
+            document.getElementById('konamiOverlay').classList.remove('konami-active');
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') { closeKonami(); return; }
+            keys.push(e.key);
+            keys = keys.slice(-8);
+            if (keys.join(',') === KONAMI) showKonami();
+        });
+
+        document.getElementById('konamiClose').addEventListener('click', closeKonami);
+        document.getElementById('konamiOverlay').addEventListener('click', function (e) {
+            if (e.target === e.currentTarget) closeKonami();
+        });
+
+        // Click the 🎮 icon 3 times to trigger on mobile
+        let clickCount = 0, clickTimer;
+        const hint = document.getElementById('konamiHint');
+        if (hint) hint.addEventListener('click', function () {
+            clickCount++;
+            clearTimeout(clickTimer);
+            if (clickCount >= 3) { clickCount = 0; showKonami(); }
+            else clickTimer = setTimeout(() => { clickCount = 0; }, 800);
+        });
     })();
     </script>
 </body>

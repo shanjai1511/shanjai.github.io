@@ -1,0 +1,13 @@
+{
+  "name": "Shanjai R | Software Engineer & Data Scientist",
+  "short_name": "Shanjai R",
+  "description": "Software Engineer at PromptCloud | M.Tech Data Science at BITS Pilani",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080D1A",
+  "theme_color": "#D4AF37",
+  "icons": [
+    { "src": "assets/me/n.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/me/n.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

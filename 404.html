@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Shanjai R</title>
+    <link rel="icon" href="assets/me/n.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #080D1A;
+            color: #E8EDF8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 26px 26px;
+            overflow: hidden;
+        }
+        .orb {
+            position: fixed; border-radius: 50%;
+            filter: blur(140px); pointer-events: none; z-index: 0;
+        }
+        .orb-1 { top: -10%; left: -5%; width: 500px; height: 500px; background: #D4AF37; opacity: 0.06; }
+        .orb-2 { bottom: -10%; right: -5%; width: 600px; height: 600px; background: #1a2a6c; opacity: 0.05; }
+
+        .wrap { position: relative; z-index: 1; max-width: 500px; padding: 2rem; }
+
+        .err-code {
+            font-family: 'Outfit', sans-serif;
+            font-size: 9rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #D4AF37, #f5d770, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            animation: glitch 3s ease-in-out infinite;
+        }
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-3px, 1px); }
+            94% { transform: translate(3px, -1px); }
+            96% { transform: translate(-2px, 2px); }
+        }
+
+        h1 { font-family: 'Outfit', sans-serif; font-size: 1.7rem; font-weight: 800; margin-bottom: 1rem; }
+
+        p {
+            color: #7C8499; line-height: 1.75;
+            font-size: 0.95rem; margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: #D4AF37; color: #080D1A;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700; font-size: 0.9rem;
+            padding: 0.9rem 2rem; border-radius: 10px;
+            text-decoration: none;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            box-shadow: 0 8px 30px rgba(212,175,55,0.45);
+            transform: translateY(-2px);
+        }
+
+        .sig {
+            margin-top: 2.5rem;
+            font-size: 0.75rem; color: #4A5168;
+        }
+        .sig a { color: #D4AF37; text-decoration: none; }
+        .sig a:hover { text-decoration: underline; }
+
+        .pipeline {
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.5rem; margin: 2rem 0;
+            font-size: 0.75rem; color: #4A5168;
+            font-family: monospace;
+        }
+        .pipe-step { padding: 0.3rem 0.65rem; border: 1px solid rgba(212,175,55,0.2); border-radius: 6px; }
+        .pipe-arrow { color: #D4AF37; }
+        .pipe-err { border-color: rgba(239,68,68,0.4); color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="wrap">
+        <div class="err-code">404</div>
+        <h1>Lost in the data pipeline 🔍</h1>
+        <p>This page doesn't exist — but that's okay. Even the best scraping pipelines hit a 404 sometimes. Let's get you back on track.</p>
+
+        <div class="pipeline">
+            <span class="pipe-step">Request</span>
+            <span class="pipe-arrow">→</span>
+            <span class="pipe-step">Router</span>
+            <span class="pipe-arrow">→</span>
+            <span class="pipe-step pipe-err">404 ✗</span>
+        </div>
+
+        <a href="/" class="btn">← Back to Portfolio</a>
+
+        <p class="sig">— <a href="/">Shanjai R</a> · Software Engineer &amp; Data Scientist</p>
+    </div>
+</body>
+</html>
