@@ -340,6 +340,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- ══════════ STORY ══════════ -->
@@ -649,19 +650,6 @@
                         <h3>SSLC, General</h3>
                         <p class="edu-inst">Vijayalakshmi Matric Hr Sec School</p>
                         <span class="edu-year">Jun 2016 – Apr 2018</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cert-row">
-                <p class="cert-label">Certifications</p>
-                <div class="cert-chips">
-                    <div class="glass-card cert-chip">
-                        <span class="cert-icon">🏅</span>
-                        <div>
-                            <span class="cert-name">Python Programming A-Z Definitive Diploma</span>
-                            <span class="cert-issuer">Udemy &middot; Jun 2021</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1234,7 +1222,7 @@
         <a href="#publications" class="dot-link" data-label="Publications"><span class="dn-dot"></span></a>
         <a href="#posts"        class="dot-link" data-label="Posts"       ><span class="dn-dot"></span></a>
         <a href="#hobbies"      class="dot-link" data-label="Beyond Work" ><span class="dn-dot"></span></a>
-        <a href="#contact"      class="dot-link" data-label="Contact"     ><span class="dn-dot"></span></a>
+<a href="#contact"      class="dot-link" data-label="Contact"     ><span class="dn-dot"></span></a>
     </nav>
 
     <!-- Floating Hire Me pill -->
@@ -1885,6 +1873,123 @@
             else clickTimer = setTimeout(() => { clickCount = 0; }, 800);
         });
     })();
+
+    // ─── Click Ripple ─────────────────────────────────────
+    document.addEventListener('click', function (e) {
+        const r = document.createElement('div');
+        r.className = 'click-ripple';
+        r.style.left = e.clientX + 'px';
+        r.style.top  = e.clientY + 'px';
+        document.body.appendChild(r);
+        r.addEventListener('animationend', () => r.remove());
+    }, { passive: true });
+
+    // ─── Section Achievements ─────────────────────────────
+    (function () {
+        const ACHIEVEMENTS = {
+            about:        { icon: '👤', label: 'Discovered',  name: 'About Me' },
+            story:        { icon: '🗺️',  label: 'Discovered',  name: 'My Story' },
+            experience:   { icon: '💼', label: 'Unlocked',    name: 'Experience' },
+            skills:       { icon: '⚡', label: 'Unlocked',    name: 'Skills' },
+            education:    { icon: '🎓', label: 'Unlocked',    name: 'Education' },
+            awards:       { icon: '🏆', label: 'Unlocked',    name: 'Awards' },
+            projects:     { icon: '🚀', label: 'Unlocked',    name: 'Projects' },
+            publications: { icon: '📄', label: 'Discovered',  name: 'Publications' },
+            posts:        { icon: '✍️',  label: 'Discovered',  name: 'Featured Posts' },
+            hobbies:      { icon: '🎵', label: 'Discovered',  name: 'Beyond Work' },
+            daylife:      { icon: '🗓️', label: 'Discovered',  name: 'Day in the Life' },
+            contact:      { icon: '📬', label: 'Ready',       name: "Let's Connect!" },
+        };
+
+        const badge = document.createElement('div');
+        badge.className = 'achievement-badge';
+        badge.innerHTML = '<span class="ach-icon" id="achIcon"></span><div><span class="ach-label" id="achLabel"></span><span class="ach-name" id="achName"></span></div>';
+        document.body.appendChild(badge);
+
+        let achTimer;
+        function showAch(a) {
+            document.getElementById('achIcon').textContent = a.icon;
+            document.getElementById('achLabel').textContent = a.label;
+            document.getElementById('achName').textContent = a.name;
+            badge.classList.add('ach-show');
+            clearTimeout(achTimer);
+            achTimer = setTimeout(() => badge.classList.remove('ach-show'), 2600);
+        }
+
+        const seen = new Set(JSON.parse(sessionStorage.getItem('ach_seen') || '[]'));
+        const achObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    const id = e.target.id;
+                    if (ACHIEVEMENTS[id] && !seen.has(id)) {
+                        seen.add(id);
+                        sessionStorage.setItem('ach_seen', JSON.stringify([...seen]));
+                        setTimeout(() => showAch(ACHIEVEMENTS[id]), 500);
+                    }
+                }
+            });
+        }, { threshold: 0.25 });
+        document.querySelectorAll('section[id]').forEach(s => achObs.observe(s));
+    })();
+
+    // ─── Autoplay vibes on first interaction ──────────────
+    (function () {
+        const ringtone = document.getElementById('ringtoneAudio');
+        const btn      = document.getElementById('mfBtn');
+        if (!ringtone || !btn) return;
+        let started = false;
+        function tryAutoplay() {
+            if (started) return;
+            started = true;
+            ringtone.volume = 0.35;
+            ringtone.play().then(() => {
+                btn.classList.add('mf-on');
+                showToast('🎵 Vibes on — enjoy the portfolio!');
+            }).catch(() => {});
+            ['click', 'touchstart', 'keydown'].forEach(ev =>
+                document.removeEventListener(ev, tryAutoplay));
+        }
+        ['click', 'touchstart', 'keydown'].forEach(ev =>
+            document.addEventListener(ev, tryAutoplay, { once: true, passive: true }));
+    })();
+
+    // ─── Day in the Life — IST current-time highlight ─────
+    (function () {
+        const events = document.querySelectorAll('.dil-event[data-time]');
+        if (!events.length) return;
+        function getISTMinutes() {
+            const now = new Date();
+            const utcMin = now.getUTCHours() * 60 + now.getUTCMinutes();
+            return (utcMin + 330) % 1440; // IST = UTC+5:30
+        }
+        function parseMins(t) {
+            const [h, m] = t.split(':').map(Number);
+            return h * 60 + m;
+        }
+        function highlightNow() {
+            const nowMin = getISTMinutes();
+            const times = Array.from(events).map(el => parseMins(el.dataset.time));
+            let idx = -1;
+            for (let i = 0; i < times.length; i++) {
+                if (nowMin >= times[i] && (i === times.length - 1 || nowMin < times[i + 1])) idx = i;
+            }
+            events.forEach((el, i) => el.classList.toggle('dil-now', i === idx));
+        }
+        highlightNow();
+    })();
+
+    // ─── Magnetic button micro-interaction ────────────────
+    document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
+        btn.addEventListener('mousemove', function (e) {
+            const r = this.getBoundingClientRect();
+            const dx = e.clientX - (r.left + r.width / 2);
+            const dy = e.clientY - (r.top + r.height / 2);
+            this.style.transform = `translate(${dx * 0.22}px, ${dy * 0.22}px)`;
+        });
+        btn.addEventListener('mouseleave', function () {
+            this.style.transform = '';
+        });
+    });
     </script>
 </body>
 </html>
