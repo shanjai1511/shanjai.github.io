@@ -156,8 +156,8 @@ a { color: var(--text-primary); text-decoration: none; transition: var(--transit
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Mobile nav ── */
-.mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(8,13,26,0.5); backdrop-filter: blur(6px); z-index: 998; opacity: 0; transition: opacity 0.3s ease; }
-.mobile-overlay.open { opacity: 1; }
+.mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(8,13,26,0.5); backdrop-filter: blur(6px); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.mobile-overlay.open { opacity: 1; pointer-events: all; }
 .mobile-nav { position: fixed; top: var(--nav-height); right: 0; width: 270px; height: calc(100vh - var(--nav-height)); background: var(--bg-secondary); z-index: 999; padding: 2rem 1.25rem; transform: translateX(100%); transition: transform 0.35s var(--ease); box-shadow: -8px 0 40px rgba(0,0,0,0.15); }
 .mobile-nav.open { transform: translateX(0); }
 .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
@@ -609,6 +609,9 @@ section { padding: 110px 0; }
 .pc-prev:hover, .pc-next:hover { background: rgba(0,0,0,0.7); }
 .post-img-wrap:hover .pc-prev,
 .post-img-wrap:hover .pc-next { opacity: 1; pointer-events: auto; }
+@media (max-width: 768px) {
+    .pc-prev, .pc-next { opacity: 0.8; pointer-events: auto; }
+}
 
 /* Gradient overlay on image */
 .post-img-wrap::after {
@@ -842,6 +845,9 @@ footer p { color: var(--text-secondary); font-size: 0.85rem; }
     .ab-main { padding: 2rem; }
     .project-img-wrap { min-height: 220px; }
     #skillGraph { height: 280px; }
+
+    /* Carousel dots: expand invisible tap area without changing visual size */
+    .pc-dot { padding: 8px; margin: -8px; box-sizing: content-box; background-clip: content-box; }
 }
 
 @media (max-width: 600px) {
@@ -1068,7 +1074,7 @@ footer p { color: var(--text-secondary); font-size: 0.85rem; }
     top: var(--nav-height);
     left: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 997;
     overflow: hidden;
     background: var(--accent-gold-light);
     border-bottom: 1px solid rgba(212,175,55,0.22);

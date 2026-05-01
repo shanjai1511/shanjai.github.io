@@ -1313,7 +1313,7 @@
     window.addEventListener('scroll', () => {
         const s = window.scrollY;
         const m = document.documentElement.scrollHeight - window.innerHeight;
-        progressBar.style.width = (s / m * 100) + '%';
+        progressBar.style.width = (m > 0 ? Math.min(s / m * 100, 100) : 0) + '%';
         mainNav.classList.toggle('scrolled', s > 60);
         tickerBar?.classList.toggle('ticker-scrolled', s > 60);
         scrollTopBtn.classList.toggle('visible', s > 400);
@@ -1410,9 +1410,11 @@
         // Auto-start immediately
         startTimer();
 
-        // Pause on hover, resume on leave
+        // Pause on hover/touch, resume on leave
         wrap.addEventListener('mouseenter', stopTimer);
         wrap.addEventListener('mouseleave', startTimer);
+        wrap.addEventListener('touchstart', stopTimer, { passive: true });
+        wrap.addEventListener('touchend',   startTimer, { passive: true });
 
         // Prev / Next buttons
         btnPrev && btnPrev.addEventListener('click', e => { e.preventDefault(); stopTimer(); goTo(idx - 1); startTimer(); });
