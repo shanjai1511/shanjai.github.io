@@ -43,10 +43,15 @@
 
     <script>
         (function () {
-            const t = localStorage.getItem('theme');
-            if (t) {
-                document.documentElement.setAttribute('data-theme', t);
-            } else {
+            try {
+                const t = localStorage.getItem('theme');
+                if (t) {
+                    document.documentElement.setAttribute('data-theme', t);
+                } else {
+                    const h = new Date().getHours();
+                    document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
+                }
+            } catch (_) {
                 const h = new Date().getHours();
                 document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
             }
@@ -1669,7 +1674,9 @@
         if (navigator.share) {
             try { await navigator.share(payload); } catch (_) {}
         } else {
-            navigator.clipboard.writeText(payload.url).then(() => showToast('🔗 Portfolio link copied!'));
+            navigator.clipboard.writeText(payload.url)
+                .then(() => showToast('🔗 Portfolio link copied!'))
+                .catch(() => showToast('🔗 Copy: shanjai1511.github.io'));
         }
     });
 
