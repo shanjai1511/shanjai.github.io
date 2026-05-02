@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#080D1A"/>
+      <stop offset="100%" stop-color="#0F1629"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#f5d770"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="15%" cy="20%" r="45%">
+      <stop offset="0%"   stop-color="#D4AF37" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="85%" cy="80%" r="45%">
+      <stop offset="0%"   stop-color="#1a2a6c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1a2a6c" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="avatar-clip">
+      <circle cx="960" cy="315" r="180"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#orb1)"/>
+  <rect width="1200" height="630" fill="url(#orb2)"/>
+
+  <!-- Dot grid texture -->
+  <pattern id="dots" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="rgba(255,255,255,0.04)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="160" width="4" height="310" rx="2" fill="url(#gold)"/>
+
+  <!-- Name -->
+  <text x="116" y="235" font-family="'Outfit', 'Arial Black', sans-serif" font-weight="900"
+        font-size="78" fill="url(#gold)" letter-spacing="-2">Shanjai R</text>
+
+  <!-- Role -->
+  <text x="118" y="300" font-family="'Inter', Arial, sans-serif" font-weight="500"
+        font-size="28" fill="rgba(255,255,255,0.75)">Software Engineer · Data Scientist</text>
+
+  <!-- Divider -->
+  <rect x="118" y="330" width="520" height="1.5" fill="rgba(212,175,55,0.3)" rx="1"/>
+
+  <!-- Company + education -->
+  <text x="118" y="375" font-family="'Inter', Arial, sans-serif" font-weight="400"
+        font-size="22" fill="rgba(255,255,255,0.55)">PromptCloud / 42Signals</text>
+  <text x="118" y="408" font-family="'Inter', Arial, sans-serif" font-weight="400"
+        font-size="22" fill="rgba(255,255,255,0.55)">M.Tech @ BITS Pilani</text>
+
+  <!-- Stat pills -->
+  <rect x="118" y="445" width="130" height="44" rx="22" fill="rgba(212,175,55,0.12)" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+  <text x="183" y="472" font-family="'Inter', Arial, sans-serif" font-weight="700"
+        font-size="18" fill="#D4AF37" text-anchor="middle">3+ Years</text>
+
+  <rect x="262" y="445" width="118" height="44" rx="22" fill="rgba(212,175,55,0.12)" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+  <text x="321" y="472" font-family="'Inter', Arial, sans-serif" font-weight="700"
+        font-size="18" fill="#D4AF37" text-anchor="middle">6 Awards</text>
+
+  <rect x="394" y="445" width="138" height="44" rx="22" fill="rgba(212,175,55,0.12)" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+  <text x="463" y="472" font-family="'Inter', Arial, sans-serif" font-weight="700"
+        font-size="18" fill="#D4AF37" text-anchor="middle">20+ Skills</text>
+
+  <!-- URL -->
+  <text x="118" y="565" font-family="'Inter', Arial, sans-serif" font-weight="500"
+        font-size="20" fill="rgba(255,255,255,0.35)">shanjai1511.github.io</text>
+
+  <!-- Avatar circle border -->
+  <circle cx="960" cy="315" r="185" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="2"/>
+  <circle cx="960" cy="315" r="190" fill="none" stroke="rgba(212,175,55,0.08)" stroke-width="6"/>
+
+  <!-- Avatar placeholder (replace with actual photo in a PNG export) -->
+  <circle cx="960" cy="315" r="180" fill="rgba(212,175,55,0.08)"/>
+  <text x="960" y="330" font-family="'Outfit', Arial, sans-serif" font-weight="900"
+        font-size="96" fill="rgba(212,175,55,0.35)" text-anchor="middle">S.R</text>
+</svg>
