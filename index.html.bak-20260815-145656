@@ -19,7 +19,7 @@
     <meta name="google-adsense-account" content="ca-pub-1169116962313138">
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#A9832E">
+    <meta name="theme-color" content="#B8902E">
     <link rel="canonical" href="https://shanjai1511.github.io/">
     <meta name="robots" content="index, follow">
     <!-- Open Graph -->
@@ -34,12 +34,12 @@
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Shanjai R | Software Engineer & Data Scientist">
-    <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
     <meta name="twitter:description" content="Software Engineer at PromptCloud | M.Tech Data Science & Engineering at BITS Pilani.">
+    <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="styles/styles.css">
 
@@ -131,34 +131,14 @@
             <a href="#home" class="logo">ASR</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#story">My Story</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li class="nav-dropdown">
-                    <a href="#projects" class="nav-dropdown-toggle">Work <i class="lni lni-chevron-down"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <div class="nav-dropdown-menu-inner">
-                            <a href="sara.html">Scalable Automated Retrieval Architecture</a>
-                            <a href="competitor-intelligence.html">Competitor Intelligence Engine</a>
-                            <a href="product-matching.html">Automated Product Matching Pipeline</a>
-                            <a href="search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
-                            <a href="price-intelligence.html">Price Intelligence &amp; Revenue Leakage</a>
-                            <a href="#projects" class="nav-dropdown-all">View All Work</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#posts" class="nav-dropdown-toggle">Writing <i class="lni lni-chevron-down"></i></a>
-                    <div class="nav-dropdown-menu">
-                        <div class="nav-dropdown-menu-inner">
-                            <a href="https://www.linkedin.com/pulse/person-who-knows-how-company-works-has-more-leverage-than-shanjai-r-lrc4c/" target="_blank">Company Knowledge as Leverage</a>
-                            <a href="https://medium.com/@shanjai1511/the-deepest-peace-is-found-in-chaos-7f0021dbf183" target="_blank">The Deepest Peace Is Found in Chaos</a>
-                            <a href="https://www.linkedin.com/pulse/art-poking-around-how-curiosity-made-me-better-engineer-shanjai-r-xxylc/" target="_blank">The Art of Poking Around</a>
-                            <a href="https://www.linkedin.com/pulse/watchtower-without-watchman-just-architecture-shanjai-r-mu8ec/" target="_blank">A Watchtower Without a Watchman</a>
-                            <a href="https://www.linkedin.com/pulse/security-living-inside-iron-dome-shanjai-r-ssydc/" target="_blank">Not Living Inside an Iron Dome</a>
-                            <a href="#posts" class="nav-dropdown-all">View All Writing</a>
-                        </div>
-                    </div>
-                </li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#posts">Posts</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -173,6 +153,44 @@
         </div>
     </nav>
 
+    <!-- ══════════ FUN FACTS TICKER (fixed below nav) ══════════ -->
+    <div class="ticker-wrap" id="tickerBar" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">☕ Runs on ice cream</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧠 Bigger picture first — details follow naturally</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💜 BTS fan — NORMAL &amp; GO GO on loop</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🔄 Refines until it feels right — not just done</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌊 Poovar Island &gt; any city sunset</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">⚡ Fixes what's broken, not just what's assigned</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🐍 Python is my first love</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🚀 Quietly ambitious, deeply intentional</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎮 Found the Easter egg? ↑↑↓↓↑↓↑↓</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧭 Depth over speed — understanding matters more</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">📸 Photographer at heart, Engineer by trade</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💡 Sees patterns and connections everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🏆 6 awards and counting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Ownership comes naturally — no waiting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌏 Coimbatore → Everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Real impact over appearance, always</span><span class="ticker-sep">✦</span>
+            <!-- duplicate for seamless loop -->
+            <span class="ticker-item">☕ Runs on ice cream</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧠 Bigger picture first — details follow naturally</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💜 BTS fan — NORMAL &amp; GO GO on loop</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🔄 Refines until it feels right — not just done</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌊 Poovar Island &gt; any city sunset</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">⚡ Fixes what's broken, not just what's assigned</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🐍 Python is my first love</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🚀 Quietly ambitious, deeply intentional</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎮 Found the Easter egg? ↑↑↓↓↑↓↑↓</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🧭 Depth over speed — understanding matters more</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">📸 Photographer at heart, Engineer by trade</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">💡 Sees patterns and connections everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🏆 6 awards and counting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Ownership comes naturally — no waiting</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🌏 Coimbatore → Everywhere</span><span class="ticker-sep">✦</span>
+            <span class="ticker-item">🎯 Real impact over appearance, always</span><span class="ticker-sep">✦</span>
+        </div>
+    </div>
 
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="mobile-nav" id="mobileNav">
@@ -183,14 +201,9 @@
             <li><a href="#skills"     class="mobile-link">Skills</a></li>
             <li><a href="#education"  class="mobile-link">Education</a></li>
             <li><a href="#awards"     class="mobile-link">Awards</a></li>
-            <li><a href="#projects"     class="mobile-link">Work</a></li>
-            <li><a href="sara.html"                     class="mobile-link mobile-link--sub">SARA</a></li>
-            <li><a href="competitor-intelligence.html"  class="mobile-link mobile-link--sub">Competitor Intelligence Engine</a></li>
-            <li><a href="product-matching.html"         class="mobile-link mobile-link--sub">Automated Product Matching Pipeline</a></li>
-            <li><a href="search-intelligence.html"      class="mobile-link mobile-link--sub">Search Intelligence &amp; Brand Visibility</a></li>
-            <li><a href="price-intelligence.html"       class="mobile-link mobile-link--sub">Price Intelligence &amp; Revenue Leakage</a></li>
+            <li><a href="#projects"     class="mobile-link">Projects</a></li>
             <li><a href="#publications" class="mobile-link">Publications</a></li>
-            <li><a href="#posts"        class="mobile-link">Writing</a></li>
+            <li><a href="#posts"        class="mobile-link">Posts</a></li>
             <li><a href="#contact"      class="mobile-link">Contact</a></li>
         </ul>
     </div>
@@ -208,16 +221,18 @@
                     <div class="local-time" id="localTime">🕐 &mdash; · Coimbatore, IN</div>
                     <p class="greeting">Hello, I'm</p>
                     <h1 class="hero-name gradient-text" id="type-title" data-text="Shanjai R"> </h1>
-                    <p class="hero-role">Software Engineer II</p>
-                    <p class="hero-meta">Data Engineering · Data Science · Intelligent Systems</p>
-
-                    <h2 class="hero-statement">Building systems that turn messy real-world data into structured intelligence.</h2>
-
-                    <p class="hero-current"><span class="hero-current-label">Currently</span> Building SARA: a fashion &amp; retail intelligence pipeline</p>
-
+                    <p class="hero-role" id="type-subtitle" data-text="Software Engineer @ PromptCloud"> </p>
+                    <p class="hero-bio" id="type-bio" data-text="M.Tech Data Science & Engineering at BITS Pilani. Building scalable data pipelines and intelligent systems."> </p>
+                    <div class="hero-stats">
+                        <div class="hstat"><span class="hstat-n" data-target="3" data-suffix="+">3+</span><span class="hstat-l">Years Exp.</span></div>
+                        <div class="hstat-sep"></div>
+                        <div class="hstat"><span class="hstat-n" data-target="6" data-suffix="">6</span><span class="hstat-l">Awards</span></div>
+                        <div class="hstat-sep"></div>
+                        <div class="hstat"><span class="hstat-n" data-target="14" data-suffix="+">14+</span><span class="hstat-l">Skills</span></div>
+                    </div>
                     <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">Explore Work</a>
-                        <a href="https://docs.google.com/document/d/1CuNf3c0HqHSQjyJzvckA4KE_3--v1WsG9807g1U0QyU/edit?usp=sharing" target="_blank" class="btn btn-ghost">Resume</a>
+                        <a href="https://docs.google.com/document/d/1CuNf3c0HqHSQjyJzvckA4KE_3--v1WsG9807g1U0QyU/edit?usp=sharing" target="_blank" class="btn btn-primary">View Resume</a>
+                        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
                         <div class="socials">
                             <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn"  class="social-btn"><i class="lni lni-linkedin-original"></i></a>
                             <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"    class="social-btn"><i class="lni lni-github-original"></i></a>
@@ -254,21 +269,50 @@
                 <div class="s-rule"></div>
             </div>
 
-            <div class="about-editorial">
-                <div class="ab-statement">
-                    <h3>I work where messy data meets real-world systems.</h3>
-                    <div class="ab-credentials">
-                        <div class="ab-cred"><span class="ab-cred-k">Role</span><span class="ab-cred-v">Software Engineer II</span></div>
-                        <div class="ab-cred"><span class="ab-cred-k">Company</span><span class="ab-cred-v">PromptCloud / 42Signals</span></div>
-                        <div class="ab-cred"><span class="ab-cred-k">Location</span><span class="ab-cred-v">Coimbatore, India</span></div>
-                        <div class="ab-cred"><span class="ab-cred-k">Languages</span><span class="ab-cred-v">Tamil · English</span></div>
-                    </div>
+            <div class="about-bento">
+                <!-- Main text -->
+                <div class="glass-card ab-main">
+                    <p>Most people see data as numbers. I see it as signals, patterns, behaviour, and stories waiting to be uncovered.</p>
+                    <p>I work on building scalable web scraping pipelines and intelligent data systems that can navigate messy real-world data at scale. From collecting raw information across multiple platforms to transforming it into structured business insights, I enjoy solving the kind of engineering problems where every website, workflow, and edge case behaves differently.</p>
+                    <p>At PromptCloud, I work at the intersection of data engineering, automation, and data science — designing systems that are not just functional, but resilient, adaptable, and production-ready. Whether it’s debugging a pipeline failure at scale, optimizing extraction workflows, or architecting modular scraping frameworks, I enjoy turning operational chaos into structured systems.</p>
+                    <p>What drives me most is curiosity ? </p>
+                    <p>Why did the data fail ?</p>
+                    <p>Can this process scale to 100 sites instead of 5 ?</p>
+                    <p>How do we reduce human dependency through better architecture ?</p>
+                    <p>Outside of engineering, I’m continuously exploring the broader ecosystem around technology, analytics, and system design while pursuing my M.Tech in Data Science and Engineering at BITS Pilani. I believe strong systems quietly create strong businesses and I enjoy building those systems.</p>
                 </div>
 
-                <div class="ab-supporting">
-                    <p>My work focuses on scalable web data systems: extraction pipelines, validation layers, and the infrastructure that keeps them running unattended, turning fragmented information from across the internet into structured business intelligence.</p>
-                    <p>At PromptCloud / 42Signals, that spans e-commerce, quick commerce, and, through <a href="#projects">SARA</a>, fashion and retail intelligence. The questions that keep me interested: why did the data fail, can this scale to a hundred sites instead of five, and how do we design systems that need less human intervention over time.</p>
-                    <p>Alongside that, I'm pursuing an M.Tech in Data Science and Engineering at BITS Pilani, less to add a credential, more to reason more rigorously about the systems I already build daily.</p>
+                <!-- Quick facts -->
+                <div class="glass-card ab-facts">
+                    <h4 class="ab-facts-title">Quick Facts</h4>
+                    <ul class="facts-list">
+                        <li><span class="fact-icon">💼</span><div><span class="fact-k">Role</span><span class="fact-v">Software Engineer II</span></div></li>
+                        <li><span class="fact-icon">🎓</span><div><span class="fact-k">Pursuing</span><span class="fact-v">M.Tech @ BITS Pilani</span></div></li>
+                        <li><span class="fact-icon">🏢</span><div><span class="fact-k">Company</span><span class="fact-v">PromptCloud / 42Signals</span></div></li>
+                        <li><span class="fact-icon">📍</span><div><span class="fact-k">Location</span><span class="fact-v">Coimbatore, India</span></div></li>
+                        <li><span class="fact-icon">🔍</span><div><span class="fact-k">Focus</span><span class="fact-v">Data Scientist</span></div></li>
+                    </ul>
+                </div>
+
+                <!-- Quote -->
+                <div class="glass-card ab-quote">
+                    <div class="quote-mark">"</div>
+                    <blockquote>A systems thinker trying to turn life into a coherent story — not just a sequence of achievements.</blockquote>
+                </div>
+
+                <!-- Languages -->
+                <div class="glass-card ab-langs">
+                    <h4 class="ab-facts-title">Spoken Languages</h4>
+                    <div class="lang-list">
+                        <div class="lang-item">
+                            <span class="lang-flag">🇮🇳</span>
+                            <div><span class="fact-k">Tamil</span><span class="fact-v">Native</span></div>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-flag">🇬🇧</span>
+                            <div><span class="fact-k">English</span><span class="fact-v">Full Professional</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -304,7 +348,7 @@
                         <span class="now-icon">📖</span>
                         <div>
                             <span class="now-k">Currently Reading</span>
-                            <span class="now-v">Designing Data-Intensive Applications, by Martin Kleppmann</span>
+                            <span class="now-v">Designing Data-Intensive Applications — Martin Kleppmann</span>
                         </div>
                     </div>
                 </div>
@@ -327,14 +371,14 @@
                         <div class="glass-card tl-card">
                             <span class="tl-year">2018 – 2020</span>
                             <h3>The Unlikely Beginning</h3>
-                            <p>School days: computers were never my favourite subject. I never imagined building a career around technology. I didn't connect with programming and honestly thought it was something meant for naturally "tech people." I was not one of them.</p>
+                            <p>School days — computers were never my favourite subject. I never imagined building a career around technology. I didn't connect with programming and honestly thought it was something meant for naturally "tech people." I was not one of them.</p>
                         </div>
                     </div>
                     <div class="tl-item" data-tl>
                         <div class="tl-dot"></div>
                         <div class="glass-card tl-card">
                             <span class="tl-year">2020 – 2024</span>
-                            <h3>B.Tech IT: Finding My Calling</h3>
+                            <h3>B.Tech IT — Finding My Calling</h3>
                             <p>Pursued Information Technology at Sri Shakthi Institute of Engineering and Technology. Struggled early, then discovered a real passion for data extraction and logic-driven problem solving. Graduated with <strong>8.58 CGPA, First Class with Distinction</strong>.</p>
                         </div>
                     </div>
@@ -342,15 +386,15 @@
                         <div class="tl-dot"></div>
                         <div class="glass-card tl-card">
                             <span class="tl-year">Jul 2023</span>
-                            <h3>PromptCloud: Where Learning Became Real</h3>
-                            <p>Joined as a Software Engineering Intern. Worked on banner placement analysis for Amazon, Nykaa, and Blinkit: identifying where brand banners appear inside app layouts and connecting technical findings directly to business strategy.</p>
+                            <h3>PromptCloud — Where Learning Became Real</h3>
+                            <p>Joined as a Software Engineering Intern. Worked on banner placement analysis for Amazon, Nykaa, and Blinkit — identifying where brand banners appear inside app layouts and connecting technical findings directly to business strategy.</p>
                         </div>
                     </div>
                     <div class="tl-item" data-tl>
                         <div class="tl-dot"></div>
                         <div class="glass-card tl-card">
                             <span class="tl-year">Jul – Dec 2024</span>
-                            <h3>Associate Software Engineer: Taking Ownership</h3>
+                            <h3>Associate Software Engineer — Taking Ownership</h3>
                             <p>Built the Client Site Mapping Dashboard for 42Signals and designed a Modular Web Scraping Pipeline with YAML-driven rules, MySQL integration, and multi-layer validation. Philosophy: build systems, not shortcuts.</p>
                         </div>
                     </div>
@@ -358,15 +402,15 @@
                         <div class="tl-dot"></div>
                         <div class="glass-card tl-card">
                             <span class="tl-year">Jan 2025</span>
-                            <h3>Software Engineer I: Leading the Product</h3>
-                            <p>Full ownership of 42Signals product operations, handling multiple client engagements, driving new explorations, and earning the <strong>Emerging Leader award</strong> for ownership and leadership initiative.</p>
+                            <h3>Software Engineer I — Leading the Product</h3>
+                            <p>Full ownership of 42Signals product operations — handling multiple client engagements, driving new explorations, and earning the <strong>Emerging Leader award</strong> for ownership and leadership initiative.</p>
                         </div>
                     </div>
                     <div class="tl-item" data-tl>
                         <div class="tl-dot"></div>
                         <div class="glass-card tl-card">
                             <span class="tl-year">Oct 2025</span>
-                            <h3>BITS Pilani: Never Stop Learning</h3>
+                            <h3>BITS Pilani — Never Stop Learning</h3>
                             <p>Enrolled in M.Tech Data Science and Engineering through the Work Integrated Learning Program. Goal: move beyond operational execution into strategic, AI-driven analytics leadership.</p>
                         </div>
                     </div>
@@ -374,7 +418,7 @@
                         <div class="tl-dot"></div>
                         <div class="glass-card tl-card">
                             <span class="tl-year">Jul 2026</span>
-                            <h3>Software Engineer II: Raising the Bar</h3>
+                            <h3>Software Engineer II — Raising the Bar</h3>
                             <p>Promoted to Software Engineer II at PromptCloud / 42Signals, working at the intersection of data engineering, automation, and data science to turn raw web and app data into meaningful business insights across e-commerce and quick commerce.</p>
                         </div>
                     </div>
@@ -383,7 +427,7 @@
                         <div class="glass-card tl-card tl-card-now">
                             <span class="tl-year tl-year-now">● Now</span>
                             <h3>Mentoring & Still Building</h3>
-                            <p>Conducting mock interviews for college juniors: resumes, Python, logical thinking. Because guidance matters enormously at the start. And for me, this is only the beginning.</p>
+                            <p>Conducting mock interviews for college juniors — resumes, Python, logical thinking. Because guidance matters enormously at the start. And for me, this is only the beginning.</p>
                         </div>
                     </div>
                 </div>
@@ -392,16 +436,16 @@
                     <div class="glass-card story-pillar-card">
                         <div class="pillar-icon">🎯</div>
                         <h3>My Vision</h3>
-                        <p>Build systems that solve real problems people actually face, not just what looks impressive. Clarity, structure, and long-term impact over short-term noise.</p>
+                        <p>Build systems that solve real problems people actually face — not just what looks impressive. Clarity, structure, and long-term impact over short-term noise.</p>
                     </div>
                     <div class="glass-card story-pillar-card">
                         <div class="pillar-icon">🚀</div>
                         <h3>My Mission</h3>
-                        <p>Take ownership. Refine until it's right. Grow into someone who doesn't just contribute, but leads, shapes outcomes, and makes things meaningfully better.</p>
+                        <p>Take ownership. Refine until it's right. Grow into someone who doesn't just contribute — but leads, shapes outcomes, and makes things meaningfully better.</p>
                     </div>
                     <div class="glass-card story-belief-card">
                         <div class="quote-mark">"</div>
-                        <blockquote>I don't just complete work; I refine it until it feels right. Ownership isn't assigned to me. It comes naturally.</blockquote>
+                        <blockquote>I don't just complete work — I refine it until it feels right. Ownership isn't assigned to me. It comes naturally.</blockquote>
                     </div>
                 </div>
             </div>
@@ -415,52 +459,94 @@
                 <div class="s-rule"></div>
             </div>
 
-            <div class="ar-list">
-                <div class="ar-entry ar-entry--current">
-                    <span class="ar-dot" aria-hidden="true"></span>
-                    <div class="ar-year">2026 – Present</div>
-                    <div class="ar-body">
-                        <h3>Software Engineer II</h3>
-                        <p class="ar-co"><a href="https://www.promptcloud.com/" target="_blank">PromptCloud / 42Signals</a> · Bengaluru</p>
-                        <p class="ar-meta">Data Engineering · E-commerce Intelligence · Automation</p>
-                        <p class="ar-desc">Using data science–driven approaches to turn raw web and app data into business intelligence across e-commerce and quick commerce: automated validation, market intelligence, competitor analysis, demand signals, and search/keyword insight pipelines, built in collaboration with business and product teams.</p>
-                        <div class="ar-tags"><span>Python</span><span>Data Analysis</span><span>Elasticsearch</span><span>Kibana</span><span>MySQL</span></div>
-                    </div>
+            <div class="exp-layout">
+                <!-- Tab buttons -->
+                <div class="exp-tabs" role="tablist">
+                    <button type="button" class="exp-tab active" data-panel="ep0" role="tab" aria-selected="true">
+                        <span class="tab-role">Software Engineer II</span>
+                        <span class="tab-co">PromptCloud / 42Signals</span>
+                        <span class="tab-date">Jul 2026 – Present</span>
+                        <span class="tab-badge">Current</span>
+                    </button>
+                    <button type="button" class="exp-tab" data-panel="ep1" role="tab" aria-selected="false">
+                        <span class="tab-role">Software Engineer I</span>
+                        <span class="tab-co">PromptCloud / 42Signals</span>
+                        <span class="tab-date">Jan 2025 – Jun 2026</span>
+                    </button>
+                    <button type="button" class="exp-tab" data-panel="ep2" role="tab" aria-selected="false">
+                        <span class="tab-role">Associate Software Engineer</span>
+                        <span class="tab-co">PromptCloud</span>
+                        <span class="tab-date">Jul – Dec 2024</span>
+                    </button>
+                    <button type="button" class="exp-tab" data-panel="ep3" role="tab" aria-selected="false">
+                        <span class="tab-role">Software Engineering Intern</span>
+                        <span class="tab-co">PromptCloud</span>
+                        <span class="tab-date">Jul 2023 – Jun 2024</span>
+                    </button>
                 </div>
 
-                <div class="ar-entry">
-                    <span class="ar-dot" aria-hidden="true"></span>
-                    <div class="ar-year">2025 – 2026</div>
-                    <div class="ar-body">
-                        <h3>Software Engineer I</h3>
-                        <p class="ar-co"><a href="https://www.promptcloud.com/" target="_blank">PromptCloud / 42Signals</a> · Bengaluru</p>
-                        <p class="ar-meta">Data Engineering · Analytics Pipelines</p>
-                        <p class="ar-desc">Converted raw web and app data into actionable business insights for e-commerce and quick commerce, detecting trends and anomalies through automated validation and quality checks, and defining data quality standards across teams.</p>
-                        <div class="ar-tags"><span>Python</span><span>Data Analysis</span><span>Elasticsearch</span><span>Kibana</span><span>MySQL</span></div>
+                <!-- Panels -->
+                <div class="exp-panels">
+                    <div class="exp-panel active glass-card" id="ep0">
+                        <div class="panel-head">
+                            <h3>Software Engineer II <a href="https://www.promptcloud.com/" target="_blank" class="panel-co">@ PromptCloud / 42Signals</a></h3>
+                            <span class="panel-date">Jul 2026 – Present</span>
+                        </div>
+                        <ul class="panel-bullets">
+                            <li>Use data science–driven approaches to turn raw web and app data into meaningful business insights, especially in e-commerce and quick commerce.</li>
+                            <li>Analyze large datasets to identify trends, patterns, and anomalies, improving data quality through automated validation and intelligent checks.</li>
+                            <li>Prepare clean, structured data for analytics, supporting use cases like market intelligence, competitor analysis, demand signals, and search/keyword insights.</li>
+                            <li>Collaborate with business and product teams to ensure the data answers real business questions and helps stakeholders make data-backed decisions.</li>
+                        </ul>
+                        <div class="panel-tags">
+                            <span>Python</span><span>Data Analysis</span><span>Elasticsearch</span><span>Kibana</span><span>MySQL</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="ar-entry">
-                    <span class="ar-dot" aria-hidden="true"></span>
-                    <div class="ar-year">2024</div>
-                    <div class="ar-body">
-                        <h3>Associate Software Engineer</h3>
-                        <p class="ar-co"><a href="https://www.promptcloud.com/" target="_blank">PromptCloud</a> · Bengaluru</p>
-                        <p class="ar-meta">Systems Design · Data Pipelines</p>
-                        <p class="ar-desc">Designed and implemented scalable systems for processing large datasets with high reliability, applying statistical techniques to support business decisions and optimizing pipelines for throughput and accuracy.</p>
-                        <div class="ar-tags"><span>Python</span><span>BeautifulSoup</span><span>Scrapy</span><span>MySQL</span></div>
+                    <div class="exp-panel glass-card" id="ep1">
+                        <div class="panel-head">
+                            <h3>Software Engineer I <a href="https://www.promptcloud.com/" target="_blank" class="panel-co">@ PromptCloud / 42Signals</a></h3>
+                            <span class="panel-date">Jan 2025 – Jun 2026</span>
+                        </div>
+                        <ul class="panel-bullets">
+                            <li>Applied data science–driven approaches to convert raw web and app data into actionable business insights for e-commerce and quick commerce verticals.</li>
+                            <li>Analyzed large datasets to detect trends, patterns, and anomalies using automated validation and intelligent quality checks.</li>
+                            <li>Prepared analytics-ready datasets supporting market intelligence, competitor analysis, demand signals, and keyword insights.</li>
+                            <li>Collaborated cross-functionally to define data quality standards and streamline analytics delivery pipelines.</li>
+                        </ul>
+                        <div class="panel-tags">
+                            <span>Python</span><span>Data Analysis</span><span>Elasticsearch</span><span>Kibana</span><span>MySQL</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="ar-entry">
-                    <span class="ar-dot" aria-hidden="true"></span>
-                    <div class="ar-year">2023 – 2024</div>
-                    <div class="ar-body">
-                        <h3>Software Engineering Intern</h3>
-                        <p class="ar-co"><a href="https://www.promptcloud.com/" target="_blank">PromptCloud</a> · Bengaluru</p>
-                        <p class="ar-meta">Web Scraping · Data Extraction</p>
-                        <p class="ar-desc">Built scalable web scraping pipelines with configurable site adaptors for pagination, content fetching, and data extraction, supporting market research and content aggregation projects.</p>
-                        <div class="ar-tags"><span>Python</span><span>Ruby</span><span>BeautifulSoup</span><span>Nokogiri</span><span>XPath</span></div>
+                    <div class="exp-panel glass-card" id="ep2">
+                        <div class="panel-head">
+                            <h3>Associate Software Engineer <a href="https://www.promptcloud.com/" target="_blank" class="panel-co">@ PromptCloud</a></h3>
+                            <span class="panel-date">Jul 2024 – Dec 2024</span>
+                        </div>
+                        <ul class="panel-bullets">
+                            <li>Designed and implemented scalable systems for processing and analyzing large datasets with high reliability.</li>
+                            <li>Applied statistical and data science techniques to extract actionable insights that supported business decision-making.</li>
+                            <li>Optimized existing data pipelines for throughput and accuracy, reducing processing errors significantly.</li>
+                        </ul>
+                        <div class="panel-tags">
+                            <span>Python</span><span>BeautifulSoup</span><span>Scrapy</span><span>MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="exp-panel glass-card" id="ep3">
+                        <div class="panel-head">
+                            <h3>Software Engineering Intern <a href="https://www.promptcloud.com/" target="_blank" class="panel-co">@ PromptCloud</a></h3>
+                            <span class="panel-date">Jul 2023 – Jun 2024</span>
+                        </div>
+                        <ul class="panel-bullets">
+                            <li>Built scalable web scraping pipelines with configurable site adaptors for pagination, content fetching, and data extraction.</li>
+                            <li>Developed data processing workflows supporting market research and content aggregation projects.</li>
+                            <li>Gained hands-on experience with Python, SQL, and web technologies in a production data engineering environment.</li>
+                        </ul>
+                        <div class="panel-tags">
+                            <span>Python</span><span>Ruby</span><span>BeautifulSoup</span><span>Nokogiri</span><span>XPath</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -481,22 +567,100 @@
                 <span class="lb-tech">Applied Data Science for Market Intelligence using Web Data</span>
             </div>
 
-            <div class="skills-editorial">
-                <div class="sk-col">
-                    <h4>Data</h4>
-                    <ul><li>Data Engineering</li><li>Data Analysis</li><li>Analytics</li><li>Machine Learning</li></ul>
+            <div class="skill-graph-wrap">
+                <canvas id="skillGraph" role="img" aria-label="Interactive skill relationship graph"></canvas>
+                <div class="graph-legend">
+                    <span class="gl-item gl-lang">Languages</span>
+                    <span class="gl-item gl-scrape">Data &amp; Scraping</span>
+                    <span class="gl-item gl-infra">Infrastructure</span>
                 </div>
-                <div class="sk-col">
-                    <h4>Systems</h4>
-                    <ul><li>Web Data Extraction</li><li>ETL Pipelines</li><li>Distributed Task Queues</li><li>Automation</li><li>System Design</li></ul>
+                <p class="graph-hint">Hover to explore · drag nodes</p>
+            </div>
+
+            <div class="skill-categories">
+                <div class="glass-card skill-cat-card">
+                    <div class="scat-header">
+                        <span class="scat-icon">⌨️</span>
+                        <h4>Languages</h4>
+                    </div>
+                    <div class="scat-chips">
+                        <span class="schip"><img src="assets/skills/python.png" onerror="this.src=''" alt="">Python</span>
+                        <span class="schip"><img src="assets/skills/ruby.png"   onerror="this.src=''" alt="">Ruby</span>
+                        <span class="schip"><img src="assets/skills/java.png"   onerror="this.src=''" alt="">Java</span>
+                    </div>
                 </div>
-                <div class="sk-col">
-                    <h4>Domain</h4>
-                    <ul><li>E-commerce</li><li>Quick Commerce</li><li>Fashion &amp; Retail Intelligence</li><li>Digital Shelf Analytics</li><li>Market Intelligence</li><li>Voice of Customer</li></ul>
+                <div class="glass-card skill-cat-card">
+                    <div class="scat-header">
+                        <span class="scat-icon">🔍</span>
+                        <h4>Data & Scraping</h4>
+                    </div>
+                    <div class="scat-chips">
+                        <span class="schip schip-core"><img src="assets/skills/beautifulsoup.png" onerror="this.src=''" alt="">BeautifulSoup</span>
+                        <span class="schip schip-core"><img src="assets/skills/scrapy.png"        onerror="this.src=''" alt="">Scrapy</span>
+                        <span class="schip schip-core"><img src="assets/skills/datascience.jpg"   onerror="this.src=''" alt="">Data Analysis</span>
+                        <span class="schip schip-core"><img src="assets/skills/pandas.svg"        onerror="this.style.display='none'" alt="">pandas</span>
+                        <span class="schip"><img src="assets/skills/numpy.svg"      onerror="this.style.display='none'" alt="">NumPy</span>
+                        <span class="schip"><img src="assets/skills/langchain.svg"  onerror="this.style.display='none'" alt="">LangChain</span>
+                        <span class="schip"><img src="assets/skills/nokogiri.png"   onerror="this.src=''" alt="">Nokogiri</span>
+                        <span class="schip"><img src="assets/skills/xpath.png"      onerror="this.src=''" alt="">XPath</span>
+                    </div>
                 </div>
-                <div class="sk-col">
-                    <h4>Tools</h4>
-                    <ul><li>Python</li><li>SQL</li><li>Pandas</li><li>NumPy</li><li>Scrapy</li><li>BeautifulSoup</li><li>Elasticsearch</li><li>RabbitMQ</li><li>FastAPI</li><li>Docker</li><li>Git</li></ul>
+                <div class="glass-card skill-cat-card">
+                    <div class="scat-header">
+                        <span class="scat-icon">🛠️</span>
+                        <h4>Infrastructure</h4>
+                    </div>
+                    <div class="scat-chips">
+                        <span class="schip"><img src="assets/skills/mysql.png"    onerror="this.src=''" alt="">MySQL</span>
+                        <span class="schip"><img src="assets/skills/elastic.png"  onerror="this.src=''" alt="">Elasticsearch</span>
+                        <span class="schip"><img src="assets/skills/kibana.png"   onerror="this.src=''" alt="">Kibana</span>
+                        <span class="schip"><img src="assets/skills/logstash.png" onerror="this.src=''" alt="">Logstash</span>
+                        <span class="schip"><img src="assets/skills/git.png"      onerror="this.src=''" alt="">Git</span>
+                        <span class="schip"><img src="assets/skills/linux.png"    onerror="this.src=''" alt="">Linux</span>
+                        <span class="schip"><img src="assets/skills/docker.svg"   onerror="this.style.display='none'" alt="">Docker</span>
+                        <span class="schip"><img src="assets/skills/restapi.png"  onerror="this.style.display='none'" alt="">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marquee -->
+            <div class="skills-marquee" aria-hidden="true">
+                <div class="marquee-track">
+                    <span class="mchip"><img src="assets/skills/python.png"       onerror="this.src=''" alt="">Python</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/ruby.png"         onerror="this.src=''" alt="">Ruby</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/beautifulsoup.png" onerror="this.src=''" alt="">BeautifulSoup</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/scrapy.png"       onerror="this.src=''" alt="">Scrapy</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/pandas.svg"       onerror="this.style.display='none'" alt="">pandas</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/numpy.svg"        onerror="this.style.display='none'" alt="">NumPy</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/langchain.svg"    onerror="this.style.display='none'" alt="">LangChain</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/elastic.png"      onerror="this.src=''" alt="">Elasticsearch</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/kibana.png"       onerror="this.src=''" alt="">Kibana</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/mysql.png"        onerror="this.src=''" alt="">MySQL</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/docker.svg"       onerror="this.style.display='none'" alt="">Docker</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/git.png"          onerror="this.src=''" alt="">Git</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/linux.png"        onerror="this.src=''" alt="">Linux</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/nokogiri.png"     onerror="this.src=''" alt="">Nokogiri</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/java.png"         onerror="this.src=''" alt="">Java</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/logstash.png"     onerror="this.src=''" alt="">Logstash</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/xpath.png"        onerror="this.src=''" alt="">XPath</span><span class="mdot">✦</span>
+                    <!-- duplicate for seamless loop -->
+                    <span class="mchip"><img src="assets/skills/python.png"       onerror="this.src=''" alt="">Python</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/ruby.png"         onerror="this.src=''" alt="">Ruby</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/beautifulsoup.png" onerror="this.src=''" alt="">BeautifulSoup</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/scrapy.png"       onerror="this.src=''" alt="">Scrapy</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/pandas.svg"       onerror="this.style.display='none'" alt="">pandas</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/numpy.svg"        onerror="this.style.display='none'" alt="">NumPy</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/langchain.svg"    onerror="this.style.display='none'" alt="">LangChain</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/elastic.png"      onerror="this.src=''" alt="">Elasticsearch</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/kibana.png"       onerror="this.src=''" alt="">Kibana</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/mysql.png"        onerror="this.src=''" alt="">MySQL</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/docker.svg"       onerror="this.style.display='none'" alt="">Docker</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/git.png"          onerror="this.src=''" alt="">Git</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/linux.png"        onerror="this.src=''" alt="">Linux</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/nokogiri.png"     onerror="this.src=''" alt="">Nokogiri</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/java.png"         onerror="this.src=''" alt="">Java</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/logstash.png"     onerror="this.src=''" alt="">Logstash</span><span class="mdot">✦</span>
+                    <span class="mchip"><img src="assets/skills/xpath.png"        onerror="this.src=''" alt="">XPath</span><span class="mdot">✦</span>
                 </div>
             </div>
         </section>
@@ -567,7 +731,7 @@
                     <div class="tilt-shine"></div>
                     <div class="award-top">
                         <span class="award-emoji">⭐</span>
-                        <span class="award-times">×5</span>
+                        <span class="award-times">×3</span>
                     </div>
                     <h3>Hi5 Award</h3>
                     <p>Celebrated for exceptional teamwork, collaboration, and sustained positive impact across cross-functional teams.</p>
@@ -584,85 +748,24 @@
             </div>
         </section>
 
-        <!-- ══════════ SELECTED WORK ══════════ -->
+        <!-- ══════════ PROJECTS ══════════ -->
         <section id="projects" class="fade-in-up">
             <div class="section-header">
-                <p class="s-eyebrow"><span>06</span> Selected Work</p>
-                <h2>Selected Work</h2>
+                <p class="s-eyebrow"><span>06</span> Projects</p>
+                <h2>Featured Work</h2>
                 <div class="s-rule"></div>
             </div>
 
             <div class="projects-stack">
-
-                <!-- Flagship: SARA -->
-                <div class="glass-card project-card project-card--flagship">
-                    <div class="project-body project-body--full">
-                        <div class="project-body-top">
-                            <div>
-                                <span class="proj-num proj-num--flagship">01</span>
-                                <h3>SARA</h3>
-                                <p class="proj-subtitle">Scalable Automated Retrieval Architecture</p>
-                            </div>
-                            <a href="https://github.com/shanjai1511/SARA" target="_blank" class="proj-ext-link" aria-label="GitHub">
-                                <i class="lni lni-arrow-top-right"></i>
-                            </a>
-                        </div>
-                        <span class="proj-status">Currently Building</span>
-                        <p class="proj-summary proj-summary--lg">Fashion and retail intelligence lives across dozens of sites with no shared structure. SARA explores how a web-data pipeline can discover, retrieve, and parse that fragmented information from 22 fashion e-commerce and media sites, indexing everything into Elasticsearch as a searchable intelligence layer.</p>
-                        <div class="proj-tags"><span>Python</span><span>RabbitMQ</span><span>Elasticsearch</span><span>Kibana</span><span>FastAPI</span><span>Streamlit</span><span>APScheduler</span></div>
-                        <a href="sara.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Client work at PromptCloud / 42Signals -->
-                <div class="projects-compact-grid">
-                    <div class="glass-card project-card project-card--compact">
-                        <span class="proj-num proj-num--compact">02</span>
-                        <h3>Competitor Intelligence Engine</h3>
-                        <p class="proj-subtitle">Competitor Analysis · Market Intelligence</p>
-                        <span class="proj-status proj-status--muted">PromptCloud / 42Signals · Confidential</span>
-                        <p class="proj-summary">Tracking competitor pricing, assortment, and positioning signals across e-commerce marketplaces to surface where a brand is gaining or losing shelf share.</p>
-                        <div class="proj-tags"><span>Python</span><span>Elasticsearch</span><span>Kibana</span><span>MySQL</span></div>
-                        <a href="competitor-intelligence.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
-                    </div>
-                    <div class="glass-card project-card project-card--compact">
-                        <span class="proj-num proj-num--compact">03</span>
-                        <h3>Automated Product Matching Pipeline</h3>
-                        <p class="proj-subtitle">Fashion Retail Client · Digital Shelf Analytics</p>
-                        <span class="proj-status proj-status--muted">PromptCloud / 42Signals · Confidential</span>
-                        <p class="proj-summary">Matching the same product across competing fashion retailers despite inconsistent titles, images, and attributes, so pricing and assortment comparisons are apples-to-apples.</p>
-                        <div class="proj-tags"><span>Python</span><span>Data Validation</span><span>Elasticsearch</span></div>
-                        <a href="product-matching.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
-                    </div>
-                    <div class="glass-card project-card project-card--compact">
-                        <span class="proj-num proj-num--compact">04</span>
-                        <h3>Search Intelligence &amp; Brand Visibility Analytics</h3>
-                        <p class="proj-subtitle">Search &amp; Keyword Insights</p>
-                        <span class="proj-status proj-status--muted">PromptCloud / 42Signals · Confidential</span>
-                        <p class="proj-summary">Measuring how a brand's products rank and appear across on-site search and category pages, turning visibility into a trackable, actionable metric.</p>
-                        <div class="proj-tags"><span>Python</span><span>Kibana</span><span>Data Analysis</span></div>
-                        <a href="search-intelligence.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
-                    </div>
-                    <div class="glass-card project-card project-card--compact">
-                        <span class="proj-num proj-num--compact">05</span>
-                        <h3>Price Intelligence &amp; Revenue Leakage Detection</h3>
-                        <p class="proj-subtitle">Demand Signals · Pricing</p>
-                        <span class="proj-status proj-status--muted">PromptCloud / 42Signals · Confidential</span>
-                        <p class="proj-summary">Surfacing pricing anomalies and unauthorized discounting across marketplaces that quietly erode margin, before they show up in quarterly numbers.</p>
-                        <div class="proj-tags"><span>Python</span><span>MySQL</span><span>Elasticsearch</span></div>
-                        <a href="price-intelligence.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
-                    </div>
-                </div>
-
                 <div class="glass-card project-card tilt-card"><div class="tilt-shine"></div>
                     <div class="project-img-wrap">
-                        <span class="proj-num">06</span>
+                        <span class="proj-num">01</span>
                         <img src="assets/projects/mwspemdcc.webp"
-                            onerror="this.src='https://via.placeholder.com/700x420/1C1B17/A9832E?text=Pipeline'"
+                            onerror="this.src='https://via.placeholder.com/700x420/0A1128/D4AF37?text=Pipeline'"
                             alt="Web Scraping Pipeline" loading="lazy">
                         <div class="proj-img-overlay">
-                            <a href="web-scraping-pipeline.html" class="overlay-link">
-                                Read the Case Study <i class="lni lni-chevron-right"></i>
+                            <a href="https://github.com/shanjai1511/web-scrapping-pipeline" target="_blank" class="overlay-link">
+                                <i class="lni lni-github-original"></i> View on GitHub
                             </a>
                         </div>
                     </div>
@@ -675,19 +778,47 @@
                         </div>
                         <div class="proj-tags"><span>Python</span><span>MySQL</span><span>BeautifulSoup</span></div>
                         <p class="proj-summary">A production-scale, multi-site scraping system with YAML-driven site configuration, retry logic, and MySQL-backed storage.</p>
-                        <a href="web-scraping-pipeline.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
+                        <div class="cs-grid">
+                            <div class="cs-block cs-problem">
+                                <span class="cs-label">Problem</span>
+                                <p>Site-specific scripts broke constantly with no unified architecture for scaling across multiple data sources.</p>
+                            </div>
+                            <div class="cs-block cs-approach">
+                                <span class="cs-label">Approach</span>
+                                <p>Designed a YAML-configured adaptor system separating URL collection, fetching, parsing, and storage as independent stages.</p>
+                            </div>
+                            <div class="cs-block cs-arch">
+                                <span class="cs-label">Architecture</span>
+                                <div class="cs-arch-flow">
+                                    <span>URL Collector</span><span class="arch-sep">→</span>
+                                    <span>Page Fetcher</span><span class="arch-sep">→</span>
+                                    <span>YAML Parser</span><span class="arch-sep">→</span>
+                                    <span>BS4 / Scrapy</span><span class="arch-sep">→</span>
+                                    <span>Retry Layer</span><span class="arch-sep">→</span>
+                                    <span>MySQL</span>
+                                </div>
+                            </div>
+                            <div class="cs-block cs-impact">
+                                <span class="cs-label">Impact</span>
+                                <div class="cs-metrics">
+                                    <div class="cs-metric"><span class="m-val">20+</span><span class="m-desc">Sites Automated</span></div>
+                                    <div class="cs-metric"><span class="m-val">65%</span><span class="m-desc">Faster Setup</span></div>
+                                    <div class="cs-metric"><span class="m-val">95%+</span><span class="m-desc">Data Accuracy</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="glass-card project-card tilt-card"><div class="tilt-shine"></div>
                     <div class="project-img-wrap">
-                        <span class="proj-num">07</span>
+                        <span class="proj-num">02</span>
                         <img src="assets/projects/ecllms_paper.png"
-                            onerror="this.src='https://via.placeholder.com/700x420/1C1B17/A9832E?text=Digital+Menu'"
+                            onerror="this.src='https://via.placeholder.com/700x420/0A1128/D4AF37?text=Digital+Menu'"
                             alt="Digital Menucard" loading="lazy">
                         <div class="proj-img-overlay">
-                            <a href="digital-menucard.html" class="overlay-link">
-                                Read the Case Study <i class="lni lni-chevron-right"></i>
+                            <a href="https://github.com/shanjai1511/Digital-menu-card" target="_blank" class="overlay-link">
+                                <i class="lni lni-github-original"></i> View on GitHub
                             </a>
                         </div>
                     </div>
@@ -700,19 +831,46 @@
                         </div>
                         <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>QR Code</span></div>
                         <p class="proj-summary">A QR-code triggered digital menu system that eliminates paper menus with real-time updates and restaurant analytics.</p>
-                        <a href="digital-menucard.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
+                        <div class="cs-grid">
+                            <div class="cs-block cs-problem">
+                                <span class="cs-label">Problem</span>
+                                <p>Restaurants reprinted paper menus for every change — slow, costly, and wasteful in fast-paced environments.</p>
+                            </div>
+                            <div class="cs-block cs-approach">
+                                <span class="cs-label">Approach</span>
+                                <p>QR code–linked web app where menus are served dynamically; owners update content instantly without technical expertise.</p>
+                            </div>
+                            <div class="cs-block cs-arch">
+                                <span class="cs-label">Architecture</span>
+                                <div class="cs-arch-flow">
+                                    <span>QR Scan</span><span class="arch-sep">→</span>
+                                    <span>Web App</span><span class="arch-sep">→</span>
+                                    <span>Dynamic DB</span><span class="arch-sep">→</span>
+                                    <span>Admin Panel</span><span class="arch-sep">→</span>
+                                    <span>Real-time Sync</span>
+                                </div>
+                            </div>
+                            <div class="cs-block cs-impact">
+                                <span class="cs-label">Impact</span>
+                                <div class="cs-metrics">
+                                    <div class="cs-metric"><span class="m-val">₹0</span><span class="m-desc">Print Cost</span></div>
+                                    <div class="cs-metric"><span class="m-val">Live</span><span class="m-desc">Instant Updates</span></div>
+                                    <div class="cs-metric"><span class="m-val">Any</span><span class="m-desc">Device</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="glass-card project-card tilt-card"><div class="tilt-shine"></div>
                     <div class="project-img-wrap">
-                        <span class="proj-num">08</span>
+                        <span class="proj-num">03</span>
                         <img src="assets/projects/ecllms.webp"
-                            onerror="this.src='https://via.placeholder.com/700x420/1C1B17/A9832E?text=ECLLMS'"
+                            onerror="this.src='https://via.placeholder.com/700x420/0A1128/D4AF37?text=ECLLMS'"
                             alt="Enhanced Chemistry Lab LMS" loading="lazy">
                         <div class="proj-img-overlay">
-                            <a href="chemistry-lab-lms.html" class="overlay-link">
-                                Read the Case Study <i class="lni lni-chevron-right"></i>
+                            <a href="https://github.com/shanjai1511/CLECTS" target="_blank" class="overlay-link">
+                                <i class="lni lni-github-original"></i> View on GitHub
                             </a>
                         </div>
                     </div>
@@ -725,7 +883,33 @@
                         </div>
                         <div class="proj-tags"><span>Python</span><span>Langchain</span><span>BeautifulSoup</span></div>
                         <p class="proj-summary">An AI-powered virtual lab platform with voice-command navigation and Langchain Q&A for guided chemistry learning.</p>
-                        <a href="chemistry-lab-lms.html" class="proj-case-link">Read the Case Study <i class="lni lni-chevron-right"></i></a>
+                        <div class="cs-grid">
+                            <div class="cs-block cs-problem">
+                                <span class="cs-label">Problem</span>
+                                <p>Physical lab constraints left students without 24/7 guided help; complex procedures were difficult to follow independently.</p>
+                            </div>
+                            <div class="cs-block cs-approach">
+                                <span class="cs-label">Approach</span>
+                                <p>Combined web-scraped chemistry content with Langchain LLM and voice commands to create a fully interactive virtual lab.</p>
+                            </div>
+                            <div class="cs-block cs-arch">
+                                <span class="cs-label">Architecture</span>
+                                <div class="cs-arch-flow">
+                                    <span>BS4 Scraper</span><span class="arch-sep">→</span>
+                                    <span>Langchain LLM</span><span class="arch-sep">→</span>
+                                    <span>Voice Interface</span><span class="arch-sep">→</span>
+                                    <span>Interactive Lab UI</span>
+                                </div>
+                            </div>
+                            <div class="cs-block cs-impact">
+                                <span class="cs-label">Impact</span>
+                                <div class="cs-metrics">
+                                    <div class="cs-metric"><span class="m-val">100%</span><span class="m-desc">Virtual</span></div>
+                                    <div class="cs-metric"><span class="m-val">AI</span><span class="m-desc">Instant Q&amp;A</span></div>
+                                    <div class="cs-metric"><span class="m-val">24/7</span><span class="m-desc">Access</span></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -781,22 +965,21 @@
         <!-- ══════════ FEATURED POSTS ══════════ -->
         <section id="posts" class="fade-in-up">
             <div class="section-header">
-                <p class="s-eyebrow"><span>08</span> Writing</p>
-                <h2>Notes &amp; Observations</h2>
+                <p class="s-eyebrow"><span>08</span> Activity</p>
+                <h2>Featured Posts</h2>
                 <div class="s-rule"></div>
             </div>
             <div class="posts-grid">
 
-                <!-- LinkedIn Pulse: The Person Who Knows How the Company Works -->
-                <a href="https://www.linkedin.com/pulse/person-who-knows-how-company-works-has-more-leverage-than-shanjai-r-lrc4c/" target="_blank" class="glass-card post-card post-card--featured">
-                    <div class="post-img-wrap post-img--writing">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQFs-7NLw7Wv8Q/article-cover_image-shrink_720_1280/B56aAFvVJwGsAQ-/0/1786802694017?e=2147483647&amp;v=beta&amp;t=QUkdwnFXPsIBUdn_eoBTD95eQ8k0DOAQFzKDv02tYME" alt="The Person Who Knows How the Company Works Has More Leverage Than the Person Who Knows the Most" loading="lazy" class="pc-slide active">
-                        <span class="post-tag post-tag--writing">✍️ Writing</span>
+                <!-- Post 1: MTech Semester -->
+                <a href="https://www.linkedin.com/posts/shanjai_just-completed-my-first-semester-of-mtech-activity-7450422798034051073-y8qH" target="_blank" class="glass-card post-card">
+                    <div class="post-img-wrap post-img--academic">
+                        <img src="assets/posts/post-mtech-1.jpg" alt="MTech First Semester" loading="lazy" class="pc-slide active">
+                        <span class="post-tag post-tag--academic">🎓 Academic</span>
                     </div>
                     <div class="post-body">
-                        <div class="post-meta"><span class="post-date">Aug 2026</span><span class="post-read">4 min read</span></div>
-                        <h3 class="post-title">The Person Who Knows How the Company Works Has More Leverage Than the Person Who Knows the Most</h3>
-                        <p class="post-excerpt">Understanding why a system was built a certain way is worth more than knowing the most code. Two pipelines that looked logically separate turned out to be split only because of an outdated client requirement; recognizing that led to roughly a 50% reduction in analytics cost. "The code tells you what. The history tells you why."</p>
+                        <div class="post-meta"><span class="post-date">Dec 2024</span><span class="post-read">2 min read</span></div>
+                        <p class="post-excerpt">Balancing MTech in Data Science at BITS Pilani alongside full-time work at PromptCloud forced a shift in how I approach learning. What made this semester different wasn't just the coursework — it was proving to myself that growth has no off switch.</p>
                         <div class="post-footer">
                             <span class="post-li-logo"><i class="lni lni-linkedin-original"></i> Read on LinkedIn</span>
                             <i class="lni lni-arrow-top-right post-ext"></i>
@@ -804,68 +987,95 @@
                     </div>
                 </a>
 
-                <!-- Post 0: Medium Essay -->
-                <a href="https://medium.com/@shanjai1511/the-deepest-peace-is-found-in-chaos-7f0021dbf183" target="_blank" class="glass-card post-card">
-                    <div class="post-img-wrap post-img--writing">
-                        <img src="assets/posts/post-medium-peace.png" alt="The Deepest Peace is Found in Chaos" loading="lazy" class="pc-slide active">
-                        <span class="post-tag post-tag--writing">✍️ Writing</span>
-                    </div>
-                    <div class="post-body">
-                        <div class="post-meta"><span class="post-date">Jul 2026</span><span class="post-read">3 min read</span></div>
-                        <h3 class="post-title">The Deepest Peace is Found in Chaos</h3>
-                        <p class="post-excerpt">Society romanticizes peace as quiet beaches and minimalist spaces, but the real thing is different. Coming home during festivals, chaotic and loud as it is, produces a calm no silence ever could. "Peace is not the absence of noise. Peace is the presence of a safety net."</p>
-                        <div class="post-footer">
-                            <span class="post-med-logo">Read on Medium</span>
-                            <i class="lni lni-arrow-top-right post-ext post-ext--neutral"></i>
+                <!-- Post 2: Poovar — 5 images carousel -->
+                <a href="https://www.linkedin.com/posts/shanjai_some-moments-in-life-feel-so-right-that-you-activity-7421150857678856192-Mi-s" target="_blank" class="glass-card post-card post-carousel">
+                    <div class="post-img-wrap post-img--life">
+                        <img src="assets/posts/post-poovar-1.jpg" alt="Poovar 1" loading="lazy" class="pc-slide active">
+                        <img src="assets/posts/post-poovar-2.jpg" alt="Poovar 2" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-poovar-3.jpg" alt="Poovar 3" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-poovar-4.jpg" alt="Poovar 4" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-poovar-5.jpg" alt="Poovar 5" loading="lazy" class="pc-slide">
+                        <button type="button" class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
+                        <button type="button" class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
+                        <div class="pc-dots">
+                            <span class="pc-dot active"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span>
                         </div>
-                    </div>
-                </a>
-
-                <!-- LinkedIn Pulse: The Art of Poking Around -->
-                <a href="https://www.linkedin.com/pulse/art-poking-around-how-curiosity-made-me-better-engineer-shanjai-r-xxylc/" target="_blank" class="glass-card post-card">
-                    <div class="post-img-wrap post-img--writing">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQGt59yJei1-Kw/article-cover_image-shrink_720_1280/B56Z8oZuYGIUAQ-/0/1783089263728?e=2147483647&amp;v=beta&amp;t=xiN_yf12_PrNApZLeikbV_2jp70sJC-Br7YyHngTJkY" alt="The Art of Poking Around" loading="lazy" class="pc-slide active">
-                        <span class="post-tag post-tag--writing">✍️ Writing</span>
+                        <span class="post-tag post-tag--life">✈️ Life & Travel</span>
                     </div>
                     <div class="post-body">
-                        <div class="post-meta"><span class="post-date">Jul 2026</span><span class="post-read">4 min read</span></div>
-                        <h3 class="post-title">The Art of Poking Around: How Curiosity Made Me a Better Engineer</h3>
-                        <p class="post-excerpt">Responsibility defines deliverables. Curiosity drives growth. Poking around a product beyond what's assigned (every dashboard, filter, and edge case) surfaces problems raw data never shows on its own. "The most valuable engineering skill isn't writing better code. It's being curious enough to keep poking around."</p>
+                        <div class="post-meta"><span class="post-date">Feb 2025</span><span class="post-read">3 min read</span></div>
+                        <p class="post-excerpt">"Some moments in life feel so right that you wish they could last forever." Three days at Poovar Island, late-night conversations, and a personal breakthrough at Varkala — facing fears and discovering a lighter, braver version of myself.</p>
                         <div class="post-footer">
+                            <span class="post-likes">❤️ 78</span>
                             <span class="post-li-logo"><i class="lni lni-linkedin-original"></i> Read on LinkedIn</span>
                             <i class="lni lni-arrow-top-right post-ext"></i>
                         </div>
                     </div>
                 </a>
 
-                <!-- LinkedIn Pulse: A Watchtower Without a Watchman -->
-                <a href="https://www.linkedin.com/pulse/watchtower-without-watchman-just-architecture-shanjai-r-mu8ec/" target="_blank" class="glass-card post-card">
-                    <div class="post-img-wrap post-img--writing">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQHAckg115LpXw/article-cover_image-shrink_720_1280/B56Z6S3o2LJoAQ-/0/1780580524099?e=2147483647&amp;v=beta&amp;t=IN8wDce-f6hJDLyLCXL8_g561ZN-2w7YLzCFJdfFrIM" alt="A Watchtower Without a Watchman Is Just Architecture" loading="lazy" class="pc-slide active">
-                        <span class="post-tag post-tag--writing">✍️ Writing</span>
+                <!-- Post 3: Udaipur -->
+                <a href="https://www.linkedin.com/posts/shanjai_a-week-of-memories-our-udaipur-retreat-activity-7247604170571063296-2BuY" target="_blank" class="glass-card post-card">
+                    <div class="post-img-wrap post-img--culture">
+                        <img src="assets/posts/post-udaipur-1.jpg" alt="Udaipur Retreat" loading="lazy" class="pc-slide active">
+                        <span class="post-tag post-tag--culture">🏢 Team & Culture</span>
                     </div>
                     <div class="post-body">
-                        <div class="post-meta"><span class="post-date">Jun 2026</span><span class="post-read">4 min read</span></div>
-                        <h3 class="post-title">A Watchtower Without a Watchman Is Just Architecture</h3>
-                        <p class="post-excerpt">Every dashboard, alert, and automation you build adds a system, and every system needs an owner, or it just becomes hidden risk. "A watchtower without a watchman is just architecture. A dashboard without an owner is just a chart."</p>
+                        <div class="post-meta"><span class="post-date">Sep 2024</span><span class="post-read">2 min read</span></div>
+                        <p class="post-excerpt">A week of memories at our Udaipur corporate retreat — exploring Sanjangarh Palace, Lake Pichola, and sessions on company vision and personal growth. A reminder that even in the fast-paced world of work, human connection is everything.</p>
                         <div class="post-footer">
+                            <span class="post-likes">❤️ 48</span>
                             <span class="post-li-logo"><i class="lni lni-linkedin-original"></i> Read on LinkedIn</span>
                             <i class="lni lni-arrow-top-right post-ext"></i>
                         </div>
                     </div>
                 </a>
 
-                <!-- LinkedIn Pulse: Security Is Not Living Inside an Iron Dome -->
-                <a href="https://www.linkedin.com/pulse/security-living-inside-iron-dome-shanjai-r-ssydc/" target="_blank" class="glass-card post-card">
-                    <div class="post-img-wrap post-img--writing">
-                        <img src="https://media.licdn.com/dms/image/v2/D5612AQEdXd_7KfwyZQ/article-cover_image-shrink_720_1280/B56Z48AFw2GgAU-/0/1779123120666?e=2147483647&amp;v=beta&amp;t=9rBTpCQoFeTC_usAV8jzkKn9gBdNaC79GzW1UKmqx4U" alt="Security Is Not Living Inside an Iron Dome" loading="lazy" class="pc-slide active">
-                        <span class="post-tag post-tag--writing">✍️ Writing</span>
+                <!-- Post 4: Graduation — 3 images carousel -->
+                <a href="https://www.linkedin.com/posts/shanjai_collegechronicles-fromzoomtograduation-journeytocapandgown-activity-7209801618635071488-Yx_l" target="_blank" class="glass-card post-card post-card--featured post-carousel">
+                    <div class="post-img-wrap post-img--milestone">
+                        <img src="assets/posts/post-graduation-1.jpg" alt="Graduation 1" loading="lazy" class="pc-slide active">
+                        <img src="assets/posts/post-graduation-2.jpg" alt="Graduation 2" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-graduation-3.jpg" alt="Graduation 3" loading="lazy" class="pc-slide">
+                        <button type="button" class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
+                        <button type="button" class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
+                        <div class="pc-dots">
+                            <span class="pc-dot active"></span><span class="pc-dot"></span><span class="pc-dot"></span>
+                        </div>
+                        <span class="post-tag post-tag--milestone">🏆 Milestone</span>
                     </div>
                     <div class="post-body">
-                        <div class="post-meta"><span class="post-date">May 2026</span><span class="post-read">4 min read</span></div>
-                        <h3 class="post-title">Security Is Not Living Inside an Iron Dome</h3>
-                        <p class="post-excerpt">Repeatedly firefighting the same emergencies is a design problem, not an effort problem. Real strength isn't living inside an iron dome of manual fixes and constant monitoring; it's building systems that stay stable as complexity grows. "Security is not just protection. It is resilience by design."</p>
+                        <div class="post-meta"><span class="post-date">Jul 2024</span><span class="post-read">4 min read</span></div>
+                        <p class="post-excerpt">From Zoom classes during lockdown to cap and gown — four years of pandemic-era learning, personal growth, a tough job search, and finally landing my first Software Engineering role at PromptCloud. Endlessly grateful for every step of the journey.</p>
                         <div class="post-footer">
+                            <span class="post-likes">❤️ 197 &nbsp;·&nbsp; 💬 12</span>
+                            <span class="post-li-logo"><i class="lni lni-linkedin-original"></i> Read on LinkedIn</span>
+                            <i class="lni lni-arrow-top-right post-ext"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Post 5: PromptCloud PDF — 7 pages carousel -->
+                <a href="https://www.linkedin.com/posts/shanjai_life-at-promptcloud-activity-7164212237312741376-jW8s" target="_blank" class="glass-card post-card post-carousel">
+                    <div class="post-img-wrap post-img--career">
+                        <img src="assets/posts/post-promptcloud-1.jpg" alt="PromptCloud 1" loading="lazy" class="pc-slide active">
+                        <img src="assets/posts/post-promptcloud-2.jpg" alt="PromptCloud 2" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-promptcloud-3.jpg" alt="PromptCloud 3" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-promptcloud-4.jpg" alt="PromptCloud 4" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-promptcloud-5.jpg" alt="PromptCloud 5" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-promptcloud-6.jpg" alt="PromptCloud 6" loading="lazy" class="pc-slide">
+                        <img src="assets/posts/post-promptcloud-7.jpg" alt="PromptCloud 7" loading="lazy" class="pc-slide">
+                        <button type="button" class="pc-prev" aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
+                        <button type="button" class="pc-next" aria-label="Next"><i class="lni lni-chevron-right"></i></button>
+                        <div class="pc-dots">
+                            <span class="pc-dot active"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span><span class="pc-dot"></span>
+                        </div>
+                        <span class="post-tag post-tag--career">💼 Career</span>
+                    </div>
+                    <div class="post-body">
+                        <div class="post-meta"><span class="post-date">Mar 2024</span><span class="post-read">1 min read</span></div>
+                        <p class="post-excerpt">PromptCloud's spotlight on me: "Meet Shanjai Ravi, our intern in the Data Delivery team — known for problem-solving prowess and tackling web scraping challenges creatively." A moment I'll always look back on with pride.</p>
+                        <div class="post-footer">
+                            <span class="post-likes">❤️ 18</span>
                             <span class="post-li-logo"><i class="lni lni-linkedin-original"></i> Read on LinkedIn</span>
                             <i class="lni lni-arrow-top-right post-ext"></i>
                         </div>
@@ -936,7 +1146,7 @@
                 <div class="glass-card hb-card hb-travel">
                     <span class="hb-icon">✈️</span>
                     <h3>Travel</h3>
-                    <p>Chasing sunsets in Poovar, palace views in Udaipur: experiences that shift perspective more than any textbook ever could.</p>
+                    <p>Chasing sunsets in Poovar, palace views in Udaipur — experiences that shift perspective more than any textbook ever could.</p>
                     <div class="hb-tags">
                         <span>Poovar Island</span><span>Udaipur</span><span>More coming</span>
                     </div>
@@ -951,7 +1161,7 @@
                 <div class="glass-card hb-card hb-mentor">
                     <span class="hb-icon">🎓</span>
                     <h3>Mentoring</h3>
-                    <p>Mock interviews for college juniors: resumes, Python, logical thinking. Giving back what I wish I had at the start.</p>
+                    <p>Mock interviews for college juniors — resumes, Python, logical thinking. Giving back what I wish I had at the start.</p>
                     <span class="hb-stat">10+ sessions</span>
                 </div>
 
@@ -993,10 +1203,10 @@
                 </div>
 
                 <div class="glass-card hb-card hb-read">
-                    <span class="hb-icon">🛠️</span>
-                    <h3>Currently Working On</h3>
-                    <p class="hb-book-title"><em>SARA</em></p>
-                    <span class="hb-author">Fashion &amp; retail intelligence pipeline</span>
+                    <span class="hb-icon">📖</span>
+                    <h3>Currently Reading</h3>
+                    <p class="hb-book-title"><em>Designing Data-Intensive Applications</em></p>
+                    <span class="hb-author">— Martin Kleppmann</span>
                 </div>
 
             </div>
@@ -1013,7 +1223,7 @@
             <div class="contact-split">
                 <div class="contact-left">
                     <h3 class="contact-heading">Let's build something <em class="gold-em">amazing</em> together.</h3>
-                    <p class="contact-sub">I'm open to new projects, creative ideas, or opportunities. Whether you have a question or just want to say hello, my inbox is always open.</p>
+                    <p class="contact-sub">I'm open to new projects, creative ideas, or opportunities. Whether you have a question or just want to say hello — my inbox is always open.</p>
                     <div class="contact-links">
                         <a href="mailto:shanjai1511@gmail.com" class="clink" id="emailClink">
                             <span class="clink-icon"><i class="lni lni-envelope"></i></span>
@@ -1056,20 +1266,14 @@
 
     <footer>
         <div class="footer-inner">
-            <blockquote class="footer-statement">Build quietly. Think deeply. Ship things that matter.</blockquote>
-            <div class="footer-bottom">
-                <div class="footer-id">
-                    <span class="footer-name">Shanjai R</span>
-                    <span class="footer-title">Software Engineer II · Data Engineering · Data Science</span>
-                </div>
-                <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
-                    <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
-                    <a href="https://www.instagram.com/r.shanjai/" target="_blank" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
-                    <a href="mailto:shanjai1511@gmail.com"                          aria-label="Email"   ><i class="lni lni-envelope"></i></a>
-                </div>
+            <p>&copy; 2024–<span id="footerYear"></span> Shanjai R &mdash; Designed with Tritonic Royal Elegance.</p>
+            <span class="konami-hint" id="konamiHint" title="Try ↑↑↓↓↑↓↑↓">🎮</span>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
+                <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
+                <a href="https://www.instagram.com/r.shanjai/" target="_blank" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
+                <a href="mailto:shanjai1511@gmail.com"                          aria-label="Email"   ><i class="lni lni-envelope"></i></a>
             </div>
-            <p class="footer-copy">&copy; 2024–<span id="footerYear"></span> Shanjai R<span class="konami-hint" id="konamiHint" title="Try ↑↑↓↓↑↓↑↓"> · 🎮</span></p>
         </div>
     </footer>
 
@@ -1175,7 +1379,7 @@
             <button type="button" class="konami-close" id="konamiClose" aria-label="Close">✕</button>
             <div class="konami-emoji">🎮</div>
             <h3 class="konami-title">You Found the Easter Egg!</h3>
-            <p class="konami-msg">Here's a secret: I went from <strong>hating computers in school</strong> to building data pipelines that process millions of records. Never stop surprising yourself.</p>
+            <p class="konami-msg">Here's a secret — I went from <strong>hating computers in school</strong> to building data pipelines that process millions of records. Never stop surprising yourself.</p>
             <p class="konami-code-hint">↑ ↑ ↓ ↓ ↑ ↓ ↑ ↓</p>
         </div>
     </div>
@@ -1244,11 +1448,13 @@
     const mainNav     = document.getElementById('mainNav');
     const scrollTopBtn = document.getElementById('scrollTop');
     const heroPhotoEl = document.querySelector('.hero-photo');
+    const tickerBar   = document.getElementById('tickerBar');
     window.addEventListener('scroll', () => {
         const s = window.scrollY;
         const m = document.documentElement.scrollHeight - window.innerHeight;
         progressBar.style.width = (m > 0 ? Math.min(s / m * 100, 100) : 0) + '%';
         mainNav.classList.toggle('scrolled', s > 60);
+        tickerBar?.classList.toggle('ticker-scrolled', s > 60);
         scrollTopBtn.classList.toggle('visible', s > 400);
         hirePill?.classList.toggle('hire-visible', s > 500);
         if (heroPhotoEl && s < window.innerHeight) {
@@ -1307,6 +1513,18 @@
         });
     }, 800);
 
+    // ─── Experience tabs ─────────────────────────────────────
+    document.querySelectorAll('.exp-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.exp-tab').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+            document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected','true');
+            const panel = document.getElementById(btn.dataset.panel);
+            if (panel) panel.classList.add('active');
+        });
+    });
+
     // ─── Post carousels ──────────────────────────────────────
     document.querySelectorAll('.post-carousel').forEach(card => {
         const wrap   = card.querySelector('.post-img-wrap');
@@ -1356,7 +1574,9 @@
         })();
     }
     setTimeout(() => {
-        typeText(document.getElementById('type-title'), 65);
+        typeText(document.getElementById('type-title'), 65, () =>
+        typeText(document.getElementById('type-subtitle'), 38, () =>
+        typeText(document.getElementById('type-bio'), 18)));
     }, 400);
 
     // ─── Story Timeline scroll-in ────────────────────────────
@@ -1588,7 +1808,7 @@
     document.getElementById('shareBtn')?.addEventListener('click', async () => {
         const payload = {
             title: 'Shanjai R | Software Engineer & Data Scientist',
-            text: 'Check out this portfolio: Software Engineer at PromptCloud, M.Tech @ BITS Pilani.',
+            text: 'Check out this portfolio — Software Engineer at PromptCloud, M.Tech @ BITS Pilani.',
             url: 'https://shanjai1511.github.io/'
         };
         if (navigator.share) {
@@ -1628,7 +1848,7 @@
     document.querySelector('.hero-photo')?.addEventListener('click', function () {
         const wrap = this.closest('.photo-wrap');
         wrap?.classList.add('photo-wiggle');
-        showToast('📸 Hey, that\'s me, Shanjai R!');
+        showToast('📸 Hey, that\'s me! — Shanjai R');
         setTimeout(() => wrap?.classList.remove('photo-wiggle'), 700);
     });
 
@@ -1658,7 +1878,7 @@
         footerP.addEventListener('click', function () {
             fClicks++;
             const days = Math.floor((Date.now() - new Date('2024-01-01')) / 86400000);
-            if (fClicks === 1) showToast(`🗓️ This portfolio is ${days} days old, and still growing!`);
+            if (fClicks === 1) showToast(`🗓️ This portfolio is ${days} days old — and still growing!`);
             else if (fClicks >= 4) { fClicks = 0; showToast('😄 Stop clicking the footer!'); }
         });
     }
@@ -1756,7 +1976,7 @@
             btn.classList.toggle('mf-on', on);
             if (on) ringtone.play().catch(() => {});
             else ringtone.pause();
-            showToast(on ? '🎵 Vibes on, enjoy browsing!' : '🔇 Music paused');
+            showToast(on ? '🎵 Vibes on — enjoy browsing!' : '🔇 Music paused');
         });
     })();
 
@@ -1865,7 +2085,7 @@
             ringtone.volume = 0.35;
             ringtone.play().then(() => {
                 btn.classList.add('mf-on');
-                showToast('🎵 Vibes on, enjoy the portfolio!');
+                showToast('🎵 Vibes on — enjoy the portfolio!');
             }).catch(() => {});
             ['click', 'touchstart', 'keydown'].forEach(ev =>
                 document.removeEventListener(ev, tryAutoplay));
@@ -1874,7 +2094,7 @@
             document.addEventListener(ev, tryAutoplay, { once: true, passive: true }));
     })();
 
-    // --- Day in the Life: IST current-time highlight ─────
+    // ─── Day in the Life — IST current-time highlight ─────
     (function () {
         const events = document.querySelectorAll('.dil-event[data-time]');
         if (!events.length) return;
