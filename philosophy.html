@@ -7,29 +7,28 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'UA-177242401-1');
         gtag('config', 'G-QSSV85L7QK');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Intelligence &amp; Brand Visibility Analytics | Shanjai R</title>
-    <meta name="description" content="A system measuring how a brand's products rank and appear across on-site search and category pages. Client work at PromptCloud / 42Signals." />
+    <title>How I Think About Systems | Shanjai R</title>
+    <meta name="description" content="Six principles behind how Shanjai R approaches data systems: starting with the decision, tracing symptoms back to systems, and treating data collection as a cost that has to earn its place." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#14213D">
-    <link rel="canonical" href="https://shanjai1511.github.io/search-intelligence.html">
+    <link rel="canonical" href="https://shanjai1511.github.io/philosophy.html">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type"        content="website">
-    <meta property="og:url"         content="https://shanjai1511.github.io/search-intelligence.html">
-    <meta property="og:title"       content="Search Intelligence & Brand Visibility Analytics">
-    <meta property="og:description" content="Measuring how a brand's products rank and appear across on-site search and category pages.">
+    <meta property="og:url"         content="https://shanjai1511.github.io/philosophy.html">
+    <meta property="og:title"       content="How I Think About Systems">
+    <meta property="og:description" content="My approach has changed from building what was requested to understanding what is actually worth building.">
     <meta property="og:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:title"       content="Search Intelligence & Brand Visibility Analytics">
-    <meta name="twitter:description" content="Turning search visibility into a trackable, actionable metric.">
+    <meta name="twitter:title"       content="How I Think About Systems">
+    <meta name="twitter:description" content="Six principles behind how I approach data systems and engineering decisions.">
     <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,14 +37,13 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      "name": "Search Intelligence & Brand Visibility Analytics",
+      "@type": "Article",
+      "headline": "How I Think About Systems",
       "author": { "@type": "Person", "name": "Shanjai R", "url": "https://shanjai1511.github.io/" },
-      "description": "A system measuring how a brand's products rank and appear across on-site search and category pages."
+      "description": "My approach has changed from building what was requested to understanding what is actually worth building."
     }
     </script>
 </head>
@@ -128,7 +126,7 @@
                     </div>
                 </li>
                 <li><a href="impact.html">Impact</a></li>
-                <li><a href="philosophy.html">Philosophy</a></li>
+                <li><a href="philosophy.html" class="active">Philosophy</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -164,39 +162,73 @@
     </div>
 
     <main>
-        <a href="index.html#projects" class="cs-back"><i class="lni lni-chevron-left"></i> Selected Work</a>
+        <a href="index.html" class="cs-back"><i class="lni lni-chevron-left"></i> Home</a>
 
         <section class="cs-hero fade-in-up">
-            <span class="proj-status proj-status--muted">PromptCloud / 42Signals · Confidential</span>
-            <h1>Search Intelligence &amp; Brand Visibility Analytics</h1>
-            <p class="cs-hero-sub">Search &amp; Keyword Insights</p>
-            <p class="cs-hero-lede">Being in stock doesn't matter if a shopper never scrolls far enough to see the product. Visibility is a metric; it just isn't tracked like one.</p>
-            <div class="cs-hero-meta">
-                <div class="cs-meta-item"><span class="cs-meta-k">Context</span><span class="cs-meta-v">PromptCloud / 42Signals</span></div>
-                <div class="cs-meta-item"><span class="cs-meta-k">Domain</span><span class="cs-meta-v">E-commerce Search</span></div>
-                <div class="cs-meta-item"><span class="cs-meta-k">Stack</span><span class="cs-meta-v">Python · Kibana</span></div>
-                <div class="cs-meta-item"><span class="cs-meta-k">Status</span><span class="cs-meta-v">Confidential Client Work</span></div>
+            <span class="proj-status">Philosophy</span>
+            <h1>How I Think About Systems</h1>
+            <p class="ph-intro">My approach has changed from building what was requested to understanding what is actually worth building.</p>
+        </section>
+
+        <section class="fade-in-up">
+            <div class="ph-list">
+                <div class="ph-item">
+                    <span class="ph-num">01</span>
+                    <div class="ph-body">
+                        <h3>I start with the decision, not the data.</h3>
+                        <p class="ph-lead">What is someone actually going to do with this information?</p>
+                        <p class="ph-text">If there is no meaningful decision behind a metric, dashboard, or dataset, more data rarely makes the problem better.</p>
+                    </div>
+                </div>
+                <div class="ph-item">
+                    <span class="ph-num">02</span>
+                    <div class="ph-body">
+                        <h3>I look for the system behind the symptom.</h3>
+                        <p class="ph-lead">A recurring issue is usually telling you something about the system.</p>
+                        <p class="ph-text">The visible failure is often only the final point in a much longer chain of assumptions, processes and dependencies.</p>
+                    </div>
+                </div>
+                <div class="ph-item">
+                    <span class="ph-num">03</span>
+                    <div class="ph-body">
+                        <h3>I care about why a system exists.</h3>
+                        <p class="ph-lead">Knowing how something works is useful. Knowing why it works that way is leverage.</p>
+                        <p class="ph-text">Understanding previous decisions, constraints and failed approaches often matters as much as understanding the current implementation.</p>
+                    </div>
+                </div>
+                <div class="ph-item">
+                    <span class="ph-num">04</span>
+                    <div class="ph-body">
+                        <h3>More data is not automatically better data.</h3>
+                        <p class="ph-lead">The objective isn't maximum collection. It is maximum usefulness.</p>
+                        <p class="ph-text">Every additional field creates processing, storage, maintenance and interpretation costs. Data should earn its place.</p>
+                    </div>
+                </div>
+                <div class="ph-item">
+                    <span class="ph-num">05</span>
+                    <div class="ph-body">
+                        <h3>A pipeline is a chain of assumptions.</h3>
+                        <p class="ph-lead">Sources &rarr; collection &rarr; processing &rarr; validation &rarr; interpretation &rarr; decision.</p>
+                        <p class="ph-text">A failure anywhere in that chain can make perfectly valid code produce an unusable outcome.</p>
+                    </div>
+                </div>
+                <div class="ph-item">
+                    <span class="ph-num">06</span>
+                    <div class="ph-body">
+                        <h3>The best solution is sometimes removing the requirement.</h3>
+                        <p class="ph-lead">Before optimizing a system, I ask whether the system is solving the right problem.</p>
+                        <p class="ph-text">Sometimes the highest-leverage improvement isn't faster code or more infrastructure. It is removing something that never needed to exist.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="cs-narrative fade-in-up">
-            <p>Brands obsess over their product photography, pricing, and reviews, then have almost no visibility into whether any of it matters, because they can't see where their products actually land when a shopper searches or browses a category. A product buried on page four of results might as well not exist, and most brands only find that out anecdotally.</p>
-            <p>I built a system that measures where a brand's products rank and appear across on-site search results and category listings, so visibility becomes a number tracked over time against specific keywords and categories, instead of a vague sense that "we should probably rank higher."</p>
-
-            <blockquote class="cs-pullquote">Search rankings shift by keyword, by device, by the hour. A single snapshot is close to meaningless.</blockquote>
-
-            <p>That volatility is the real design constraint. A one-off "we rank #4" screenshot tells you almost nothing; the measurement only becomes useful once it's repeated consistently enough to separate real movement from normal day-to-day noise, and specific enough to tie a ranking change back to an actual keyword or category rather than an average across all of them.</p>
-            <p>This is confidential client work, so the tracking methodology and results stay private, but the lesson generalizes: most "visibility" metrics fail not because the data is wrong, but because a single point-in-time number is being asked to answer a question only a trend line can.</p>
-
-            <div class="proj-tags"><span>Python</span><span>Kibana</span><span>Data Analysis</span></div>
-        </section>
-
         <section class="cs-cta fade-in-up">
-            <h2>Trying to quantify search visibility?</h2>
-            <p>Happy to talk through tracking methodology, keyword-level analysis, or turning "we should rank higher" into a measurable metric.</p>
+            <h2>See these principles in practice?</h2>
+            <p>Happy to talk through how a specific system was designed, or why it was designed that way.</p>
             <div class="cs-cta-actions">
                 <a href="index.html#contact" class="btn btn-primary">Let's Talk</a>
-                <a href="index.html#projects" class="btn btn-ghost">View Other Work</a>
+                <a href="impact.html" class="btn btn-ghost">What Changed Because I Worked On It</a>
             </div>
         </section>
     </main>
