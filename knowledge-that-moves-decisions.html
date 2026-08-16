@@ -12,23 +12,23 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How I Think About Systems | Shanjai Ravi</title>
-    <meta name="description" content="Six principles behind how Shanjai Ravi approaches data systems: starting with the decision, tracing symptoms back to systems, and treating data collection as a cost that has to earn its place." />
+    <title>Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone | Shanjai Ravi</title>
+    <meta name="description" content="Shanjai Ravi on why the value of information isn't what it describes, but what it changes — and what that means for building analytics people actually use." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#14213D">
-    <link rel="canonical" href="https://shanjai1511.github.io/philosophy.html">
+    <link rel="canonical" href="https://shanjai1511.github.io/knowledge-that-moves-decisions.html">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:type"        content="website">
-    <meta property="og:url"         content="https://shanjai1511.github.io/philosophy.html">
-    <meta property="og:title"       content="How I Think About Systems">
-    <meta property="og:description" content="My approach has changed from building what was requested to understanding what is actually worth building.">
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://shanjai1511.github.io/knowledge-that-moves-decisions.html">
+    <meta property="og:title"       content="Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone">
+    <meta property="og:description" content="The value of information isn't what it describes. It's what it changes.">
     <meta property="og:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:title"       content="How I Think About Systems">
-    <meta name="twitter:description" content="Six principles behind how I approach data systems and engineering decisions.">
+    <meta name="twitter:title"       content="Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone">
+    <meta name="twitter:description" content="Why knowledge only becomes valuable once it's connected to a decision someone is actually going to make.">
     <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,13 +41,26 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "How I Think About Systems",
+      "headline": "Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone",
       "author": { "@type": "Person", "name": "Shanjai Ravi", "url": "https://shanjai1511.github.io/" },
-      "description": "My approach has changed from building what was requested to understanding what is actually worth building."
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "description": "The value of information isn't what it describes. It's what it changes.",
+      "mainEntityOfPage": "https://shanjai1511.github.io/knowledge-that-moves-decisions.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shanjai1511.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://shanjai1511.github.io/#posts" },
+        { "@type": "ListItem", "position": 3, "name": "Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone", "item": "https://shanjai1511.github.io/knowledge-that-moves-decisions.html" }
+      ]
     }
     </script>
 </head>
-
 <body>
 
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -126,7 +139,7 @@
                     </div>
                 </li>
                 <li><a href="impact.html">Impact</a></li>
-                <li><a href="philosophy.html" class="active">Philosophy</a></li>
+                <li><a href="philosophy.html">Philosophy</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -161,86 +174,40 @@
         </ul>
     </div>
 
+    
     <main>
-        <a href="index.html" class="cs-back"><i class="lni lni-chevron-left"></i> Home</a>
+        <a href="index.html#posts" class="cs-back"><i class="lni lni-chevron-left"></i> Writing</a>
 
         <section class="cs-hero fade-in-up">
-            <span class="proj-status">Philosophy</span>
-            <h1>How I Think About Systems</h1>
-            <p class="ph-intro">My approach has changed from building what was requested to understanding what is actually worth building.</p>
+            <span class="proj-status">Writing</span>
+            <h1>Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone</h1>
+            <div class="cs-hero-meta">
+                <div class="cs-meta-item"><span class="cs-meta-k">Author</span><span class="cs-meta-v">Shanjai Ravi</span></div>
+                <div class="cs-meta-item"><span class="cs-meta-k">Published</span><span class="cs-meta-v">Aug 2026</span></div>
+                <div class="cs-meta-item"><span class="cs-meta-k">Read</span><span class="cs-meta-v">4 min</span></div>
+                
+            </div>
         </section>
 
         <section class="cs-narrative fade-in-up">
-            <p>When data looks wrong, I don't immediately assume the data pipeline is broken. I first investigate whether we are collecting the right data, whether the requirement is still relevant, and whether the data actually supports the decision the business is trying to make.</p>
-            <div class="cs-arch-flow">
-                <span>Problem</span><span class="arch-sep">→</span>
-                <span>Investigation</span><span class="arch-sep">→</span>
-                <span>Root Cause</span><span class="arch-sep">→</span>
-                <span>System / Process Change</span><span class="arch-sep">→</span>
-                <span>Business Impact</span>
-            </div>
-        </section>
+            <p>It's possible to know a great deal about a system and still not be useful to the people relying on it. I've seen this most clearly in analytics work: a dashboard can be completely accurate and still fail to change a single decision anyone makes.</p>
 
-        <section class="fade-in-up">
-            <h2 class="cs-section-title">Six Principles</h2>
-            <div class="ph-list">
-                <div class="ph-item">
-                    <span class="ph-num">01</span>
-                    <div class="ph-body">
-                        <h3>I start with the decision, not the data.</h3>
-                        <p class="ph-lead">What is someone actually going to do with this information?</p>
-                        <p class="ph-text">If there is no meaningful decision behind a metric, dashboard, or dataset, more data rarely makes the problem better.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">02</span>
-                    <div class="ph-body">
-                        <h3>I look for the system behind the symptom.</h3>
-                        <p class="ph-lead">A recurring issue is usually telling you something about the system.</p>
-                        <p class="ph-text">The visible failure is often only the final point in a much longer chain of assumptions, processes and dependencies.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">03</span>
-                    <div class="ph-body">
-                        <h3>I care about why a system exists.</h3>
-                        <p class="ph-lead">Knowing how something works is useful. Knowing why it works that way is leverage.</p>
-                        <p class="ph-text">Understanding previous decisions, constraints and failed approaches often matters as much as understanding the current implementation.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">04</span>
-                    <div class="ph-body">
-                        <h3>More data is not automatically better data.</h3>
-                        <p class="ph-lead">The objective isn't maximum collection. It is maximum usefulness.</p>
-                        <p class="ph-text">Every additional field creates processing, storage, maintenance and interpretation costs. Data should earn its place.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">05</span>
-                    <div class="ph-body">
-                        <h3>A pipeline is a chain of assumptions.</h3>
-                        <p class="ph-lead">Sources &rarr; collection &rarr; processing &rarr; validation &rarr; interpretation &rarr; decision.</p>
-                        <p class="ph-text">A failure anywhere in that chain can make perfectly valid code produce an unusable outcome.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">06</span>
-                    <div class="ph-body">
-                        <h3>The best solution is sometimes removing the requirement.</h3>
-                        <p class="ph-lead">Before optimizing a system, I ask whether the system is solving the right problem.</p>
-                        <p class="ph-text">Sometimes the highest-leverage improvement isn't faster code or more infrastructure. It is removing something that never needed to exist.</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Two different questions</h2>
+            <p>"What is happening" and "what should I do about it" are different questions, and most dashboards are built to answer only the first. Rankings move, visibility shifts, a competitor drops a price &mdash; all true, all trackable, and none of it useful on its own. The gap between the two questions is exactly where a lot of analytics work quietly fails, and it's the subject of a related piece on <a href="why-dashboards-fail.html">why dashboards fail even when the data is correct</a>.</p>
+
+            <h2>Starting from the decision</h2>
+            <p>The shift I've made, repeatedly, is to work backward from the decision instead of forward from the data. If a product's ranking drops past a certain point, what should the client actually do &mdash; adjust spend, escalate to the brand team, flag it for review? Once that answer exists, the metric has somewhere to go. Before that, it's just a number changing color on a screen. This is the first of the principles I keep coming back to: <a href="philosophy.html">start with the decision, not the dataset</a>.</p>
+
+            <h2>What this looks like in practice</h2>
+            <p>In the search and visibility analytics work described in <a href="search-intelligence.html">Search Intelligence &amp; Brand Visibility Analytics</a>, this meant treating "the dashboard is technically correct" as necessary but not sufficient. The real work started once I asked what action was supposed to follow a given signal, and worked backward from there. That's also the shape of the <a href="impact.html">Dashboard &rarr; Decision System</a> case in my impact notes &mdash; the same idea, applied to a specific project.</p>
         </section>
 
         <section class="cs-cta fade-in-up">
-            <h2>See these principles in practice?</h2>
-            <p>Happy to talk through how a specific system was designed, or why it was designed that way.</p>
+            <h2>See it applied</h2>
+            <p>This principle shows up directly in the search intelligence work.</p>
             <div class="cs-cta-actions">
-                <a href="index.html#contact" class="btn btn-primary">Let's Talk</a>
-                <a href="impact.html" class="btn btn-ghost">What Changed Because I Worked On It</a>
+                <a href="search-intelligence.html" class="btn btn-primary">Search Intelligence & Brand Visibility</a>
+                <a href="index.html#posts" class="btn btn-ghost">More Writing</a>
             </div>
         </section>
     </main>

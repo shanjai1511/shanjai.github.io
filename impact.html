@@ -12,8 +12,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Changed Because I Worked On It | Shanjai R</title>
-    <meta name="description" content="Four short case studies in how Shanjai R measures engineering work: not by what was built, but by what became clearer, faster, or more useful because of it." />
+    <title>What Changed Because I Worked On It | Shanjai Ravi</title>
+    <meta name="description" content="Four short case studies in how Shanjai Ravi measures engineering work: not by what was built, but by what became clearer, faster, or more useful because of it." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#14213D">
@@ -42,7 +42,7 @@
       "@context": "https://schema.org",
       "@type": "Article",
       "headline": "What Changed Because I Worked On It",
-      "author": { "@type": "Person", "name": "Shanjai R", "url": "https://shanjai1511.github.io/" },
+      "author": { "@type": "Person", "name": "Shanjai Ravi", "url": "https://shanjai1511.github.io/" },
       "description": "I don't measure my work by what I built. I measure it by what became clearer, faster, or more useful because I built it."
     }
     </script>
@@ -171,6 +171,7 @@
         </section>
 
         <section class="fade-in-up">
+            <h2 class="cs-section-title">The Pattern</h2>
             <div class="wc-list">
                 <div class="wc-item">
                     <span class="wc-num">01</span>
@@ -260,6 +261,68 @@
             <p class="wc-closing">Good engineering solves the problem in front of you. Good systems thinking asks why the problem exists in the first place.</p>
         </section>
 
+        <section class="fade-in-up">
+            <h2 class="cs-section-title">Selected Impact</h2>
+            <p class="wc-intro" style="max-width:860px; margin:0 auto 2.25rem;">Where this pattern shows up in the real work &mdash; each one links to the fuller case study.</p>
+
+            <div class="wc-list">
+                <div class="wc-item">
+                    <span class="wc-num">A</span>
+                    <div class="wc-body">
+                        <h3><a href="price-intelligence.html">Price Intelligence</a></h3>
+                        <p><strong>Context.</strong> Price Intelligence &amp; Revenue Leakage work at PromptCloud / 42Signals.</p>
+                        <p><strong>Problem.</strong> Identifying price violations across e-commerce marketplaces.</p>
+                        <p><strong>What I discovered and changed.</strong> Part of the work was improving the reliability of the underlying data the detection logic depended on, not just the detection rules themselves.</p>
+                        <p><strong>Impact.</strong> More trustworthy violation detection &mdash; see the <a href="price-intelligence.html">full case study</a>.</p>
+                    </div>
+                </div>
+
+                <div class="wc-item">
+                    <span class="wc-num">B</span>
+                    <div class="wc-body">
+                        <h3><a href="search-intelligence.html">Share of Search &amp; Keyword Performance</a></h3>
+                        <p><strong>Context.</strong> Keyword and marketplace visibility analytics for e-commerce clients.</p>
+                        <p><strong>Problem.</strong> Technically correct dashboards were not necessarily helping the client make decisions.</p>
+                        <p><strong>What I discovered and changed.</strong> Investigated why tracking rankings and visibility wasn't the same as answering the question the client actually cared about, and adjusted the analytics accordingly.</p>
+                        <p><strong>Impact.</strong> Analytics that pointed toward a decision, not just a number &mdash; see the <a href="search-intelligence.html">full case study</a>.</p>
+                    </div>
+                </div>
+
+                <div class="wc-item">
+                    <span class="wc-num">C</span>
+                    <div class="wc-body">
+                        <h3><a href="web-scraping-pipeline.html">Data Quality</a></h3>
+                        <p><strong>Context.</strong> Recurring data-quality issues flagged across client pipelines.</p>
+                        <p><strong>Problem.</strong> Issues were being treated and re-investigated individually.</p>
+                        <p><strong>What I discovered and changed.</strong> A large portion of reported issues weren't actually relevant to the client's business requirements &mdash; which reshaped how crawling and QA were prioritized.</p>
+                        <p><strong>Impact.</strong> Less time spent chasing data that didn't matter &mdash; see the <a href="web-scraping-pipeline.html">full case study</a>.</p>
+                    </div>
+                </div>
+
+                <div class="wc-item">
+                    <span class="wc-num">D</span>
+                    <div class="wc-body">
+                        <h3><a href="competitor-intelligence.html">Competitor Discovery</a></h3>
+                        <p><strong>Context.</strong> Competitor Intelligence Engine work across e-commerce marketplaces.</p>
+                        <p><strong>Problem.</strong> Identifying and ranking which sellers were actually competitors worth tracking.</p>
+                        <p><strong>What I discovered and changed.</strong> Built ranking logic around product attributes &mdash; product name, brand, category and pricing &mdash; rather than treating every marketplace listing as equally relevant.</p>
+                        <p><strong>Impact.</strong> A competitor set the client could actually act on &mdash; see the <a href="competitor-intelligence.html">full case study</a>.</p>
+                    </div>
+                </div>
+
+                <div class="wc-item">
+                    <span class="wc-num">E</span>
+                    <div class="wc-body">
+                        <h3><a href="sara.html">Data Infrastructure</a></h3>
+                        <p><strong>Context.</strong> SARA and the broader marketplace data pipelines behind it.</p>
+                        <p><strong>Problem.</strong> Collecting, processing, validating and transforming large volumes of marketplace data reliably, at scale.</p>
+                        <p><strong>What I discovered and changed.</strong> Treated collection, validation and transformation as independent, horizontally scalable stages instead of one fragile script.</p>
+                        <p><strong>Impact.</strong> Infrastructure that scales by configuration, not rewrites &mdash; see the <a href="sara.html">full case study</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="cs-cta fade-in-up">
             <h2>Want systems that hold up under real use?</h2>
             <p>Happy to talk through how a system was built, or why it was built that way.</p>
@@ -275,17 +338,25 @@
             <blockquote class="footer-statement">Build quietly. Think deeply. Ship things that matter.</blockquote>
             <div class="footer-bottom">
                 <div class="footer-id">
-                    <span class="footer-name">Shanjai R</span>
-                    <span class="footer-title">Software Engineer II · Data Engineering · Data Science</span>
+                    <span class="footer-name">Shanjai Ravi</span>
+                    <span class="footer-title">Software Engineer · Data Analytics · Data Infrastructure · E-commerce Intelligence</span>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/shanjai/" target="_blank" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
-                    <a href="https://github.com/shanjai1511"       target="_blank" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
-                    <a href="https://www.instagram.com/r.shanjai/" target="_blank" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
+                    <a href="https://www.linkedin.com/in/shanjai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
+                    <a href="https://github.com/shanjai1511"       target="_blank" rel="noopener noreferrer" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
+                    <a href="https://medium.com/@shanjai1511"      target="_blank" rel="noopener noreferrer" aria-label="Medium"   ><i class="lni lni-medium"></i></a>
+                    <a href="https://www.instagram.com/r.shanjai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
                     <a href="mailto:shanjai1511@gmail.com"                          aria-label="Email"   ><i class="lni lni-envelope"></i></a>
                 </div>
             </div>
-            <p class="footer-copy">&copy; 2024–<span id="footerYear"></span> Shanjai R</p>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Work</a>
+                <a href="impact.html">Impact</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="index.html#posts">Writing</a>
+            </nav>
+            <p class="footer-copy">&copy; 2024–<span id="footerYear"></span> Shanjai Ravi</p>
         </div>
     </footer>
 

@@ -12,23 +12,23 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How I Think About Systems | Shanjai Ravi</title>
-    <meta name="description" content="Six principles behind how Shanjai Ravi approaches data systems: starting with the decision, tracing symptoms back to systems, and treating data collection as a cost that has to earn its place." />
+    <title>When More Data Makes a Product Worse | Shanjai Ravi</title>
+    <meta name="description" content="Shanjai Ravi on why collecting more data isn't automatically better data, and how unused fields quietly slow down the systems built around them." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#14213D">
-    <link rel="canonical" href="https://shanjai1511.github.io/philosophy.html">
+    <link rel="canonical" href="https://shanjai1511.github.io/when-more-data-makes-a-product-worse.html">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:type"        content="website">
-    <meta property="og:url"         content="https://shanjai1511.github.io/philosophy.html">
-    <meta property="og:title"       content="How I Think About Systems">
-    <meta property="og:description" content="My approach has changed from building what was requested to understanding what is actually worth building.">
+    <meta property="og:type"        content="article">
+    <meta property="og:url"         content="https://shanjai1511.github.io/when-more-data-makes-a-product-worse.html">
+    <meta property="og:title"       content="When More Data Makes a Product Worse">
+    <meta property="og:description" content="More data isn't automatically better data. Every additional field has a cost — and it should have to earn its place.">
     <meta property="og:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:title"       content="How I Think About Systems">
-    <meta name="twitter:description" content="Six principles behind how I approach data systems and engineering decisions.">
+    <meta name="twitter:title"       content="When More Data Makes a Product Worse">
+    <meta name="twitter:description" content="Every additional field creates processing, storage and interpretation costs. Data should earn its place.">
     <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,13 +41,26 @@
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "How I Think About Systems",
+      "headline": "When More Data Makes a Product Worse",
       "author": { "@type": "Person", "name": "Shanjai Ravi", "url": "https://shanjai1511.github.io/" },
-      "description": "My approach has changed from building what was requested to understanding what is actually worth building."
+      "datePublished": "2026-08-16",
+      "dateModified": "2026-08-16",
+      "description": "More data isn't automatically better data. Every additional field has a cost — and it should have to earn its place.",
+      "mainEntityOfPage": "https://shanjai1511.github.io/when-more-data-makes-a-product-worse.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shanjai1511.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Writing", "item": "https://shanjai1511.github.io/#posts" },
+        { "@type": "ListItem", "position": 3, "name": "When More Data Makes a Product Worse", "item": "https://shanjai1511.github.io/when-more-data-makes-a-product-worse.html" }
+      ]
     }
     </script>
 </head>
-
 <body>
 
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -126,7 +139,7 @@
                     </div>
                 </li>
                 <li><a href="impact.html">Impact</a></li>
-                <li><a href="philosophy.html" class="active">Philosophy</a></li>
+                <li><a href="philosophy.html">Philosophy</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -161,86 +174,40 @@
         </ul>
     </div>
 
+    
     <main>
-        <a href="index.html" class="cs-back"><i class="lni lni-chevron-left"></i> Home</a>
+        <a href="index.html#posts" class="cs-back"><i class="lni lni-chevron-left"></i> Writing</a>
 
         <section class="cs-hero fade-in-up">
-            <span class="proj-status">Philosophy</span>
-            <h1>How I Think About Systems</h1>
-            <p class="ph-intro">My approach has changed from building what was requested to understanding what is actually worth building.</p>
+            <span class="proj-status">Writing</span>
+            <h1>When More Data Makes a Product Worse</h1>
+            <div class="cs-hero-meta">
+                <div class="cs-meta-item"><span class="cs-meta-k">Author</span><span class="cs-meta-v">Shanjai Ravi</span></div>
+                <div class="cs-meta-item"><span class="cs-meta-k">Published</span><span class="cs-meta-v">Aug 2026</span></div>
+                <div class="cs-meta-item"><span class="cs-meta-k">Read</span><span class="cs-meta-v">4 min</span></div>
+                
+            </div>
         </section>
 
         <section class="cs-narrative fade-in-up">
-            <p>When data looks wrong, I don't immediately assume the data pipeline is broken. I first investigate whether we are collecting the right data, whether the requirement is still relevant, and whether the data actually supports the decision the business is trying to make.</p>
-            <div class="cs-arch-flow">
-                <span>Problem</span><span class="arch-sep">→</span>
-                <span>Investigation</span><span class="arch-sep">→</span>
-                <span>Root Cause</span><span class="arch-sep">→</span>
-                <span>System / Process Change</span><span class="arch-sep">→</span>
-                <span>Business Impact</span>
-            </div>
-        </section>
+            <p>"Collect everything, decide later" sounds safe. In practice, I've found it's one of the more expensive defaults a data product can adopt, because every field collected "just in case" keeps costing something long after the case never arrives.</p>
 
-        <section class="fade-in-up">
-            <h2 class="cs-section-title">Six Principles</h2>
-            <div class="ph-list">
-                <div class="ph-item">
-                    <span class="ph-num">01</span>
-                    <div class="ph-body">
-                        <h3>I start with the decision, not the data.</h3>
-                        <p class="ph-lead">What is someone actually going to do with this information?</p>
-                        <p class="ph-text">If there is no meaningful decision behind a metric, dashboard, or dataset, more data rarely makes the problem better.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">02</span>
-                    <div class="ph-body">
-                        <h3>I look for the system behind the symptom.</h3>
-                        <p class="ph-lead">A recurring issue is usually telling you something about the system.</p>
-                        <p class="ph-text">The visible failure is often only the final point in a much longer chain of assumptions, processes and dependencies.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">03</span>
-                    <div class="ph-body">
-                        <h3>I care about why a system exists.</h3>
-                        <p class="ph-lead">Knowing how something works is useful. Knowing why it works that way is leverage.</p>
-                        <p class="ph-text">Understanding previous decisions, constraints and failed approaches often matters as much as understanding the current implementation.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">04</span>
-                    <div class="ph-body">
-                        <h3>More data is not automatically better data.</h3>
-                        <p class="ph-lead">The objective isn't maximum collection. It is maximum usefulness.</p>
-                        <p class="ph-text">Every additional field creates processing, storage, maintenance and interpretation costs. Data should earn its place.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">05</span>
-                    <div class="ph-body">
-                        <h3>A pipeline is a chain of assumptions.</h3>
-                        <p class="ph-lead">Sources &rarr; collection &rarr; processing &rarr; validation &rarr; interpretation &rarr; decision.</p>
-                        <p class="ph-text">A failure anywhere in that chain can make perfectly valid code produce an unusable outcome.</p>
-                    </div>
-                </div>
-                <div class="ph-item">
-                    <span class="ph-num">06</span>
-                    <div class="ph-body">
-                        <h3>The best solution is sometimes removing the requirement.</h3>
-                        <p class="ph-lead">Before optimizing a system, I ask whether the system is solving the right problem.</p>
-                        <p class="ph-text">Sometimes the highest-leverage improvement isn't faster code or more infrastructure. It is removing something that never needed to exist.</p>
-                    </div>
-                </div>
-            </div>
+            <h2>The cost that doesn't show up on a dashboard</h2>
+            <p>More fields mean more to crawl, more to validate, more edge cases in QA, and more surface area for something to break quietly. None of that shows up as a single line item &mdash; it shows up as a pipeline that's slower to change, harder to reason about, and more expensive to keep healthy, for the benefit of data that never gets used. I wrote more about this specific pattern in <a href="the-most-expensive-data.html">the most expensive data is the data that changes nothing</a>.</p>
+
+            <h2>Relevance over volume</h2>
+            <p>The useful question isn't "can we collect this," it's "does this earn its place." That's one of the principles I return to often: the objective isn't maximum collection, it's maximum usefulness &mdash; covered as one of <a href="philosophy.html">six principles behind how I think about systems</a>. In practice this has meant categorizing data by relevance and business priority rather than treating every available field as equally worth collecting, which is exactly the shift described in the <a href="impact.html">Too Much Data &rarr; Less Noise</a> case.</p>
+
+            <h2>A worse product, not just a slower one</h2>
+            <p>Unused data doesn't just cost engineering time. It makes the product itself harder to use &mdash; more fields to filter through, more noise around the signal that actually matters. Reducing what gets collected, done deliberately, is often the highest-leverage change available, and it's frequently more valuable than adding another feature on top of an already-cluttered dataset.</p>
         </section>
 
         <section class="cs-cta fade-in-up">
-            <h2>See these principles in practice?</h2>
-            <p>Happy to talk through how a specific system was designed, or why it was designed that way.</p>
+            <h2>Read the case behind this</h2>
+            <p>Too Much Data to Less Noise is one of four patterns in what changed because I worked on it.</p>
             <div class="cs-cta-actions">
-                <a href="index.html#contact" class="btn btn-primary">Let's Talk</a>
-                <a href="impact.html" class="btn btn-ghost">What Changed Because I Worked On It</a>
+                <a href="impact.html" class="btn btn-primary">What Changed Because I Worked On It</a>
+                <a href="philosophy.html" class="btn btn-ghost">How I Think About Systems</a>
             </div>
         </section>
     </main>

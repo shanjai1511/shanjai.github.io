@@ -270,6 +270,7 @@ section { padding: 56px 0; }
     font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600;
     color: var(--text-primary); margin-bottom: 0.5rem; display: block;
 }
+.hero-role-edu { font-weight: 500; color: var(--text-secondary); }
 .hero-meta {
     font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
     color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1.6px;
@@ -331,7 +332,7 @@ section { padding: 56px 0; }
 @keyframes bounceY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
 
 /* ── Now Card ── */
-.now-card { max-width: 1160px; margin: 2rem auto 0; padding: 2rem 2.5rem; }
+.now-card { max-width: 1240px; margin: 2rem auto 0; padding: 2rem 2.5rem; }
 .now-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
 .now-dot { width: 10px; height: 10px; background: var(--accent-olive); border-radius: 50%; box-shadow: 0 0 0 3px rgba(var(--accent-olive-rgb),0.2); flex-shrink: 0; animation: nowGlow 2s ease-in-out infinite; }
 @keyframes nowGlow { 0%,100% { box-shadow: 0 0 0 3px rgba(var(--accent-olive-rgb),0.2); } 50% { box-shadow: 0 0 0 7px rgba(var(--accent-olive-rgb),0.08); } }
@@ -341,6 +342,9 @@ section { padding: 56px 0; }
 .now-item { display: flex; align-items: flex-start; gap: 0.75rem; }
 .now-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
 .now-k { display: block; font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); opacity: 0.65; margin-bottom: 0.2rem; }
+.now-focus { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); }
+.now-focus .now-k { margin-bottom: 0.6rem; }
+.now-focus .sk-chips { font-size: 0.88rem; line-height: 1.9; }
 .now-v { display: block; font-size: 0.9rem; color: var(--text-primary); line-height: 1.5; }
 
 /* ── Story ── */
@@ -602,7 +606,7 @@ section { padding: 56px 0; }
 }
 .cs-narrative .proj-tags { margin-top: 0.5rem; }
 
-.cs-section-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent-gold); max-width: 860px; margin: 0 auto 2.25rem; }
+.cs-section-title { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent-gold); max-width: 860px; margin: 0 auto 2.25rem; line-height: 1.4; }
 
 /* Connected process flow: Challenge → Approach → Architecture → Outcome */
 .cs-flow { position: relative; max-width: 860px; margin: 0 auto; padding-left: 3.25rem; padding-bottom: 4rem; }
@@ -625,7 +629,7 @@ section { padding: 56px 0; }
 .cs-flow-step .cs-metrics { margin-top: 0.75rem; }
 
 /* Legacy grid (still used by Web Scraping Pipeline / Digital Menucard / Chemistry Lab LMS) */
-.cs-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; padding-bottom: 4rem; }
+.cs-full-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 860px; margin: 0 auto; padding-bottom: 4rem; }
 .cs-block--lg { padding: 1.75rem 2rem; }
 .cs-block--lg p { font-size: 0.95rem; }
 .cs-block--lg .cs-arch-flow { font-size: 0.85rem; }
@@ -637,13 +641,20 @@ section { padding: 56px 0; }
 .cs-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
 /* ── Impact: "What Changed Because I Worked On It" ── */
-.wc-intro, .ph-intro { max-width: 640px; margin: -0.75rem auto 3rem; text-align: center; font-size: 1.08rem; color: var(--text-secondary); line-height: 1.75; font-style: italic; }
-.wc-list { max-width: 980px; margin: 0 auto; }
+.wc-intro, .ph-intro { max-width: 640px; margin: 0 0 3rem; font-size: 1.08rem; color: var(--text-secondary); line-height: 1.75; font-style: italic; }
+.wc-list { max-width: 860px; margin: 0 auto; }
 .wc-item { display: grid; grid-template-columns: 90px 1fr; gap: 2rem; padding: 3rem 0; border-top: 1px solid var(--glass-border); }
 .wc-item:first-child { border-top: none; padding-top: 0.5rem; }
 .wc-item:last-child { padding-bottom: 1rem; }
 .wc-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--accent-gold); padding-top: 0.15rem; }
 .wc-body h3 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+.wc-body h3 a { color: var(--text-primary); border-bottom: 1px solid var(--glass-border); transition: border-color 0.2s ease, color 0.2s ease; }
+.wc-body h3 a:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
+.wc-body > p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; margin-bottom: 0.85rem; max-width: 700px; }
+.wc-body > p:last-child { margin-bottom: 0; }
+.wc-body > p strong { color: var(--text-primary); font-weight: 700; }
+.wc-body > p a { color: var(--accent-gold); border-bottom: 1px solid rgba(20,33,61,0.25); }
+.wc-body > p a:hover { border-color: var(--accent-gold); }
 .wc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .wc-grid p { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.75; }
 .wc-closing {
@@ -655,7 +666,7 @@ section { padding: 56px 0; }
 }
 
 /* ── Philosophy: "How I Think About Systems" ── */
-.ph-list { max-width: 820px; margin: 0 auto; }
+.ph-list { max-width: 860px; margin: 0 auto; }
 .ph-item { display: grid; grid-template-columns: 70px 1fr; gap: 1.75rem; padding: 3.5rem 0; border-top: 1px solid var(--glass-border); transition: opacity 0.3s ease; }
 .ph-item:first-child { border-top: none; padding-top: 0.5rem; }
 .ph-item:last-child { padding-bottom: 1rem; }
@@ -673,6 +684,16 @@ section { padding: 56px 0; }
 
 /* ── Featured Posts ── */
 .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.more-writing { max-width: 860px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--glass-border); }
+.more-writing-list { display: flex; flex-direction: column; gap: 0; }
+.more-writing-list a {
+    font-size: 0.95rem; color: var(--text-secondary);
+    padding: 0.75rem 0; border-bottom: 1px solid var(--glass-border);
+    transition: color 0.2s ease;
+}
+.more-writing-list a:last-child { border-bottom: none; }
+.more-writing-list a:hover { color: var(--accent-gold); }
+.more-writing-list a::after { content: ' →'; }
 
 .post-card {
     padding: 0; display: flex; flex-direction: column;
@@ -893,6 +914,9 @@ footer { padding: 4.5rem 2rem 2.5rem; margin-top: 2rem; border-top: 1px solid va
 .footer-id { display: flex; flex-direction: column; gap: 0.3rem; }
 .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--text-primary); }
 .footer-title { font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 0.4px; }
+.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--glass-border); }
+.footer-links a { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--accent-gold); }
 .footer-copy { color: var(--text-secondary); font-size: 0.8rem; text-align: center; margin-top: 1.75rem; }
 .footer-socials { display: flex; gap: 0.75rem; }
 .footer-socials a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--radius-lg); background: var(--bg-secondary); border: 1px solid rgba(0,0,0,0.06); color: var(--text-secondary); font-size: 1rem; transition: var(--transition); }
@@ -1172,11 +1196,11 @@ footer { padding: 4.5rem 2rem 2.5rem; margin-top: 2rem; border-top: 1px solid va
    CURRENTLY LEARNING BADGE
    ══════════════════════════════════════════════════════ */
 .learning-badge {
-    display: inline-flex; align-items: center; gap: 0.6rem;
+    display: flex; width: fit-content; align-items: center; gap: 0.6rem;
     background: var(--glass-bg); border: 1.5px solid rgba(var(--accent-olive-rgb),0.3);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     padding: 0.5rem 1.2rem; border-radius: 30px;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     font-size: 0.82rem;
 }
 .lb-dot {
