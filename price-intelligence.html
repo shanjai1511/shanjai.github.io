@@ -17,7 +17,7 @@
     <meta name="description" content="A monitoring system surfacing pricing anomalies and unauthorized discounting across marketplaces. Client work at PromptCloud / 42Signals." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#A9832E">
+    <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai1511.github.io/price-intelligence.html">
     <meta name="robots" content="index, follow">
 
@@ -38,21 +38,6 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-    <script>
-        (function () {
-            try {
-                const t = localStorage.getItem('theme');
-                if (t) { document.documentElement.setAttribute('data-theme', t); }
-                else {
-                    const h = new Date().getHours();
-                    document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-                }
-            } catch (_) {
-                const h = new Date().getHours();
-                document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-            }
-        })();
-    </script>
 
     <script type="application/ld+json">
     {
@@ -108,10 +93,6 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button type="button" class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
                 <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -159,9 +140,63 @@
             <blockquote class="cs-pullquote">A detection system that cries wolf trains its own users to ignore it.</blockquote>
 
             <p>That's the real constraint underneath anomaly detection: a threshold tight enough to catch real leakage early is also tight enough to flag every legitimate flash sale and seasonal discount. Distinguishing a genuine violation from ordinary pricing activity matters as much as catching the anomaly itself: an alert nobody trusts gets ignored within a week, and an ignored alert is worse than no alert.</p>
-            <p>This is confidential client work, so the detection logic and client numbers stay private, but the underlying principle holds anywhere alerting is involved: the goal was never more alerts. It was alerts a revenue team actually trusts enough to act on.</p>
+            <p>This is confidential client work, so the exact detection logic stays private, but the underlying principle holds anywhere alerting is involved: the goal was never more alerts. It was alerts a revenue team actually trusts enough to act on.</p>
 
             <div class="proj-tags"><span>Python</span><span>MySQL</span><span>Elasticsearch</span></div>
+        </section>
+
+        <section class="viz-section fade-in-up">
+            <p class="cs-section-title">Pipeline & Signal</p>
+            <p class="viz-intro">The detection pipeline's shape, and a snapshot of the kind of signal it surfaces across a 30-day monitoring window.</p>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Architecture</p>
+                <div class="viz-pipeline">
+                    <div class="viz-pipeline-node"><i class="lni lni-database" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Data Ingestion</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-checkbox" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Data Standardization</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-pin" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Product Mapping</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-ruler" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Policy Mapping</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-warning" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Violation Detection</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-bar-chart" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Insights & Reporting</span></div>
+                </div>
+                <p class="viz-source">Detection: rule-based (MAP/MRP, channel, seller) + ML models (anomaly &amp; pattern detection, seller scoring)</p>
+            </div>
+
+            <div class="viz-stats">
+                <div class="viz-stat">
+                    <span class="viz-stat-val">12.84%</span>
+                    <span class="viz-stat-label">Violation Rate</span>
+                    <span class="viz-stat-delta up"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>2.31% vs last 30 days</span>
+                </div>
+                <div class="viz-stat">
+                    <span class="viz-stat-val">8,732</span>
+                    <span class="viz-stat-label">Total Violations</span>
+                    <span class="viz-stat-delta up"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>1,205 vs last 30 days</span>
+                </div>
+            </div>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Violation Rate by Marketplace</p>
+                <div class="viz-stacked-track">
+                    <span class="viz-stacked-seg" style="width:35%;background:var(--viz-1)"></span>
+                    <span class="viz-stacked-seg" style="width:28%;background:var(--viz-2)"></span>
+                    <span class="viz-stacked-seg" style="width:18%;background:var(--viz-3)"></span>
+                    <span class="viz-stacked-seg" style="width:12%;background:var(--viz-4)"></span>
+                    <span class="viz-stacked-seg" style="width:7%;background:var(--viz-5)"></span>
+                </div>
+                <div class="viz-stacked-legend">
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-1)"></span>Amazon.in &mdash; <b>35%</b></span>
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-2)"></span>Flipkart &mdash; <b>28%</b></span>
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-3)"></span>Myntra &mdash; <b>18%</b></span>
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-4)"></span>TataCliq &mdash; <b>12%</b></span>
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-5)"></span>Meesho &mdash; <b>7%</b></span>
+                </div>
+            </div>
         </section>
 
         <section class="cs-cta fade-in-up">
@@ -198,11 +233,6 @@
     </button>
 
     <script>
-        document.getElementById('darkToggle').addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        });
 
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');

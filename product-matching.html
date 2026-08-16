@@ -17,7 +17,7 @@
     <meta name="description" content="A product matching pipeline reconciling listings across fashion retailers despite inconsistent titles, images, and attributes. Client work at PromptCloud / 42Signals." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#A9832E">
+    <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai1511.github.io/product-matching.html">
     <meta name="robots" content="index, follow">
 
@@ -38,21 +38,6 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-    <script>
-        (function () {
-            try {
-                const t = localStorage.getItem('theme');
-                if (t) { document.documentElement.setAttribute('data-theme', t); }
-                else {
-                    const h = new Date().getHours();
-                    document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-                }
-            } catch (_) {
-                const h = new Date().getHours();
-                document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-            }
-        })();
-    </script>
 
     <script type="application/ld+json">
     {
@@ -108,10 +93,6 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button type="button" class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
                 <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -164,6 +145,86 @@
             <div class="proj-tags"><span>Python</span><span>Data Validation</span><span>Elasticsearch</span></div>
         </section>
 
+        <section class="viz-section fade-in-up">
+            <p class="cs-section-title">Pipeline & Results</p>
+            <p class="viz-intro">The stage-by-stage shape of the matching pipeline and the aggregate outcomes it produced &mdash; matching 3,300 SKUs across 9 Indian e-commerce platforms.</p>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Architecture</p>
+                <div class="viz-pipeline">
+                    <div class="viz-pipeline-node"><i class="lni lni-list" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Input · SKU Master</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-search-alt" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Search & Discovery</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-pin" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Extraction & Matching</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-reload" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Retry & Error Handling</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-bulb" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">AI Diagnostics</span></div>
+                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <div class="viz-pipeline-node"><i class="lni lni-bar-chart" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Output & Monitoring</span></div>
+                </div>
+                <p class="viz-source">Tech: Python · Playwright · BeautifulSoup · Groq API · ScraperAPI · Google Sheets API</p>
+            </div>
+
+            <div class="viz-stats">
+                <div class="viz-stat"><span class="viz-stat-val">3,300</span><span class="viz-stat-label">Total SKUs</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">2,872</span><span class="viz-stat-label">URLs Matched</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">87.0%</span><span class="viz-stat-label">Overall Match Rate</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">92.3%</span><span class="viz-stat-label">Automation Rate</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">68%</span><span class="viz-stat-label">Reduction in Manual Effort</span></div>
+            </div>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Match Rate by Platform</p>
+                <div class="viz-bars">
+                    <div class="viz-bar-row"><span class="viz-bar-label">Flipkart</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:100%"></span></span><span class="viz-bar-val">100.0%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">Amazon.in</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:99.1%"></span></span><span class="viz-bar-val">99.1%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">Luxury TataCliq</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:92.1%"></span></span><span class="viz-bar-val">92.1%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">TataCliq</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:90.3%"></span></span><span class="viz-bar-val">90.3%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">Nykaa Fashion</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:88.2%"></span></span><span class="viz-bar-val">88.2%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">Shoppers Stop</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:87.7%"></span></span><span class="viz-bar-val">87.7%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">AJIO</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:82.6%"></span></span><span class="viz-bar-val">82.6%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">Lifestyle</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:81.5%"></span></span><span class="viz-bar-val">81.5%</span></div>
+                    <div class="viz-bar-row"><span class="viz-bar-label">Myntra</span><span class="viz-bar-track"><span class="viz-bar-fill" style="width:68.4%"></span></span><span class="viz-bar-val">68.4%</span></div>
+                </div>
+            </div>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Live Monitoring &mdash; Status Distribution</p>
+                <div class="viz-stacked-track">
+                    <span class="viz-stacked-seg" style="width:87.03%;background:var(--viz-good)"></span>
+                    <span class="viz-stacked-seg" style="width:7.3%;background:var(--viz-warning)"></span>
+                    <span class="viz-stacked-seg" style="width:5.67%;background:var(--viz-critical)"></span>
+                </div>
+                <div class="viz-stacked-legend">
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-good)"></span>Matched &mdash; <b>2,872</b></span>
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-warning)"></span>In Progress &mdash; <b>241</b></span>
+                    <span class="viz-legend-item"><span class="viz-legend-swatch" style="background:var(--viz-critical)"></span>Failed &mdash; <b>187</b></span>
+                </div>
+            </div>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">AJIO &mdash; Improvement After Secondary Search</p>
+                <div class="viz-compare">
+                    <div class="viz-compare-side">
+                        <span class="viz-compare-tag">Primary Search Only</span>
+                        <span class="viz-compare-val">651</span>
+                        <span class="viz-compare-sub">19.7% matched</span>
+                    </div>
+                    <div class="viz-compare-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        <span class="viz-compare-arrow-delta">+348 URLs</span>
+                    </div>
+                    <div class="viz-compare-side viz-after">
+                        <span class="viz-compare-tag">+ Google Search Fallback</span>
+                        <span class="viz-compare-val">999</span>
+                        <span class="viz-compare-sub">30.3% matched</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="cs-cta fade-in-up">
             <h2>Working through a product matching problem?</h2>
             <p>Happy to talk through matching strategy, attribute extraction, or where precision and recall trade off against each other.</p>
@@ -198,11 +259,6 @@
     </button>
 
     <script>
-        document.getElementById('darkToggle').addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        });
 
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');

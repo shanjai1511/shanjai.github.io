@@ -17,7 +17,7 @@
     <meta name="description" content="A production-grade web data pipeline discovering, retrieving, and parsing structured records from 22 fashion e-commerce and media sites into Elasticsearch. Built by Shanjai R." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#A9832E">
+    <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai1511.github.io/sara.html">
     <meta name="robots" content="index, follow">
 
@@ -38,21 +38,6 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-    <script>
-        (function () {
-            try {
-                const t = localStorage.getItem('theme');
-                if (t) { document.documentElement.setAttribute('data-theme', t); }
-                else {
-                    const h = new Date().getHours();
-                    document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-                }
-            } catch (_) {
-                const h = new Date().getHours();
-                document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-            }
-        })();
-    </script>
 
     <script type="application/ld+json">
     {
@@ -109,10 +94,6 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button type="button" class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
                 <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -172,15 +153,20 @@
                 <div class="cs-flow-step cs-arch">
                     <span class="cs-flow-num">03</span>
                     <span class="cs-label">Architecture</span>
-                    <div class="cs-arch-flow">
-                        <span>APScheduler</span><span class="arch-sep">→</span>
-                        <span>RabbitMQ Queue</span><span class="arch-sep">→</span>
-                        <span>5 Workers</span><span class="arch-sep">→</span>
-                        <span>Discovery</span><span class="arch-sep">→</span>
-                        <span>Retrieval</span><span class="arch-sep">→</span>
-                        <span>Parsing</span><span class="arch-sep">→</span>
-                        <span>Elasticsearch</span><span class="arch-sep">→</span>
-                        <span>Kibana / Streamlit Dashboard</span>
+                    <div class="viz-pipeline">
+                        <div class="viz-pipeline-node"><i class="lni lni-alarm" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">APScheduler</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-layers" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">RabbitMQ Queue</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-cog" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">5 Workers</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-search-alt" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Discovery</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-cloud-download" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Retrieval</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-code-alt" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Parsing</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-bar-chart" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Elasticsearch + Dashboard</span></div>
                     </div>
                 </div>
                 <div class="cs-flow-step">
@@ -200,6 +186,60 @@
                 </div>
             </div>
             <div class="proj-tags"><span>Python</span><span>RabbitMQ</span><span>Elasticsearch</span><span>Kibana</span><span>FastAPI</span><span>Streamlit</span><span>APScheduler</span></div>
+        </section>
+
+        <section class="viz-section fade-in-up">
+            <p class="cs-section-title">Intelligence Output</p>
+            <p class="viz-intro">A sample from what the indexed data actually surfaces &mdash; pulled from a SARA crawl run across 6 e-commerce platforms and 11 fashion media sources, Mar 15 &ndash; Apr 22, 2026.</p>
+
+            <div class="viz-stats">
+                <div class="viz-stat"><span class="viz-stat-val">3,677</span><span class="viz-stat-label">Products Indexed</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">1,769</span><span class="viz-stat-label">Trade Articles Analyzed</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">60%</span><span class="viz-stat-label">Average Platform Discount</span></div>
+                <div class="viz-stat"><span class="viz-stat-val">18.7%</span><span class="viz-stat-label">Sustainability Coverage in Editorial Signals</span></div>
+            </div>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Average Selling Price by Platform</p>
+                <div class="viz-bars">
+                    <div class="viz-bar-row">
+                        <span class="viz-bar-label">Limeroad</span>
+                        <span class="viz-bar-track"><span class="viz-bar-fill" style="width:100%"></span></span>
+                        <span class="viz-bar-val">₹879</span>
+                    </div>
+                    <div class="viz-bar-row">
+                        <span class="viz-bar-label">Amazon</span>
+                        <span class="viz-bar-track"><span class="viz-bar-fill" style="width:90.4%"></span></span>
+                        <span class="viz-bar-val">₹795</span>
+                    </div>
+                    <div class="viz-bar-row">
+                        <span class="viz-bar-label">Myntra</span>
+                        <span class="viz-bar-track"><span class="viz-bar-fill" style="width:86.5%"></span></span>
+                        <span class="viz-bar-val">₹760</span>
+                    </div>
+                </div>
+                <p class="viz-source">Deepest discount observed: 64% off (Myntra)</p>
+            </div>
+
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">The Gap SARA Surfaces &mdash; Plus-Size Demand vs. Supply</p>
+                <div class="viz-compare">
+                    <div class="viz-compare-side">
+                        <span class="viz-compare-tag">Supply Index</span>
+                        <span class="viz-compare-val">18</span>
+                        <span class="viz-compare-sub">Catalog presence</span>
+                    </div>
+                    <div class="viz-compare-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        <span class="viz-compare-arrow-delta">4.1× gap</span>
+                    </div>
+                    <div class="viz-compare-side viz-after">
+                        <span class="viz-compare-tag">Demand Index</span>
+                        <span class="viz-compare-val">74</span>
+                        <span class="viz-compare-sub">71M+ self-identified plus-size shoppers in India</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="cs-cta fade-in-up">
@@ -236,11 +276,6 @@
     </button>
 
     <script>
-        document.getElementById('darkToggle').addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        });
 
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');

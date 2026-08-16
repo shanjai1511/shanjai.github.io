@@ -17,7 +17,7 @@
     <meta name="description" content="A production-scale, multi-site scraping system with YAML-driven site configuration, retry logic, and MySQL-backed storage. Built by Shanjai R." />
     <link rel="icon" href="assets/me/n.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#A9832E">
+    <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai1511.github.io/web-scraping-pipeline.html">
     <meta name="robots" content="index, follow">
 
@@ -38,21 +38,6 @@
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="styles/styles.css">
 
-    <script>
-        (function () {
-            try {
-                const t = localStorage.getItem('theme');
-                if (t) { document.documentElement.setAttribute('data-theme', t); }
-                else {
-                    const h = new Date().getHours();
-                    document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-                }
-            } catch (_) {
-                const h = new Date().getHours();
-                document.documentElement.setAttribute('data-theme', (h >= 19 || h < 7) ? 'dark' : 'light');
-            }
-        })();
-    </script>
 
     <script type="application/ld+json">
     {
@@ -109,10 +94,6 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button type="button" class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
                 <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -167,21 +148,34 @@
                 </div>
                 <div class="glass-card cs-block cs-block--lg cs-arch cs-block--full">
                     <span class="cs-label">Architecture</span>
-                    <div class="cs-arch-flow">
-                        <span>URL Collector</span><span class="arch-sep">→</span>
-                        <span>Page Fetcher</span><span class="arch-sep">→</span>
-                        <span>YAML Parser</span><span class="arch-sep">→</span>
-                        <span>BS4 / Scrapy</span><span class="arch-sep">→</span>
-                        <span>Retry Layer</span><span class="arch-sep">→</span>
-                        <span>MySQL</span>
+                    <div class="viz-pipeline">
+                        <div class="viz-pipeline-node"><i class="lni lni-link" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">URL Collector</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-world" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Page Fetcher</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-code-alt" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">YAML Parser</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-funnel" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">BS4 / Scrapy</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-reload" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Retry Layer</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-database" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">MySQL</span></div>
                     </div>
                 </div>
                 <div class="glass-card cs-block cs-block--lg cs-impact cs-block--full">
                     <span class="cs-label">Impact</span>
                     <div class="cs-metrics">
                         <div class="cs-metric"><span class="m-val">20+</span><span class="m-desc">Sites Automated</span></div>
-                        <div class="cs-metric"><span class="m-val">65%</span><span class="m-desc">Faster Setup</span></div>
-                        <div class="cs-metric"><span class="m-val">95%+</span><span class="m-desc">Data Accuracy</span></div>
+                    </div>
+                    <div style="margin-top:1.25rem;">
+                        <div class="viz-meter">
+                            <div class="viz-meter-head"><span class="viz-meter-label">Faster Setup vs. One-Off Scripts</span><span class="viz-meter-pct">65%</span></div>
+                            <div class="viz-meter-track"><span class="viz-meter-fill" style="width:65%"></span></div>
+                        </div>
+                        <div class="viz-meter">
+                            <div class="viz-meter-head"><span class="viz-meter-label">Data Accuracy</span><span class="viz-meter-pct">95%+</span></div>
+                            <div class="viz-meter-track"><span class="viz-meter-fill" style="width:96%"></span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -222,11 +216,6 @@
     </button>
 
     <script>
-        document.getElementById('darkToggle').addEventListener('click', () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        });
 
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
