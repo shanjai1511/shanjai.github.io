@@ -110,11 +110,13 @@ a { color: var(--text-primary); text-decoration: none; transition: var(--transit
 .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--text-primary); letter-spacing: 0.5px; flex-shrink: 0; }
 .logo::after { content: '.'; color: var(--accent-gold); }
 
-.nav-links { list-style: none; display: flex; align-items: center; gap: 2.5rem; margin-left: 4rem; }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 1.6rem; margin-left: 2.5rem; }
+.nav-links li { flex-shrink: 0; }
 .nav-links a {
     display: inline-flex; align-items: center; gap: 0.35rem;
     font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); position: relative;
     padding: 0.4rem 0; letter-spacing: 1.6px; text-transform: uppercase;
+    white-space: nowrap;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
 .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--accent-gold); transition: var(--transition); }
@@ -2057,4 +2059,41 @@ footer { padding: 4.5rem 2rem 2.5rem; margin-top: 2rem; border-top: 1px solid va
     .viz-pipeline { flex-direction: column; }
     .viz-pipeline-arrow { flex-basis: 20px; }
     .viz-pipeline-arrow svg { transform: rotate(90deg); }
+}
+
+/* Interactive pipeline stage (System Playground) */
+button.viz-pipeline-node { cursor: pointer; font-family: inherit; }
+button.viz-pipeline-node:hover,
+button.viz-pipeline-node:focus-visible { border-color: var(--accent-gold); background: var(--accent-gold-light); }
+button.viz-pipeline-node:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
+button.viz-pipeline-node.is-active { border-color: var(--accent-gold); background: var(--accent-gold-light); box-shadow: inset 0 0 0 1px var(--accent-gold); }
+
+/* Editorial cards: subtle hover (insights, failure cases) */
+.wc-item { transition: background 0.3s ease; }
+.wc-item:hover { background: var(--bg-secondary); }
+
+/* Competitive Intelligence demo reveal */
+.tns-demo-result { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s var(--ease); margin-top: 1.5rem; }
+.tns-demo-result-inner { overflow: hidden; }
+.tns-demo.is-run .tns-demo-result { grid-template-rows: 1fr; }
+.tns-demo-btn[aria-pressed="true"] { background: var(--accent-gold); color: #FFFFFF; }
+.tns-demo-btn:disabled { opacity: 0.55; cursor: default; }
+
+.tns-demo-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.85rem; }
+.tns-demo-select {
+    font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600;
+    color: var(--text-primary); background: var(--bg-primary);
+    border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+    padding: 0.7rem 1rem; min-width: 240px; max-width: 100%;
+    cursor: pointer;
+}
+.tns-demo-select:disabled { opacity: 0.55; cursor: default; }
+.tns-demo-select:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
+
+.tns-demo-fields .cs-meta-item { opacity: 0; transform: translateY(6px); transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); }
+.tns-demo-fields .cs-meta-item.is-in { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 560px) {
+    .tns-demo-controls { flex-direction: column; align-items: stretch; }
+    .tns-demo-select { min-width: 0; }
 }

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSSV85L7QK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSSV85L7QK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Playground | Shanjai R</title>
+    <meta name="description" content="An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo, by Shanjai R." />
+    <link rel="icon" href="assets/me/n.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#14213D">
+    <link rel="canonical" href="https://shanjai1511.github.io/system-playground.html">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://shanjai1511.github.io/system-playground.html">
+    <meta property="og:title"       content="System Playground | Shanjai R">
+    <meta property="og:description" content="An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo.">
+    <meta property="og:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="System Playground | Shanjai R">
+    <meta name="twitter:description" content="An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo.">
+    <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "System Playground",
+      "url": "https://shanjai1511.github.io/system-playground.html",
+      "description": "An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo.",
+      "author": { "@type": "Person", "name": "Shanjai R", "url": "https://shanjai1511.github.io/" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shanjai1511.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Thinking & Systems", "item": "https://shanjai1511.github.io/thinking-and-systems.html" },
+        { "@type": "ListItem", "position": 3, "name": "System Playground", "item": "https://shanjai1511.github.io/system-playground.html" }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- ══════════ NAVIGATION ══════════ -->
+    <nav class="glass-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ASR</a>
+            <ul class="nav-links">
+                <li class="nav-dropdown nav-dropdown--mega">
+                    <a href="index.html#projects" class="nav-dropdown-toggle">Start Here <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu nav-dropdown-menu--mega">
+                        <div class="nav-mega-inner">
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Hire a Data Scientist</p>
+                                <p class="nav-mega-sub">Data pipelines, automation, infrastructure and scalable processing systems.</p>
+                                <a href="sara.html">Scalable Automated Retrieval Architecture</a>
+                                <a href="web-scraping-pipeline.html">Modular Web Scraping Pipeline</a>
+                                <a href="index.html#experience">Experience</a>
+                            </div>
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Need Data &amp; Analytics</p>
+                                <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
+                                <a href="sara.html">SARA &mdash; Intelligence Output</a>
+                                <a href="search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
+                                <a href="index.html#skills">Skills</a>
+                            </div>
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Building E-commerce Intelligence</p>
+                                <p class="nav-mega-sub">Competitive intelligence, price intelligence, search intelligence and marketplace analytics.</p>
+                                <a href="price-intelligence.html">Price Intelligence &amp; Revenue Leakage</a>
+                                <a href="competitor-intelligence.html">Competitor Intelligence Engine</a>
+                                <a href="search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
+                                <a href="product-matching.html">Automated Product Matching Pipeline</a>
+                            </div>
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Understand How I Think</p>
+                                <p class="nav-mega-sub">Reflections on engineering, data, systems and decisions.</p>
+                                <a href="impact.html">What Changed Because I Worked On It</a>
+                                <a href="philosophy.html">How I Think About Systems</a>
+                                <a href="thinking-and-systems.html">Thinking &amp; Systems</a>
+                                <a href="index.html#posts">More Writing</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li class="nav-dropdown">
+                    <a href="index.html#projects" class="nav-dropdown-toggle">Work <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="sara.html">Scalable Automated Retrieval Architecture</a>
+                            <a href="competitor-intelligence.html">Competitor Intelligence Engine</a>
+                            <a href="product-matching.html">Automated Product Matching Pipeline</a>
+                            <a href="search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
+                            <a href="price-intelligence.html">Price Intelligence &amp; Revenue Leakage</a>
+                            <a href="index.html#projects" class="nav-dropdown-all">View All Work</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="index.html#posts" class="nav-dropdown-toggle">Writing <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="https://www.linkedin.com/pulse/person-who-knows-how-company-works-has-more-leverage-than-shanjai-r-lrc4c/" target="_blank" rel="noopener noreferrer">Company Knowledge as Leverage</a>
+                            <a href="https://medium.com/@shanjai1511/the-deepest-peace-is-found-in-chaos-7f0021dbf183" target="_blank" rel="noopener noreferrer">The Deepest Peace Is Found in Chaos</a>
+                            <a href="https://www.linkedin.com/pulse/art-poking-around-how-curiosity-made-me-better-engineer-shanjai-r-xxylc/" target="_blank" rel="noopener noreferrer">The Art of Poking Around</a>
+                            <a href="https://www.linkedin.com/pulse/watchtower-without-watchman-just-architecture-shanjai-r-mu8ec/" target="_blank" rel="noopener noreferrer">A Watchtower Without a Watchman</a>
+                            <a href="https://www.linkedin.com/pulse/security-living-inside-iron-dome-shanjai-r-ssydc/" target="_blank" rel="noopener noreferrer">Not Living Inside an Iron Dome</a>
+                            <a href="index.html#posts" class="nav-dropdown-all">View All Writing</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="impact.html" class="nav-dropdown-toggle">Thinking <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="impact.html">Impact</a>
+                            <a href="philosophy.html">Philosophy</a>
+                            <a href="thinking-and-systems.html">Thinking &amp; Systems</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="index.html#projects" class="mobile-link">Start Here</a></li>
+            <li><a href="sara.html"                 class="mobile-link mobile-link--sub">Hire a Data Scientist</a></li>
+            <li><a href="search-intelligence.html"  class="mobile-link mobile-link--sub">Need Data &amp; Analytics</a></li>
+            <li><a href="price-intelligence.html"   class="mobile-link mobile-link--sub">Building E-commerce Intelligence</a></li>
+            <li><a href="impact.html" class="mobile-link mobile-link--sub">Understand How I Think</a></li>
+            <li><a href="index.html#about"      class="mobile-link">About</a></li>
+            <li><a href="index.html#experience" class="mobile-link">Experience</a></li>
+            <li><a href="index.html#skills"     class="mobile-link">Skills</a></li>
+            <li><a href="index.html#projects"   class="mobile-link">Work</a></li>
+            <li><a href="sara.html"                     class="mobile-link mobile-link--sub">SARA</a></li>
+            <li><a href="competitor-intelligence.html"  class="mobile-link mobile-link--sub">Competitor Intelligence Engine</a></li>
+            <li><a href="product-matching.html"         class="mobile-link mobile-link--sub">Automated Product Matching Pipeline</a></li>
+            <li><a href="search-intelligence.html"      class="mobile-link mobile-link--sub">Search Intelligence &amp; Brand Visibility</a></li>
+            <li><a href="price-intelligence.html"       class="mobile-link mobile-link--sub">Price Intelligence &amp; Revenue Leakage</a></li>
+            <li><a href="index.html#posts"      class="mobile-link">Writing</a></li>
+            <li><a href="impact.html" class="mobile-link">Thinking</a></li>
+            <li><a href="impact.html"                         class="mobile-link mobile-link--sub">Impact</a></li>
+            <li><a href="philosophy.html"                     class="mobile-link mobile-link--sub">Philosophy</a></li>
+            <li><a href="thinking-and-systems.html"           class="mobile-link mobile-link--sub">Thinking &amp; Systems</a></li>
+            <li><a href="what-i-notice-that-others-miss.html" class="mobile-link mobile-link--sub">What I Notice That Others Miss</a></li>
+            <li><a href="system-playground.html"              class="mobile-link mobile-link--sub">System Playground</a></li>
+            <li><a href="failure-to-learning.html"            class="mobile-link mobile-link--sub">Failure &rarr; Learning</a></li>
+            <li><a href="index.html#contact"    class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <a href="thinking-and-systems.html" class="cs-back"><i class="lni lni-chevron-left"></i> Thinking &amp; Systems</a>
+
+        <section class="cs-hero fade-in-up">
+            <span class="proj-status">Thinking &amp; Systems</span>
+            <h1>System Playground</h1>
+            <p class="cs-hero-sub">Explore how raw data becomes a business decision.</p>
+            <p class="cs-hero-lede">A few simplified versions of the systems and ideas I've worked with. Explore how the pieces connect.</p>
+        </section>
+
+        <section class="fade-in-up">
+            <div class="glass-card viz-card">
+                <p class="viz-card-title">Data Intelligence Pipeline &mdash; select a stage</p>
+                <div class="viz-pipeline" id="tnsPipeline" role="group" aria-label="Data intelligence pipeline stages">
+                    <button type="button" class="viz-pipeline-node" data-stage="raw">
+                        <span class="viz-pipeline-node-label">Raw Data</span>
+                    </button>
+                    <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <button type="button" class="viz-pipeline-node" data-stage="collection">
+                        <span class="viz-pipeline-node-label">Collection</span>
+                    </button>
+                    <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <button type="button" class="viz-pipeline-node" data-stage="processing">
+                        <span class="viz-pipeline-node-label">Processing</span>
+                    </button>
+                    <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <button type="button" class="viz-pipeline-node" data-stage="validation">
+                        <span class="viz-pipeline-node-label">Validation</span>
+                    </button>
+                    <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <button type="button" class="viz-pipeline-node" data-stage="analytics">
+                        <span class="viz-pipeline-node-label">Analytics</span>
+                    </button>
+                    <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <button type="button" class="viz-pipeline-node" data-stage="signal">
+                        <span class="viz-pipeline-node-label">Business Signal</span>
+                    </button>
+                    <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                    <button type="button" class="viz-pipeline-node" data-stage="decision">
+                        <span class="viz-pipeline-node-label">Decision</span>
+                    </button>
+                </div>
+                <div class="glass-card viz-card" id="tnsPipelinePanel" style="margin-top:1.25rem;" aria-live="polite">
+                    <p class="viz-card-title" id="tnsPipelinePanelTitle">Raw Data</p>
+                    <p id="tnsPipelinePanelText" style="color:var(--text-secondary);font-size:0.92rem;line-height:1.7;">Product listings, prices, rankings, availability and other marketplace signals.</p>
+                </div>
+            </div>
+
+            <div class="glass-card viz-card tns-demo" id="tnsDemo" style="margin-top:1.75rem;">
+                <p class="viz-card-title">From Product Data to Competitive Signal</p>
+                <p style="color:var(--text-secondary);font-size:0.92rem;margin-bottom:1rem;">Pick a product to see the kind of signal this analysis produces.</p>
+                <div class="tns-demo-controls">
+                    <select class="tns-demo-select" id="tnsDemoSelect" aria-label="Choose an example product"></select>
+                    <button type="button" class="btn btn-ghost tns-demo-btn" id="tnsDemoBtn" aria-pressed="false" aria-controls="tnsDemoResult">Run Analysis</button>
+                </div>
+                <div class="tns-demo-result" id="tnsDemoResult">
+                    <div class="tns-demo-result-inner">
+                        <div class="cs-hero-meta tns-demo-fields" id="tnsDemoFields" style="padding-top:1.5rem;margin-top:1.5rem;">
+                            <div class="cs-meta-item"><span class="cs-meta-k">Brand</span><span class="cs-meta-v" data-field="brand"></span></div>
+                            <div class="cs-meta-item"><span class="cs-meta-k">Category</span><span class="cs-meta-v" data-field="category"></span></div>
+                            <div class="cs-meta-item"><span class="cs-meta-k">Competitive Set</span><span class="cs-meta-v" data-field="competitiveSet"></span></div>
+                            <div class="cs-meta-item"><span class="cs-meta-k">Price Position</span><span class="cs-meta-v" data-field="pricePosition"></span></div>
+                            <div class="cs-meta-item"><span class="cs-meta-k">Market Signal</span><span class="cs-meta-v" data-field="marketSignal"></span></div>
+                            <div class="cs-meta-item"><span class="cs-meta-k">Possible Action</span><span class="cs-meta-v" data-field="possibleAction"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="viz-source" id="tnsDemoStatus" aria-live="polite">Simplified demonstration based on the type of analysis I work with. Not live market data.</p>
+            </div>
+
+            <p class="wc-intro" style="margin-top:2.5rem;">Continue exploring: <a href="what-i-notice-that-others-miss.html">What I Notice That Others Miss</a> &middot; <a href="failure-to-learning.html">Failure &rarr; Learning</a> &middot; <a href="thinking-and-systems.html">All of Thinking &amp; Systems</a></p>
+        </section>
+
+        <section class="cs-cta fade-in-up">
+            <h2>I like building things. But I'm more interested in understanding why they should exist.</h2>
+            <p>That's the space where engineering, data, product thinking and business decisions start to overlap.</p>
+            <div class="cs-cta-actions">
+                <a href="index.html#projects" class="btn btn-primary">View My Work</a>
+                <a href="index.html#posts" class="btn btn-ghost">Read My Writing</a>
+                <a href="https://www.linkedin.com/in/shanjai/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Connect</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <blockquote class="footer-statement">Build quietly. Think deeply. Ship things that matter.</blockquote>
+            <div class="footer-bottom">
+                <div class="footer-id">
+                    <span class="footer-name">Shanjai R</span>
+                    <span class="footer-title">Data Scientist · Data Analytics · Data Infrastructure · E-commerce Intelligence</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/shanjai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
+                    <a href="https://github.com/shanjai1511"       target="_blank" rel="noopener noreferrer" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
+                    <a href="https://medium.com/@shanjai1511"      target="_blank" rel="noopener noreferrer" aria-label="Medium"   ><i class="lni lni-medium"></i></a>
+                    <a href="https://www.instagram.com/r.shanjai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
+                    <a href="mailto:shanjai1511@gmail.com"                          aria-label="Email"   ><i class="lni lni-envelope"></i></a>
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Work</a>
+                <a href="impact.html">Impact</a>
+                <a href="philosophy.html">Philosophy</a>
+                <a href="index.html#posts">Writing</a>
+            </nav>
+            <p class="footer-copy">&copy; 2024–<span id="footerYear"></span> Shanjai R</p>
+        </div>
+    </footer>
+
+    <button type="button" class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="lni lni-chevron-up"></i>
+    </button>
+
+    <script>
+
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay   = document.getElementById('mobileOverlay');
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            mobileNav.classList.toggle('open', open);
+            overlay.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+        hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
+        overlay.addEventListener('click', () => toggleMenu(false));
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+
+        const progressBar  = document.getElementById('scrollProgress');
+        const mainNav      = document.getElementById('mainNav');
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            const s = window.scrollY;
+            const m = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (m > 0 ? Math.min(s / m * 100, 100) : 0) + '%';
+            mainNav.classList.toggle('scrolled', s > 60);
+            scrollTopBtn.classList.toggle('visible', s > 400);
+        }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+        const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.07 });
+        document.querySelectorAll('.fade-in-up').forEach(el => io.observe(el));
+
+        // ─── System Playground: interactive pipeline ──────────
+        (function () {
+            const STAGES = {
+                raw:        { label: 'Raw Data',       text: 'Product listings, prices, rankings, availability and other marketplace signals.' },
+                collection: { label: 'Collection',      text: 'Collecting the information required to answer a specific business question.' },
+                processing: { label: 'Processing',      text: 'Cleaning, normalizing and transforming raw inputs into usable data.' },
+                validation: { label: 'Validation',      text: 'Detecting missing, inconsistent or unreliable information before it reaches downstream systems.' },
+                analytics:  { label: 'Analytics',       text: 'Finding patterns, comparisons and changes that matter.' },
+                signal:     { label: 'Business Signal', text: 'Turning analysis into something meaningful: a price violation, ranking movement, competitor change or other actionable signal.' },
+                decision:   { label: 'Decision',        text: 'The final purpose of the system — helping someone decide what to investigate, change, prioritize or do next.' }
+            };
+            const pipeline = document.getElementById('tnsPipeline');
+            const panelTitle = document.getElementById('tnsPipelinePanelTitle');
+            const panelText  = document.getElementById('tnsPipelinePanelText');
+            if (!pipeline) return;
+            const nodes = pipeline.querySelectorAll('.viz-pipeline-node');
+
+            function selectStage(key) {
+                const stage = STAGES[key];
+                if (!stage) return;
+                nodes.forEach(n => n.classList.toggle('is-active', n.dataset.stage === key));
+                panelTitle.textContent = stage.label;
+                panelText.textContent = stage.text;
+            }
+            nodes.forEach(node => {
+                node.addEventListener('click', () => selectStage(node.dataset.stage));
+                node.addEventListener('mouseenter', () => selectStage(node.dataset.stage));
+                node.addEventListener('focus', () => selectStage(node.dataset.stage));
+            });
+            selectStage('raw');
+        })();
+
+        // ─── System Playground: competitive intelligence demo ─
+        (function () {
+            const demo   = document.getElementById('tnsDemo');
+            const btn    = document.getElementById('tnsDemoBtn');
+            const select = document.getElementById('tnsDemoSelect');
+            const fields = document.getElementById('tnsDemoFields');
+            const status = document.getElementById('tnsDemoStatus');
+            if (!demo || !btn || !select || !fields) return;
+
+            const PRODUCTS = [
+                { name: 'Nike Air Max Running Shoes', brand: 'Nike', category: 'Running Shoes', competitiveSet: 'Adidas · ASICS · Puma · New Balance', pricePosition: 'Premium', marketSignal: 'High competitive density', possibleAction: 'Monitor competitor price movement and visibility.' },
+                { name: 'Samsung Galaxy Buds', brand: 'Samsung', category: 'Wireless Earbuds', competitiveSet: 'Apple · Sony · JBL · boAt', pricePosition: 'Mid-Premium', marketSignal: 'Moderate competitive density', possibleAction: 'Track feature-based positioning shifts.' },
+                { name: "L'Oréal Paris Revitalift Cream", brand: "L'Oréal", category: 'Skincare', competitiveSet: "Nivea · Olay · Pond's · Lakmé", pricePosition: 'Mid-range', marketSignal: 'High promotional activity', possibleAction: 'Monitor discount-driven ranking changes.' },
+                { name: 'Philips Air Fryer HD9252', brand: 'Philips', category: 'Kitchen Appliances', competitiveSet: 'Prestige · Bajaj · Havells · Inalsa', pricePosition: 'Premium', marketSignal: 'Rising category demand', possibleAction: 'Track new entrant pricing.' },
+                { name: "Levi's 511 Slim Fit Jeans", brand: "Levi's", category: 'Denim Apparel', competitiveSet: 'Wrangler · Pepe Jeans · Spykar · Flying Machine', pricePosition: 'Mid-Premium', marketSignal: 'Stable competitive set', possibleAction: 'Monitor seasonal discount cycles.' },
+                { name: 'boAt Rockerz 550 Headphones', brand: 'boAt', category: 'Audio Accessories', competitiveSet: 'JBL · Noise · Zebronics · pTron', pricePosition: 'Budget-Mid', marketSignal: 'High price volatility', possibleAction: 'Track flash-sale price undercutting.' },
+                { name: 'Whirlpool 265L Refrigerator', brand: 'Whirlpool', category: 'Large Appliances', competitiveSet: 'LG · Samsung · Haier · Godrej', pricePosition: 'Mid-range', marketSignal: 'Low competitive density', possibleAction: 'Monitor regional price variation.' },
+                { name: 'Maybelline Fit Me Foundation', brand: 'Maybelline', category: 'Cosmetics', competitiveSet: 'Lakmé · L\'Oréal · Sugar · Nykaa Cosmetics', pricePosition: 'Budget-Mid', marketSignal: 'High SKU proliferation', possibleAction: 'Track shade-level assortment gaps.' },
+                { name: 'Fossil Gen 6 Smartwatch', brand: 'Fossil', category: 'Wearables', competitiveSet: 'Noise · boAt · Titan · Fire-Boltt', pricePosition: 'Premium', marketSignal: 'Declining category share', possibleAction: 'Monitor feature-parity competitors.' },
+                { name: 'Amul Butter 500g', brand: 'Amul', category: 'Packaged Foods', competitiveSet: 'Britannia · Nestlé · Mother Dairy', pricePosition: 'Value', marketSignal: 'Low price elasticity', possibleAction: 'Track availability gaps across marketplaces.' },
+                { name: 'IKEA Malm Bed Frame', brand: 'IKEA', category: 'Furniture', competitiveSet: 'Urban Ladder · Pepperfry · Nilkamal · Wakefit', pricePosition: 'Mid-Premium', marketSignal: 'Emerging online competition', possibleAction: 'Monitor delivery-linked pricing.' },
+                { name: 'Dyson V8 Vacuum Cleaner', brand: 'Dyson', category: 'Home Appliances', competitiveSet: 'Eureka Forbes · Kent · Philips · Xiaomi', pricePosition: 'Premium', marketSignal: 'Low competitive density', possibleAction: 'Track premium segment entrants.' },
+                { name: 'Puma Ultra Sneakers', brand: 'Puma', category: 'Athletic Footwear', competitiveSet: 'Nike · Adidas · Skechers · Reebok', pricePosition: 'Mid-Premium', marketSignal: 'High promotional density', possibleAction: 'Monitor cross-platform price parity.' },
+                { name: 'Colgate MaxFresh Toothpaste', brand: 'Colgate', category: 'Oral Care', competitiveSet: 'Pepsodent · Sensodyne · Patanjali · Closeup', pricePosition: 'Value', marketSignal: 'Stable market share', possibleAction: 'Track regional pricing anomalies.' },
+                { name: 'Sony WH-1000XM5 Headphones', brand: 'Sony', category: 'Premium Headphones', competitiveSet: 'Bose · Apple · Sennheiser · JBL', pricePosition: 'Premium', marketSignal: 'High feature-based competition', possibleAction: 'Monitor firmware-driven repositioning.' },
+                { name: 'Nivea Men Face Wash', brand: 'Nivea', category: "Men's Grooming", competitiveSet: 'Garnier Men · Himalaya · Bombay Shaving Co', pricePosition: 'Budget-Mid', marketSignal: 'Rising new-entrant activity', possibleAction: 'Track D2C brand undercutting.' },
+                { name: 'Prestige Induction Cooktop', brand: 'Prestige', category: 'Kitchen Appliances', competitiveSet: 'Bajaj · Philips · Pigeon · Butterfly', pricePosition: 'Value-Mid', marketSignal: 'High SKU turnover', possibleAction: 'Monitor entry-tier price wars.' },
+                { name: 'Titan Raga Watch', brand: 'Titan', category: 'Fashion Watches', competitiveSet: 'Fastrack · Casio · Fossil · Daniel Wellington', pricePosition: 'Mid-Premium', marketSignal: 'Stable brand loyalty', possibleAction: 'Track gifting-season price shifts.' },
+                { name: 'Bata Comfort Sandals', brand: 'Bata', category: 'Casual Footwear', competitiveSet: 'Liberty · Paragon · Relaxo · Woodland', pricePosition: 'Value', marketSignal: 'High regional density', possibleAction: 'Monitor festive discount depth.' },
+                { name: 'Godrej Interio Almirah', brand: 'Godrej', category: 'Home Storage Furniture', competitiveSet: 'Nilkamal · Supreme · Delta · Steelage', pricePosition: 'Mid-range', marketSignal: 'Low online competitive density', possibleAction: 'Track offline-to-online price gaps.' },
+                { name: 'Xiaomi Mi Power Bank 20000mAh', brand: 'Xiaomi', category: 'Mobile Accessories', competitiveSet: 'Anker · Ambrane · Realme · boAt', pricePosition: 'Value-Mid', marketSignal: 'High price undercutting', possibleAction: 'Monitor capacity-to-price ratio shifts.' }
+            ];
+
+            PRODUCTS.forEach((p, i) => {
+                const opt = document.createElement('option');
+                opt.value = String(i);
+                opt.textContent = p.name;
+                select.appendChild(opt);
+            });
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const metaItems = Array.from(fields.querySelectorAll('.cs-meta-item'));
+            let busy = false;
+
+            function fillFields(product) {
+                fields.querySelectorAll('[data-field]').forEach(el => {
+                    el.textContent = product[el.dataset.field];
+                });
+            }
+
+            function revealFields() {
+                metaItems.forEach((item, i) => {
+                    item.classList.remove('is-in');
+                    if (prefersReducedMotion) { item.classList.add('is-in'); return; }
+                    item.style.transitionDelay = (i * 90) + 'ms';
+                    requestAnimationFrame(() => requestAnimationFrame(() => item.classList.add('is-in')));
+                });
+            }
+
+            function runAnalysis() {
+                if (busy) return;
+                busy = true;
+                select.disabled = true;
+                btn.disabled = true;
+                btn.textContent = 'Analyzing…';
+                status.textContent = 'Running simplified analysis on the selected product…';
+
+                const delay = prefersReducedMotion ? 0 : 900;
+                setTimeout(() => {
+                    const product = PRODUCTS[Number(select.value)];
+                    fillFields(product);
+                    demo.classList.add('is-run');
+                    revealFields();
+                    btn.setAttribute('aria-pressed', 'true');
+                    btn.textContent = 'Reset';
+                    btn.disabled = false;
+                    select.disabled = false;
+                    busy = false;
+                    status.textContent = 'Simplified demonstration based on the type of analysis I work with. Not live market data.';
+                }, delay);
+            }
+
+            function resetDemo() {
+                demo.classList.remove('is-run');
+                metaItems.forEach(item => item.classList.remove('is-in'));
+                btn.setAttribute('aria-pressed', 'false');
+                btn.textContent = 'Run Analysis';
+                status.textContent = 'Simplified demonstration based on the type of analysis I work with. Not live market data.';
+            }
+
+            btn.addEventListener('click', () => {
+                if (demo.classList.contains('is-run')) resetDemo();
+                else runAnalysis();
+            });
+            select.addEventListener('change', () => { if (demo.classList.contains('is-run')) resetDemo(); });
+        })();
+    </script>
+</body>
+</html>
