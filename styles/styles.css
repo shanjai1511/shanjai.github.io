@@ -449,6 +449,9 @@ section { padding: 56px 0; }
 .ar-co a:hover { color: var(--accent-gold); border-color: var(--accent-gold); }
 .ar-meta { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-secondary); opacity: 0.85; margin-bottom: 1rem; }
 .ar-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; max-width: 620px; margin-bottom: 1.1rem; }
+.ar-bullets { list-style: disc; padding-left: 1.1rem; max-width: 620px; margin-bottom: 1.1rem; }
+.ar-bullets li { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.3rem; }
+.ar-bullets li::marker { color: var(--accent-gold); }
 .ar-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .ar-tags span { font-size: 0.72rem; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--glass-border); padding: 0.22rem 0.65rem; border-radius: 3px; }
 
