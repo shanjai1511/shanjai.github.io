@@ -275,7 +275,7 @@
                         <div class="photo-ring r1"></div>
                         <div class="photo-ring r2"></div>
                         <div class="photo-dots"></div>
-                        <img src="assets/me/DSC_0688_c.JPG" alt="Shanjai R" class="hero-photo"
+                        <img src="assets/me/DSC_0688_c.JPG" alt="Shanjai R" class="hero-photo" width="2000" height="2000"
                             fetchpriority="high"
                             onerror="this.style.display='none';this.parentElement.classList.add('photo-fallback')">
                         <div class="photo-glow"></div>
@@ -761,7 +761,7 @@
                 <!-- Post 0: Medium Essay -->
                 <a href="https://medium.com/@shanjai1511/the-deepest-peace-is-found-in-chaos-7f0021dbf183" target="_blank" rel="noopener noreferrer" class="glass-card post-card">
                     <div class="post-img-wrap post-img--writing">
-                        <img src="assets/posts/post-medium-peace.png" alt="The Deepest Peace is Found in Chaos" loading="lazy" class="pc-slide active">
+                        <img src="assets/posts/post-medium-peace.jpg" alt="The Deepest Peace is Found in Chaos" loading="lazy" class="pc-slide active" width="1000" height="667">
                         <span class="post-tag post-tag--writing">✍️ Writing</span>
                     </div>
                     <div class="post-body">
@@ -848,43 +848,38 @@
                 <h2>Through the Lens</h2>
                 <div class="s-rule"></div>
             </div>
-            <p class="gallery-hint">Tap a highlight to explore</p>
+            <p class="gallery-hint">Moments worth remembering, and what they taught me</p>
 
-            <div class="story-highlights-row">
+            <div class="moments-grid">
 
-                <button class="story-item" data-story="0" aria-label="Poovar Island">
-                    <div class="story-ring">
-                        <img src="assets/posts/post-poovar-1.jpg" alt="Poovar Island" loading="lazy">
-                    </div>
-                    <span class="story-label">Poovar</span>
+                <button type="button" class="moment-card" data-moment="0" aria-label="View Poovar Island photos">
+                    <span class="moment-photo">
+                        <img src="assets/posts/post-poovar-1.jpg" alt="Poovar Island" loading="lazy" width="800" height="533">
+                    </span>
+                    <span class="moment-body">
+                        <span class="moment-quote">Some of the clearest thinking happens with no signal and a boat instead of a browser tab.</span>
+                        <span class="moment-meta">Poovar Island &middot; Feb 2025</span>
+                    </span>
                 </button>
 
-                <button class="story-item" data-story="1" aria-label="Udaipur Retreat">
-                    <div class="story-ring">
-                        <img src="assets/posts/post-udaipur-1.jpg" alt="Udaipur Retreat" loading="lazy">
-                    </div>
-                    <span class="story-label">Udaipur</span>
+                <button type="button" class="moment-card" data-moment="1" aria-label="View Udaipur team trip photos">
+                    <span class="moment-photo">
+                        <img src="assets/posts/post-udaipur-1.jpg" alt="Udaipur, with the Team" loading="lazy" width="788" height="1400">
+                    </span>
+                    <span class="moment-body">
+                        <span class="moment-quote">Palaces built centuries ago, still asking the same question good systems ask: what's built to last?</span>
+                        <span class="moment-meta">Udaipur, with the Team &middot; Sep 2024</span>
+                    </span>
                 </button>
 
-                <button class="story-item" data-story="2" aria-label="Graduation">
-                    <div class="story-ring">
-                        <img src="assets/posts/post-graduation-1.jpg" alt="Graduation" loading="lazy">
-                    </div>
-                    <span class="story-label">Graduation</span>
-                </button>
-
-                <button class="story-item" data-story="3" aria-label="PromptCloud Life">
-                    <div class="story-ring">
-                        <img src="assets/posts/post-promptcloud-1.jpg" alt="PromptCloud Life" loading="lazy">
-                    </div>
-                    <span class="story-label">Work Life</span>
-                </button>
-
-                <button class="story-item" data-story="4" aria-label="M.Tech BITS Pilani">
-                    <div class="story-ring">
-                        <img src="assets/posts/post-mtech-1.jpg" alt="M.Tech BITS Pilani" loading="lazy">
-                    </div>
-                    <span class="story-label">M.Tech</span>
+                <button type="button" class="moment-card" data-moment="2" aria-label="View Graduation photos">
+                    <span class="moment-photo">
+                        <img src="assets/posts/post-graduation-1.jpg" alt="Graduation" loading="lazy" width="800" height="533">
+                    </span>
+                    <span class="moment-body">
+                        <span class="moment-quote">Four years of struggling to see the point, then finally understanding why it mattered.</span>
+                        <span class="moment-meta">Graduation Day &middot; Jul 2024</span>
+                    </span>
                 </button>
 
             </div>
@@ -1066,33 +1061,15 @@
         Hire Me
     </a>
 
-    <!-- Story Viewer -->
-    <div class="story-viewer" id="storyViewer" aria-hidden="true" role="dialog" aria-modal="true">
-        <div class="sv-header">
-            <div class="sv-progress-bars" id="svProgressBars"></div>
-            <div class="sv-meta">
-                <div class="sv-avatar-wrap">
-                    <img src="assets/me/n.png" alt="Shanjai R" class="sv-avatar" onerror="this.style.display='none'">
-                </div>
-                <div class="sv-info">
-                    <span class="sv-name">Shanjai R</span>
-                    <span class="sv-subtitle" id="svSubtitle"></span>
-                </div>
-                <button type="button" class="sv-close" id="svClose" aria-label="Close story">✕</button>
-            </div>
-        </div>
-        <div class="sv-media-wrap">
-            <img id="svImg" src="" alt="" class="sv-img">
-        </div>
-        <button type="button" class="sv-tap-zone sv-tap-prev" id="svTapPrev" aria-label="Previous"></button>
-        <button type="button" class="sv-tap-zone sv-tap-next" id="svTapNext" aria-label="Next"></button>
-    </div>
-
     <!-- Image Lightbox -->
     <div class="lightbox-overlay" id="lbOverlay" aria-hidden="true" role="dialog" aria-modal="true">
         <button type="button" class="lb-close" id="lbClose" aria-label="Close">✕</button>
         <button type="button" class="lb-prev"  id="lbPrev"  aria-label="Previous"><i class="lni lni-chevron-left"></i></button>
-        <img class="lightbox-img" id="lbImg" src="" alt="">
+        <div class="lb-media">
+            <img class="lightbox-img" id="lbImg" src="" alt="">
+            <video class="lightbox-img" id="lbVideo" controls playsinline preload="metadata" style="display:none;"></video>
+            <p class="lb-quote" id="lbQuote"></p>
+        </div>
         <button type="button" class="lb-next"  id="lbNext"  aria-label="Next"><i class="lni lni-chevron-right"></i></button>
         <span class="lb-counter" id="lbCounter"></span>
     </div>
@@ -1568,13 +1545,16 @@
 
     // ─── Magnetic button micro-interaction ────────────────
     document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
+        let r = null;
+        btn.addEventListener('mouseenter', function () { r = this.getBoundingClientRect(); });
         btn.addEventListener('mousemove', function (e) {
-            const r = this.getBoundingClientRect();
+            if (!r) r = this.getBoundingClientRect();
             const dx = e.clientX - (r.left + r.width / 2);
             const dy = e.clientY - (r.top + r.height / 2);
             this.style.transform = `translate(${dx * 0.22}px, ${dy * 0.22}px)`;
         });
         btn.addEventListener('mouseleave', function () {
+            r = null;
             this.style.transform = '';
         });
     });
@@ -1583,159 +1563,17 @@
     (function () {
         const TILT = 7;
         document.querySelectorAll('.tilt-card').forEach(card => {
+            let r = null;
+            card.addEventListener('mouseenter', () => { r = card.getBoundingClientRect(); });
             card.addEventListener('mousemove', e => {
-                const r = card.getBoundingClientRect();
+                if (!r) r = card.getBoundingClientRect();
                 const x = (e.clientX - r.left) / r.width  - 0.5;
                 const y = (e.clientY - r.top)  / r.height - 0.5;
                 card.style.transform = `perspective(900px) rotateY(${x * TILT}deg) rotateX(${-y * TILT}deg) translateZ(6px)`;
                 card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
                 card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
             });
-            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-        });
-    })();
-
-    // ─── Instagram story highlights viewer ───────────────
-    (function () {
-        const STORIES = [
-            {
-                label: 'Poovar Island',
-                subtitle: 'Feb 2025 · Kerala',
-                photos: [
-                    'assets/posts/post-poovar-1.jpg',
-                    'assets/posts/post-poovar-2.jpg',
-                    'assets/posts/post-poovar-3.jpg',
-                    'assets/posts/post-poovar-4.jpg',
-                    'assets/posts/post-poovar-5.jpg',
-                ]
-            },
-            {
-                label: 'Udaipur Retreat',
-                subtitle: 'Sep 2024 · Rajasthan',
-                photos: ['assets/posts/post-udaipur-1.jpg']
-            },
-            {
-                label: 'Graduation Day',
-                subtitle: 'Jul 2024 · Coimbatore',
-                photos: [
-                    'assets/posts/post-graduation-1.jpg',
-                    'assets/posts/post-graduation-2.jpg',
-                    'assets/posts/post-graduation-3.jpg',
-                ]
-            },
-            {
-                label: 'PromptCloud Life',
-                subtitle: '2024 · Work & Team',
-                photos: [
-                    'assets/posts/post-promptcloud-1.jpg',
-                    'assets/posts/post-promptcloud-2.jpg',
-                    'assets/posts/post-promptcloud-3.jpg',
-                    'assets/posts/post-promptcloud-4.jpg',
-                    'assets/posts/post-promptcloud-5.jpg',
-                    'assets/posts/post-promptcloud-6.jpg',
-                    'assets/posts/post-promptcloud-7.jpg',
-                ]
-            },
-            {
-                label: 'M.Tech · BITS',
-                subtitle: 'Dec 2024 · BITS Pilani',
-                photos: ['assets/posts/post-mtech-1.jpg']
-            },
-        ];
-
-        const SLIDE_DURATION = 4000;
-        const viewer    = document.getElementById('storyViewer');
-        const svImg     = document.getElementById('svImg');
-        const svSub     = document.getElementById('svSubtitle');
-        const progBars  = document.getElementById('svProgressBars');
-        const tapPrev   = document.getElementById('svTapPrev');
-        const tapNext   = document.getElementById('svTapNext');
-        if (!viewer) return;
-
-        let storyIdx = 0, photoIdx = 0, timer = null, progTimer = null;
-        const seen = new Set();
-
-        function openStory(si) {
-            storyIdx = si; photoIdx = 0;
-            viewer.classList.add('sv-open');
-            viewer.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            renderSlide();
-        }
-        function closeStory() {
-            clearTimeout(timer); cancelAnimationFrame(progTimer);
-            viewer.classList.remove('sv-open');
-            viewer.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-            markSeen(storyIdx);
-        }
-        function markSeen(si) {
-            seen.add(si);
-            document.querySelector(`.story-item[data-story="${si}"]`)?.classList.add('sv-seen');
-        }
-        function renderSlide() {
-            clearTimeout(timer);
-            const story = STORIES[storyIdx];
-            svSub.textContent = story.subtitle;
-            buildProgressBars();
-
-            svImg.classList.add('sv-fade');
-            svImg.src = story.photos[photoIdx];
-            svImg.onload = () => svImg.classList.remove('sv-fade');
-            svImg.onerror = () => svImg.classList.remove('sv-fade');
-
-            animateProgress();
-            timer = setTimeout(() => advanceSlide(1), SLIDE_DURATION);
-        }
-        function buildProgressBars() {
-            const story = STORIES[storyIdx];
-            progBars.innerHTML = story.photos.map((_, i) =>
-                `<div class="sv-prog-bar${i < photoIdx ? ' sv-done' : i === photoIdx ? ' sv-active' : ''}">
-                    <div class="sv-prog-fill" id="svFill${i}"></div>
-                 </div>`
-            ).join('');
-        }
-        function animateProgress() {
-            const fill = document.getElementById(`svFill${photoIdx}`);
-            if (!fill) return;
-            let start = null;
-            function step(ts) {
-                if (!start) start = ts;
-                const p = Math.min((ts - start) / SLIDE_DURATION * 100, 100);
-                fill.style.width = p + '%';
-                fill.style.transition = 'none';
-                if (p < 100) progTimer = requestAnimationFrame(step);
-            }
-            progTimer = requestAnimationFrame(step);
-        }
-        function advanceSlide(dir) {
-            clearTimeout(timer); cancelAnimationFrame(progTimer);
-            const story = STORIES[storyIdx];
-            photoIdx += dir;
-            if (photoIdx >= story.photos.length) {
-                markSeen(storyIdx);
-                if (storyIdx + 1 < STORIES.length) { storyIdx++; photoIdx = 0; renderSlide(); }
-                else closeStory();
-            } else if (photoIdx < 0) {
-                if (storyIdx > 0) { storyIdx--; photoIdx = STORIES[storyIdx].photos.length - 1; renderSlide(); }
-                else { photoIdx = 0; renderSlide(); }
-            } else {
-                renderSlide();
-            }
-        }
-
-        tapNext?.addEventListener('click', () => advanceSlide(1));
-        tapPrev?.addEventListener('click', () => advanceSlide(-1));
-        document.getElementById('svClose')?.addEventListener('click', closeStory);
-        document.addEventListener('keydown', e => {
-            if (!viewer.classList.contains('sv-open')) return;
-            if (e.key === 'Escape')     closeStory();
-            if (e.key === 'ArrowRight') advanceSlide(1);
-            if (e.key === 'ArrowLeft')  advanceSlide(-1);
-        });
-
-        document.querySelectorAll('.story-item[data-story]').forEach(btn => {
-            btn.addEventListener('click', () => openStory(+btn.dataset.story));
+            card.addEventListener('mouseleave', () => { r = null; card.style.transform = ''; });
         });
     })();
 
@@ -1743,6 +1581,8 @@
     (function () {
         const overlay  = document.getElementById('lbOverlay');
         const lbImg    = document.getElementById('lbImg');
+        const lbVideo  = document.getElementById('lbVideo');
+        const lbQuote  = document.getElementById('lbQuote');
         const counter  = document.getElementById('lbCounter');
         const btnPrev  = document.getElementById('lbPrev');
         const btnNext  = document.getElementById('lbNext');
@@ -1759,10 +1599,32 @@
             overlay.classList.remove('lb-open');
             overlay.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            lbVideo.pause();
+        }
+        function isVideo(item) {
+            return item.type === 'video' || /\.mp4$/i.test(item.src);
         }
         function render() {
-            lbImg.src = gallery[cur].src;
-            lbImg.alt = gallery[cur].alt || '';
+            lbVideo.pause();
+            const item = gallery[cur];
+            if (isVideo(item)) {
+                lbImg.style.display = 'none';
+                lbVideo.style.display = '';
+                if (lbVideo.dataset.src !== item.src) {
+                    lbVideo.dataset.src = item.src;
+                    lbVideo.src = item.src;
+                    lbVideo.load();
+                }
+            } else {
+                lbVideo.style.display = 'none';
+                lbVideo.removeAttribute('src'); lbVideo.load();
+                lbImg.style.display = '';
+                lbImg.src = item.src;
+                lbImg.alt = item.alt || '';
+            }
+            const quote = item.quote;
+            lbQuote.textContent = quote || '';
+            lbQuote.style.display = quote ? '' : 'none';
             const multi = gallery.length > 1;
             counter.textContent = multi ? `${cur + 1} / ${gallery.length}` : '';
             btnPrev.style.display = multi ? '' : 'none';
@@ -1791,6 +1653,64 @@
         // Hobbies / photography card images
         document.querySelectorAll('.hb-photo img, .hb-travel img').forEach((img, i, arr) => {
             img.addEventListener('click', e => { e.stopPropagation(); openLb(Array.from(arr), i); });
+        });
+
+        // Gallery: "Moments" — each card opens its full photo set with its quote
+        const MOMENTS = [
+            {
+                label: 'Poovar Island',
+                photos: [
+                    { src: 'assets/posts/post-poovar-1.jpg', quote: "Good teams behave like good systems: the interesting part is never one person, it's how the handoffs work." },
+                    { src: 'assets/posts/post-poovar-2.jpg', quote: 'Scale changes everything. A team of six does not behave like a team of sixty, and neither does a pipeline.' },
+                    { src: 'assets/posts/post-poovar-3.jpg', quote: 'Some things never show up in a quarterly report, and they are usually the reason the quarter went well.' },
+                    { src: 'assets/posts/post-poovar-4.jpg', quote: 'Not everything needs constant attention. That is usually a sign it was built well.' },
+                    { src: 'assets/posts/post-poovar-5.jpg', quote: 'Some things are built to last precisely because nobody tried to optimize them.' },
+                    { src: 'assets/posts/post-poovar-6.jpg', quote: 'The best debugging happens far from a screen.' },
+                ]
+            },
+            {
+                label: 'Udaipur, with the Team',
+                photos: [
+                    { src: 'assets/posts/post-udaipur-1.jpg', quote: 'A good sunset does not need a dashboard to tell you it is working.' },
+                    { src: 'assets/posts/post-udaipur-2.jpg', quote: 'Everything that lasts centuries was maintained on purpose, not by accident.' },
+                    { src: 'assets/posts/post-udaipur-3.jpg', quote: 'Complexity is not the problem. Complexity nobody can explain is.' },
+                    { src: 'assets/posts/post-udaipur-4.jpg', quote: 'The best architecture disappears into the experience of using it.' },
+                    { src: 'assets/posts/post-udaipur-5.jpg', quote: 'Perspective is just a different vantage point on the same problem.' },
+                    { src: 'assets/posts/post-udaipur-6.jpg', quote: "Every intricate detail was once someone's decision to add one more layer. The skill is knowing when to stop." },
+                    { src: 'assets/posts/post-udaipur-7.jpg', quote: 'The most interesting signal is usually obscured, not missing. You just have to change your angle.' },
+                    { src: 'assets/posts/post-udaipur-8.jpg', quote: 'The view changes completely depending on how far back you stand from the problem.' },
+                    { src: 'assets/posts/post-udaipur-9.jpg', quote: "Everyone visits the same monument and walks away with a completely different photo." },
+                    { src: 'assets/posts/post-udaipur-10.jpg', quote: "The same landmark looks different depending on where you're standing when you look at it." },
+                    { src: 'assets/posts/post-udaipur-11.jpg', quote: 'Even a fountain is just a system for moving water in a circle. The pigeons showed up for the plumbing.' },
+                    { src: 'assets/posts/post-udaipur-12.jpg', quote: "A well-designed space doesn't need instructions. You just know where to sit." },
+                    { src: 'assets/posts/post-udaipur-13.jpg', quote: "Repetition isn't boring when every unit is load-bearing. That's just good structure." },
+                    { src: 'assets/posts/post-udaipur-14.jpg', quote: 'History is just a very old changelog nobody bothered to compress.' },
+                    { src: 'assets/posts/post-udaipur-15.jpg', quote: "Every wall here is someone's decision to remember something on purpose." },
+                    { src: 'assets/posts/post-udaipur-16.jpg', quote: "A pattern only reads as a pattern once you're far enough away to see the whole floor." },
+                    { src: 'assets/posts/post-udaipur-17.jpg', quote: 'The parts nobody has to look at closely are usually where the most care went.' },
+                    { src: 'assets/posts/post-udaipur-18.jpg', quote: 'Somebody spent a very long time on a detail most visitors walk past in five seconds. I respect that kind of patience.' },
+                    { src: 'assets/posts/post-udaipur-19.jpg', quote: 'The most delicate-looking structures are often the ones engineered the most carefully.' },
+                    { src: 'assets/posts/post-udaipur-20.jpg', quote: 'Empty space, deliberately kept empty, is still a design decision.' },
+                    { src: 'assets/videos/udaipur-team-trip-1.mp4', type: 'video', quote: 'A photo is a snapshot. This is closer to what monitoring is supposed to feel like: continuous, not a single point in time.' },
+                    { src: 'assets/videos/udaipur-team-trip-2.mp4', type: 'video', quote: "Some things don't compress into a single frame. You have to watch them happen." },
+                ]
+            },
+            {
+                label: 'Graduation Day',
+                photos: [
+                    { src: 'assets/posts/post-graduation-1.jpg', quote: 'Every system has an origin story nobody bothered to document.' },
+                    { src: 'assets/posts/post-graduation-2.jpg', quote: 'The people who helped debug your worst days rarely make it into the highlight reel. They should.' },
+                    { src: 'assets/posts/post-graduation-3.jpg', quote: 'Zoom out far enough and individual struggles start looking like a pattern.' },
+                ]
+            },
+        ];
+        document.querySelectorAll('.moment-card[data-moment]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const moment = MOMENTS[+btn.dataset.moment];
+                if (!moment) return;
+                const imgs = moment.photos.map(p => ({ src: p.src, alt: moment.label, quote: p.quote, type: p.type }));
+                openLb(imgs, 0);
+            });
         });
     })();
     </script>
