@@ -36,7 +36,7 @@
 }
 </script>
 </head>
-<body class="jrnl" data-base="../">
+<body class="jrnl">
 
 <header class="jrnl-header">
   <div class="jrnl-header-inner">
@@ -87,7 +87,7 @@
 
   <section class="jrnl-hero">
     <div class="container">
-      <a class="jrnl-hero-link" href="../the-most-expensive-data.html">
+      <a class="jrnl-hero-link" href="the-most-expensive-data.html">
         <div class="jrnl-hero-media">
           <div class="jrnl-media-label"><span>The data that changes nothing.</span></div>
         </div>
@@ -108,14 +108,14 @@
         <a class="jrnl-view-all" href="articles.html">All Articles</a>
       </div>
       <div class="jrnl-secondary-grid">
-        <a class="jrnl-card" href="../why-dashboards-fail.html">
+        <a class="jrnl-card" href="why-dashboards-fail.html">
           <div class="jrnl-card-media"><span class="jrnl-media-num">01</span></div>
           <div class="eyebrow">Analytics</div>
           <h3>Why Dashboards Fail Even When the Data Is Correct</h3>
           <p>Accuracy isn't the same as usefulness — why a technically correct dashboard can still fail to help anyone decide.</p>
           <div class="jrnl-card-meta">3 min read &middot; Aug 2026</div>
         </a>
-        <a class="jrnl-card" href="../when-more-data-makes-a-product-worse.html">
+        <a class="jrnl-card" href="when-more-data-makes-a-product-worse.html">
           <div class="jrnl-card-media"><span class="jrnl-media-num">02</span></div>
           <div class="eyebrow">Data</div>
           <h3>When More Data Makes a Product Worse</h3>
@@ -177,7 +177,7 @@
     var list = document.getElementById("jrnlLatestList");
     list.innerHTML = rest.map(function (a) {
       return (
-        '<a class="jrnl-list-row" href="../' + a.slug + '">' +
+        '<a class="jrnl-list-row" href="' + a.slug + '">' +
         '<div class="eyebrow">' + a.category + "</div>" +
         "<div><h3>" + a.title + "</h3><p>" + a.excerpt + "</p></div>" +
         '<div class="jrnl-card-meta">' + a.readTime + (a.readTime === "Interactive" ? "" : " read") + "<br>" + a.date + "</div>" +

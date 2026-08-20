@@ -1,7 +1,8 @@
 /* SHANJAI — Journal article index. Used for the homepage feed,
    the archive, topics, related-article modules and search.
-   Slugs are bare filenames (all articles live at the site root) —
-   callers must prefix the right relative path for their own depth. */
+   Slugs are bare filenames — these article pages live in /journal/
+   alongside index.html, articles.html, topics.html and about.html,
+   so no relative-path prefix is needed. */
 
 const JRNL_ARTICLES = [
   {

@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="jrnl" data-base="../">
+<body class="jrnl">
 
 <header class="jrnl-header">
   <div class="jrnl-header-inner">
@@ -143,7 +143,7 @@
       var items = active === "All" ? JRNL_ARTICLES : JRNL_ARTICLES.filter(function (a) { return a.category === active; });
       listEl.innerHTML = items.map(function (a) {
         return (
-          '<a class="jrnl-list-row" href="../' + a.slug + '">' +
+          '<a class="jrnl-list-row" href="' + a.slug + '">' +
           '<div class="eyebrow">' + a.category + "</div>" +
           "<div><h3>" + a.title + "</h3><p>" + a.excerpt + "</p></div>" +
           '<div class="jrnl-card-meta">' + a.readTime + (a.readTime === "Interactive" ? "" : " read") + "<br>" + a.date + "</div>" +

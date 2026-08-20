@@ -35,11 +35,6 @@
   var activeIndex = -1;
   var currentMatches = [];
 
-  // Articles always live at the site root. Journal hub pages (index/articles/
-  // topics/about) sit one folder down, so links to an article need "../".
-  // Root article pages set no data-base, so it defaults to "" (same folder).
-  var JRNL_BASE = (document.body && document.body.getAttribute("data-base")) || "";
-
   function renderResults(query) {
     if (!searchResults) return;
     var q = query.trim().toLowerCase();
@@ -66,7 +61,7 @@
 
     searchResults.innerHTML = currentMatches.map(function (a, i) {
       return (
-        '<a class="jrnl-search-result" href="' + JRNL_BASE + a.slug + '" data-index="' + i + '">' +
+        '<a class="jrnl-search-result" href="' + a.slug + '" data-index="' + i + '">' +
         '<div class="eyebrow">' + a.category + '</div>' +
         "<h3>" + escapeHtml(a.title) + "</h3>" +
         "<p>" + escapeHtml(a.excerpt) + "</p>" +

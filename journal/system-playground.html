@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSSV85L7QK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSSV85L7QK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Playground | Shanjai R</title>
+    <meta name="description" content="An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo, by Shanjai R." />
+    <link rel="icon" href="../assets/me/n.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://shanjai1511.github.io/journal/system-playground.html">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://shanjai1511.github.io/journal/system-playground.html">
+    <meta property="og:title"       content="System Playground | Shanjai R">
+    <meta property="og:description" content="An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo.">
+    <meta property="og:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="System Playground | Shanjai R">
+    <meta name="twitter:description" content="An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo.">
+    <meta name="twitter:image"       content="https://shanjai1511.github.io/assets/og-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "System Playground",
+      "url": "https://shanjai1511.github.io/journal/system-playground.html",
+      "description": "An interactive walkthrough of a data intelligence pipeline and a simplified competitive-intelligence demo.",
+      "author": { "@type": "Person", "name": "Shanjai R", "url": "https://shanjai1511.github.io/" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shanjai1511.github.io/journal/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://shanjai1511.github.io/journal/articles.html" },
+        { "@type": "ListItem", "position": 3, "name": "System Playground", "item": "https://shanjai1511.github.io/journal/system-playground.html" }
+      ]
+    }
+    </script>
+
+    <style>
+      /* System Playground — bespoke widget skin, monochrome, built on journal tokens.
+         Markup IDs/classes below are load-bearing for the interactive script at the
+         bottom of this page — do not rename them without updating the script. */
+      .viz-card{ border: 1px solid var(--line); padding: 32px; background: var(--bg); }
+      .viz-card-title{
+        font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+        letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint);
+        margin: 0 0 22px;
+      }
+      .viz-pipeline{ display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+      .viz-pipeline-node{
+        font-family: var(--sans); font-size: 0.8rem; font-weight: 600;
+        padding: 11px 16px; border: 1px solid var(--line); background: none;
+        cursor: pointer; color: var(--ink-soft); transition: background .15s ease, color .15s ease, border-color .15s ease;
+      }
+      .viz-pipeline-node:hover{ border-color: var(--ink); color: var(--ink); }
+      .viz-pipeline-node.is-active{ background: var(--ink); color: #fff; border-color: var(--ink); }
+      .viz-pipeline-arrow{ color: var(--line-strong); display: flex; padding: 0 2px; }
+      #tnsPipelinePanel{ margin-top: 22px !important; }
+      #tnsPipelinePanelTitle{
+        font-family: var(--headline); font-weight: 500; font-size: 1.3rem;
+        color: var(--ink); margin: 0 0 10px !important; text-transform: none !important;
+        letter-spacing: normal !important;
+      }
+      #tnsPipelinePanelText{
+        font-family: var(--serif) !important; font-size: 1.02rem !important;
+        color: var(--ink-soft) !important; line-height: 1.65 !important; margin: 0 !important;
+      }
+      .tns-demo{ margin-top: 28px; }
+      .tns-demo-controls{ display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin: 18px 0 4px; }
+      .tns-demo-select{
+        font-family: var(--sans); font-size: 0.9rem; padding: 13px 14px;
+        border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 280px;
+      }
+      .tns-demo-btn{
+        font-family: var(--sans); font-size: 0.76rem; font-weight: 600;
+        letter-spacing: 0.08em; text-transform: uppercase; padding: 13px 26px;
+        border: 1px solid var(--ink); background: none; color: var(--ink); cursor: pointer;
+        transition: background .15s ease, color .15s ease;
+      }
+      .tns-demo-btn:hover:not(:disabled){ background: var(--ink); color: #fff; }
+      .tns-demo-btn:disabled{ opacity: 0.45; cursor: default; }
+      .tns-demo-fields{
+        display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 20px 32px;
+      }
+      .cs-meta-item{
+        border-top: 1px solid var(--line); padding-top: 12px;
+        opacity: 0; transform: translateY(6px);
+        transition: opacity .35s ease, transform .35s ease;
+      }
+      .cs-meta-item.is-in{ opacity: 1; transform: none; }
+      .cs-meta-k{
+        display: block; font-family: var(--sans); font-size: 0.68rem;
+        font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--ink-faint); margin-bottom: 6px;
+      }
+      .cs-meta-v{ font-family: var(--serif); font-size: 1.02rem; color: var(--ink); }
+      .viz-source{ font-family: var(--sans); font-size: 0.78rem; color: var(--ink-faint); margin-top: 22px; }
+      @media (max-width: 640px){
+        .tns-demo-fields{ grid-template-columns: 1fr; }
+        .viz-pipeline{ flex-direction: column; align-items: stretch; }
+        .viz-pipeline-arrow{ display: none; }
+        .viz-pipeline-node{ width: 100%; text-align: center; }
+        .viz-card{ padding: 22px; }
+      }
+    </style>
+</head>
+
+<body class="jrnl">
+
+<header class="jrnl-header">
+  <div class="jrnl-header-inner">
+    <a href="index.html" class="jrnl-wordmark">SHANJAI</a>
+    <nav class="jrnl-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="articles.html" aria-current="page">Articles</a>
+      <a href="topics.html">Topics</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="jrnl-header-right">
+      <button type="button" class="jrnl-icon-btn" data-search-trigger aria-label="Search articles">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button type="button" class="jrnl-menu-btn" data-menu-trigger aria-label="Open menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<div class="jrnl-mobile-nav" aria-hidden="true">
+  <div class="jrnl-mobile-top">
+    <span class="jrnl-wordmark">SHANJAI</span>
+    <button type="button" class="jrnl-icon-btn" data-menu-close aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button type="button" class="jrnl-mobile-search" data-search-trigger>Search &rarr;</button>
+</div>
+
+<div class="jrnl-search-overlay">
+  <div class="jrnl-search-panel">
+    <div class="jrnl-search-field">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Search articles…" aria-label="Search articles" autocomplete="off">
+      <button type="button" data-search-close>Esc</button>
+    </div>
+    <div class="jrnl-search-results"></div>
+  </div>
+</div>
+
+<main>
+  <article>
+    <header class="jrnl-article-head">
+      <div class="eyebrow"><a href="articles.html?topic=Technology">Technology &middot; Interactive</a></div>
+      <h1>System Playground</h1>
+      <p class="jrnl-article-dek">A few simplified versions of the systems and ideas I've worked with. Explore how the pieces connect.</p>
+      <div class="jrnl-byline">
+        <strong>Shanjai R</strong>
+        <span class="sep">&middot;</span>
+        <span>Aug 2026</span>
+        <span class="sep">&middot;</span>
+        <span>Interactive</span>
+      </div>
+    </header>
+
+    <div class="jrnl-article-hero">
+      <div class="jrnl-article-hero-media"><span>Explore how raw data becomes a decision.</span></div>
+    </div>
+
+    <div class="jrnl-article-body">
+      <div class="viz-card">
+        <p class="viz-card-title">Data Intelligence Pipeline — select a stage</p>
+        <div class="viz-pipeline" id="tnsPipeline" role="group" aria-label="Data intelligence pipeline stages">
+          <button type="button" class="viz-pipeline-node" data-stage="raw">
+            <span class="viz-pipeline-node-label">Raw Data</span>
+          </button>
+          <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          <button type="button" class="viz-pipeline-node" data-stage="collection">
+            <span class="viz-pipeline-node-label">Collection</span>
+          </button>
+          <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          <button type="button" class="viz-pipeline-node" data-stage="processing">
+            <span class="viz-pipeline-node-label">Processing</span>
+          </button>
+          <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          <button type="button" class="viz-pipeline-node" data-stage="validation">
+            <span class="viz-pipeline-node-label">Validation</span>
+          </button>
+          <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          <button type="button" class="viz-pipeline-node" data-stage="analytics">
+            <span class="viz-pipeline-node-label">Analytics</span>
+          </button>
+          <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          <button type="button" class="viz-pipeline-node" data-stage="signal">
+            <span class="viz-pipeline-node-label">Business Signal</span>
+          </button>
+          <span class="viz-pipeline-arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          <button type="button" class="viz-pipeline-node" data-stage="decision">
+            <span class="viz-pipeline-node-label">Decision</span>
+          </button>
+        </div>
+        <div class="viz-card" id="tnsPipelinePanel" aria-live="polite">
+          <p class="viz-card-title" id="tnsPipelinePanelTitle">Raw Data</p>
+          <p id="tnsPipelinePanelText">Product listings, prices, rankings, availability and other marketplace signals.</p>
+        </div>
+      </div>
+
+      <div class="viz-card tns-demo" id="tnsDemo">
+        <p class="viz-card-title">From Product Data to Competitive Signal</p>
+        <p style="font-family: var(--serif); color: var(--ink-soft); font-size: 0.98rem; margin: 0 0 4px;">Pick a product to see the kind of signal this analysis produces.</p>
+        <div class="tns-demo-controls">
+          <select class="tns-demo-select" id="tnsDemoSelect" aria-label="Choose an example product"></select>
+          <button type="button" class="tns-demo-btn" id="tnsDemoBtn" aria-pressed="false" aria-controls="tnsDemoResult">Run Analysis</button>
+        </div>
+        <div class="tns-demo-result" id="tnsDemoResult">
+          <div class="tns-demo-result-inner">
+            <div class="tns-demo-fields" id="tnsDemoFields" style="padding-top:1.5rem;margin-top:1.5rem;border-top:1px solid var(--line);">
+              <div class="cs-meta-item"><span class="cs-meta-k">Brand</span><span class="cs-meta-v" data-field="brand"></span></div>
+              <div class="cs-meta-item"><span class="cs-meta-k">Category</span><span class="cs-meta-v" data-field="category"></span></div>
+              <div class="cs-meta-item"><span class="cs-meta-k">Competitive Set</span><span class="cs-meta-v" data-field="competitiveSet"></span></div>
+              <div class="cs-meta-item"><span class="cs-meta-k">Price Position</span><span class="cs-meta-v" data-field="pricePosition"></span></div>
+              <div class="cs-meta-item"><span class="cs-meta-k">Market Signal</span><span class="cs-meta-v" data-field="marketSignal"></span></div>
+              <div class="cs-meta-item"><span class="cs-meta-k">Possible Action</span><span class="cs-meta-v" data-field="possibleAction"></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="viz-source" id="tnsDemoStatus" aria-live="polite">Simplified demonstration based on the type of analysis I work with. Not live market data.</p>
+      </div>
+    </div>
+
+    <p class="jrnl-article-caption" style="text-align:left; padding-top: 8px;">Continue exploring: <a href="what-i-notice-that-others-miss.html">What I Notice That Others Miss</a> &middot; <a href="failure-to-learning.html">Failure &rarr; Learning</a> &middot; <a href="thinking-and-systems.html">All of Thinking &amp; Systems</a></p>
+
+    <nav class="jrnl-article-nav" aria-label="Article navigation">
+      <a href="thinking-and-systems.html" class="prev-col">
+        <div class="dir">Previous</div>
+        <h4>Thinking &amp; Systems</h4>
+      </a>
+      <a href="the-most-expensive-data.html" class="next-col">
+        <div class="dir">Next</div>
+        <h4>The Most Expensive Data Is the Data That Changes Nothing</h4>
+      </a>
+    </nav>
+
+    <section class="jrnl-more">
+      <h2>More from Shanjai</h2>
+      <div class="jrnl-more-grid">
+        <a class="jrnl-more-item" href="thinking-and-systems.html">
+          <div class="eyebrow">Systems</div>
+          <h3>Thinking &amp; Systems</h3>
+          <p>2 min read</p>
+        </a>
+        <a class="jrnl-more-item" href="philosophy.html">
+          <div class="eyebrow">Systems</div>
+          <h3>How I Think About Systems</h3>
+          <p>5 min read</p>
+        </a>
+        <a class="jrnl-more-item" href="impact.html">
+          <div class="eyebrow">Work</div>
+          <h3>What Changed Because I Worked On It</h3>
+          <p>5 min read</p>
+        </a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="jrnl-footer">
+  <div class="container">
+    <div class="jrnl-footer-top">
+      <div>
+        <div class="jrnl-footer-word">SHANJAI</div>
+        <p class="jrnl-footer-tag">Essays on data, systems, and the decisions behind them.</p>
+      </div>
+      <div class="jrnl-footer-cols">
+        <div class="jrnl-footer-col">
+          <h4>Journal</h4>
+          <a href="index.html">Home</a>
+          <a href="articles.html">Articles</a>
+          <a href="topics.html">Topics</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="jrnl-footer-col">
+          <h4>Elsewhere</h4>
+          <a href="../index.html">Portfolio ↗</a>
+          <a href="https://www.linkedin.com/in/shanjai/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/shanjai1511" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://medium.com/@shanjai1511" target="_blank" rel="noopener noreferrer">Medium ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="jrnl-footer-bottom">
+      <span>&copy; 2024–2026 Shanjai R</span>
+      <a href="mailto:shanjai1511@gmail.com">shanjai1511@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+<script>
+    // ─── System Playground: interactive pipeline ──────────
+    (function () {
+        const STAGES = {
+            raw:        { label: 'Raw Data',       text: 'Product listings, prices, rankings, availability and other marketplace signals.' },
+            collection: { label: 'Collection',      text: 'Collecting the information required to answer a specific business question.' },
+            processing: { label: 'Processing',      text: 'Cleaning, normalizing and transforming raw inputs into usable data.' },
+            validation: { label: 'Validation',      text: 'Detecting missing, inconsistent or unreliable information before it reaches downstream systems.' },
+            analytics:  { label: 'Analytics',       text: 'Finding patterns, comparisons and changes that matter.' },
+            signal:     { label: 'Business Signal', text: 'Turning analysis into something meaningful: a price violation, ranking movement, competitor change or other actionable signal.' },
+            decision:   { label: 'Decision',        text: 'The final purpose of the system — helping someone decide what to investigate, change, prioritize or do next.' }
+        };
+        const pipeline = document.getElementById('tnsPipeline');
+        const panelTitle = document.getElementById('tnsPipelinePanelTitle');
+        const panelText  = document.getElementById('tnsPipelinePanelText');
+        if (!pipeline) return;
+        const nodes = pipeline.querySelectorAll('.viz-pipeline-node');
+
+        function selectStage(key) {
+            const stage = STAGES[key];
+            if (!stage) return;
+            nodes.forEach(n => n.classList.toggle('is-active', n.dataset.stage === key));
+            panelTitle.textContent = stage.label;
+            panelText.textContent = stage.text;
+        }
+        nodes.forEach(node => {
+            node.addEventListener('click', () => selectStage(node.dataset.stage));
+            node.addEventListener('mouseenter', () => selectStage(node.dataset.stage));
+            node.addEventListener('focus', () => selectStage(node.dataset.stage));
+        });
+        selectStage('raw');
+    })();
+
+    // ─── System Playground: competitive intelligence demo ─
+    (function () {
+        const demo   = document.getElementById('tnsDemo');
+        const btn    = document.getElementById('tnsDemoBtn');
+        const select = document.getElementById('tnsDemoSelect');
+        const fields = document.getElementById('tnsDemoFields');
+        const status = document.getElementById('tnsDemoStatus');
+        if (!demo || !btn || !select || !fields) return;
+
+        const PRODUCTS = [
+            { name: 'Nike Air Max Running Shoes', brand: 'Nike', category: 'Running Shoes', competitiveSet: 'Adidas · ASICS · Puma · New Balance', pricePosition: 'Premium', marketSignal: 'High competitive density', possibleAction: 'Monitor competitor price movement and visibility.' },
+            { name: 'Samsung Galaxy Buds', brand: 'Samsung', category: 'Wireless Earbuds', competitiveSet: 'Apple · Sony · JBL · boAt', pricePosition: 'Mid-Premium', marketSignal: 'Moderate competitive density', possibleAction: 'Track feature-based positioning shifts.' },
+            { name: "L'Oréal Paris Revitalift Cream", brand: "L'Oréal", category: 'Skincare', competitiveSet: "Nivea · Olay · Pond's · Lakmé", pricePosition: 'Mid-range', marketSignal: 'High promotional activity', possibleAction: 'Monitor discount-driven ranking changes.' },
+            { name: 'Philips Air Fryer HD9252', brand: 'Philips', category: 'Kitchen Appliances', competitiveSet: 'Prestige · Bajaj · Havells · Inalsa', pricePosition: 'Premium', marketSignal: 'Rising category demand', possibleAction: 'Track new entrant pricing.' },
+            { name: "Levi's 511 Slim Fit Jeans", brand: "Levi's", category: 'Denim Apparel', competitiveSet: 'Wrangler · Pepe Jeans · Spykar · Flying Machine', pricePosition: 'Mid-Premium', marketSignal: 'Stable competitive set', possibleAction: 'Monitor seasonal discount cycles.' },
+            { name: 'boAt Rockerz 550 Headphones', brand: 'boAt', category: 'Audio Accessories', competitiveSet: 'JBL · Noise · Zebronics · pTron', pricePosition: 'Budget-Mid', marketSignal: 'High price volatility', possibleAction: 'Track flash-sale price undercutting.' },
+            { name: 'Whirlpool 265L Refrigerator', brand: 'Whirlpool', category: 'Large Appliances', competitiveSet: 'LG · Samsung · Haier · Godrej', pricePosition: 'Mid-range', marketSignal: 'Low competitive density', possibleAction: 'Monitor regional price variation.' },
+            { name: 'Maybelline Fit Me Foundation', brand: 'Maybelline', category: 'Cosmetics', competitiveSet: 'Lakmé · L\'Oréal · Sugar · Nykaa Cosmetics', pricePosition: 'Budget-Mid', marketSignal: 'High SKU proliferation', possibleAction: 'Track shade-level assortment gaps.' },
+            { name: 'Fossil Gen 6 Smartwatch', brand: 'Fossil', category: 'Wearables', competitiveSet: 'Noise · boAt · Titan · Fire-Boltt', pricePosition: 'Premium', marketSignal: 'Declining category share', possibleAction: 'Monitor feature-parity competitors.' },
+            { name: 'Amul Butter 500g', brand: 'Amul', category: 'Packaged Foods', competitiveSet: 'Britannia · Nestlé · Mother Dairy', pricePosition: 'Value', marketSignal: 'Low price elasticity', possibleAction: 'Track availability gaps across marketplaces.' },
+            { name: 'IKEA Malm Bed Frame', brand: 'IKEA', category: 'Furniture', competitiveSet: 'Urban Ladder · Pepperfry · Nilkamal · Wakefit', pricePosition: 'Mid-Premium', marketSignal: 'Emerging online competition', possibleAction: 'Monitor delivery-linked pricing.' },
+            { name: 'Dyson V8 Vacuum Cleaner', brand: 'Dyson', category: 'Home Appliances', competitiveSet: 'Eureka Forbes · Kent · Philips · Xiaomi', pricePosition: 'Premium', marketSignal: 'Low competitive density', possibleAction: 'Track premium segment entrants.' },
+            { name: 'Puma Ultra Sneakers', brand: 'Puma', category: 'Athletic Footwear', competitiveSet: 'Nike · Adidas · Skechers · Reebok', pricePosition: 'Mid-Premium', marketSignal: 'High promotional density', possibleAction: 'Monitor cross-platform price parity.' },
+            { name: 'Colgate MaxFresh Toothpaste', brand: 'Colgate', category: 'Oral Care', competitiveSet: 'Pepsodent · Sensodyne · Patanjali · Closeup', pricePosition: 'Value', marketSignal: 'Stable market share', possibleAction: 'Track regional pricing anomalies.' },
+            { name: 'Sony WH-1000XM5 Headphones', brand: 'Sony', category: 'Premium Headphones', competitiveSet: 'Bose · Apple · Sennheiser · JBL', pricePosition: 'Premium', marketSignal: 'High feature-based competition', possibleAction: 'Monitor firmware-driven repositioning.' },
+            { name: 'Nivea Men Face Wash', brand: 'Nivea', category: "Men's Grooming", competitiveSet: 'Garnier Men · Himalaya · Bombay Shaving Co', pricePosition: 'Budget-Mid', marketSignal: 'Rising new-entrant activity', possibleAction: 'Track D2C brand undercutting.' },
+            { name: 'Prestige Induction Cooktop', brand: 'Prestige', category: 'Kitchen Appliances', competitiveSet: 'Bajaj · Philips · Pigeon · Butterfly', pricePosition: 'Value-Mid', marketSignal: 'High SKU turnover', possibleAction: 'Monitor entry-tier price wars.' },
+            { name: 'Titan Raga Watch', brand: 'Titan', category: 'Fashion Watches', competitiveSet: 'Fastrack · Casio · Fossil · Daniel Wellington', pricePosition: 'Mid-Premium', marketSignal: 'Stable brand loyalty', possibleAction: 'Track gifting-season price shifts.' },
+            { name: 'Bata Comfort Sandals', brand: 'Bata', category: 'Casual Footwear', competitiveSet: 'Liberty · Paragon · Relaxo · Woodland', pricePosition: 'Value', marketSignal: 'High regional density', possibleAction: 'Monitor festive discount depth.' },
+            { name: 'Godrej Interio Almirah', brand: 'Godrej', category: 'Home Storage Furniture', competitiveSet: 'Nilkamal · Supreme · Delta · Steelage', pricePosition: 'Mid-range', marketSignal: 'Low online competitive density', possibleAction: 'Track offline-to-online price gaps.' },
+            { name: 'Xiaomi Mi Power Bank 20000mAh', brand: 'Xiaomi', category: 'Mobile Accessories', competitiveSet: 'Anker · Ambrane · Realme · boAt', pricePosition: 'Value-Mid', marketSignal: 'High price undercutting', possibleAction: 'Monitor capacity-to-price ratio shifts.' }
+        ];
+
+        PRODUCTS.forEach((p, i) => {
+            const opt = document.createElement('option');
+            opt.value = String(i);
+            opt.textContent = p.name;
+            select.appendChild(opt);
+        });
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const metaItems = Array.from(fields.querySelectorAll('.cs-meta-item'));
+        let busy = false;
+
+        function fillFields(product) {
+            fields.querySelectorAll('[data-field]').forEach(el => {
+                el.textContent = product[el.dataset.field];
+            });
+        }
+
+        function revealFields() {
+            metaItems.forEach((item, i) => {
+                item.classList.remove('is-in');
+                if (prefersReducedMotion) { item.classList.add('is-in'); return; }
+                item.style.transitionDelay = (i * 90) + 'ms';
+                requestAnimationFrame(() => requestAnimationFrame(() => item.classList.add('is-in')));
+            });
+        }
+
+        function runAnalysis() {
+            if (busy) return;
+            busy = true;
+            select.disabled = true;
+            btn.disabled = true;
+            btn.textContent = 'Analyzing…';
+            status.textContent = 'Running simplified analysis on the selected product…';
+
+            const delay = prefersReducedMotion ? 0 : 900;
+            setTimeout(() => {
+                const product = PRODUCTS[Number(select.value)];
+                fillFields(product);
+                demo.classList.add('is-run');
+                revealFields();
+                btn.setAttribute('aria-pressed', 'true');
+                btn.textContent = 'Reset';
+                btn.disabled = false;
+                select.disabled = false;
+                busy = false;
+                status.textContent = 'Simplified demonstration based on the type of analysis I work with. Not live market data.';
+            }, delay);
+        }
+
+        function resetDemo() {
+            demo.classList.remove('is-run');
+            metaItems.forEach(item => item.classList.remove('is-in'));
+            btn.setAttribute('aria-pressed', 'false');
+            btn.textContent = 'Run Analysis';
+            status.textContent = 'Simplified demonstration based on the type of analysis I work with. Not live market data.';
+        }
+
+        btn.addEventListener('click', () => {
+            if (demo.classList.contains('is-run')) resetDemo();
+            else runAnalysis();
+        });
+        select.addEventListener('change', () => { if (demo.classList.contains('is-run')) resetDemo(); });
+    })();
+</script>
+</body>
+</html>
