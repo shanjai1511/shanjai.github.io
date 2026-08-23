@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shanjai1511.github.io/sitemap.xml
+Sitemap: https://shanjai.in/sitemap.xml

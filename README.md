@@ -1,2 +1,2 @@
 My Portfolio
-https://shanjai1511.github.io/shanjai.github.io/
+https://shanjai.in/shanjai.github.io/

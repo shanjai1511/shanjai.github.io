@@ -67,7 +67,7 @@
 
   <!-- URL -->
   <text x="118" y="565" font-family="'Inter', Arial, sans-serif" font-weight="500"
-        font-size="20" fill="rgba(255,255,255,0.35)">shanjai1511.github.io</text>
+        font-size="20" fill="rgba(255,255,255,0.35)">shanjai.in</text>
 
   <!-- Avatar circle border -->
   <circle cx="960" cy="315" r="185" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="2"/>
