@@ -1908,3 +1908,55 @@ button.viz-pipeline-node.is-active { border-color: var(--accent-gold); backgroun
     .tns-demo-controls { flex-direction: column; align-items: stretch; }
     .tns-demo-select { min-width: 0; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   Visual richness — project visuals, timeline draw-in
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Skills: connecting rail between groups (interconnected stack) ── */
+.skills-editorial { position: relative; padding-left: 1.75rem; }
+.skills-editorial::before {
+    content: ''; position: absolute; left: 5px; top: 0.9rem; bottom: 0.9rem; width: 1px;
+    background: linear-gradient(180deg, var(--accent-gold) 0%, var(--glass-border) 16%, var(--glass-border) 100%);
+}
+.sk-group { position: relative; }
+.sk-group::before {
+    content: ''; position: absolute; left: -1.775rem; top: 1.8rem;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--bg-primary); border: 2px solid var(--glass-border);
+}
+.sk-group:first-child::before { border-color: var(--accent-gold); background: var(--accent-gold); box-shadow: 0 0 0 3px var(--accent-gold-light); }
+
+/* ── Experience: timeline line draws in on scroll ── */
+.ar-list::before { clip-path: inset(0 0 100% 0); transition: clip-path 1.5s var(--ease); }
+#experience.visible .ar-list::before { clip-path: inset(0 0 0% 0); }
+
+/* ── Projects: dedicated visual zone with mini pipeline diagrams ── */
+.project-visual {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem; background: var(--bg-secondary);
+    background-image: radial-gradient(rgba(20,33,61,0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+.project-card--compact { display: flex; padding: 0; }
+.project-card--compact .project-img-wrap { flex: 0 0 38%; min-height: 190px; }
+.project-body--compact { padding: 1.85rem 2.1rem; }
+.viz-pipeline--compact { flex-direction: column; gap: 0.55rem; width: 100%; max-width: 220px; }
+.viz-pipeline--compact .viz-pipeline-node { padding: 0.65rem 0.5rem; }
+.viz-pipeline--compact .viz-pipeline-node-label { font-size: 0.66rem; }
+.viz-pipeline--compact .viz-pipeline-arrow { flex-basis: 16px; }
+.viz-pipeline--compact .viz-pipeline-arrow svg { transform: rotate(90deg); }
+.viz-pipeline--flagship { max-width: 260px; }
+.viz-pipeline--flagship .viz-pipeline-node-label { font-size: 0.7rem; }
+
+@media (max-width: 992px) {
+    .project-card--compact .project-img-wrap { flex: 0 0 190px; }
+}
+
+/* ── Impact page: flow glyph beside each numeral ── */
+.wc-num-col { display: block; }
+.wc-flow-icon { display: block; margin: 0.5rem 0 0 0.1rem; color: var(--accent-gold); opacity: 0.6; }
+
+@media (prefers-reduced-motion: reduce) {
+    .ar-list::before { clip-path: inset(0 0 0% 0); transition: none; }
+}
