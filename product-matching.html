@@ -193,39 +193,57 @@
         </section>
 
         <section class="cs-narrative fade-in-up">
-            <p>Digital shelf analytics sounds simple until you try to compare "the same product" across two retailers and realize there's no shared ID connecting them. One site calls it "Men's Classic Leather Sneaker - White," another calls it "White Leather Trainers, Men"; the photos are shot differently, and the size and color attributes are structured differently too. A price comparison built on that mismatch isn't comparing the same product at all.</p>
-            <p>The matching layer is the unglamorous, load-bearing piece underneath every other kind of retail intelligence: pricing, assortment gaps, competitor benchmarking are all only as trustworthy as the matching beneath them. So I built a pipeline that reconciles listings across competing fashion retailers despite inconsistent titles, images, and attributes, turning approximate comparisons into genuinely apples-to-apples ones.</p>
-
-            <blockquote class="cs-pullquote">A false match silently corrupts everything built on top of it. A missed match is just a gap.</blockquote>
-
-            <p>That asymmetry shaped nearly every decision in the matching logic. It's tempting to tune a matcher for the highest overall accuracy, but the cost of a false positive and a false negative aren't the same, so the system deliberately errs toward caution: when it isn't confident two listings are the same product, it says so, rather than guessing.</p>
-            <p>The tradeoff is a familiar one to anyone who's built entity resolution: optimizing for accuracy on paper isn't the same as optimizing for the outcomes that actually matter downstream.</p>
-
+            <p>Digital shelf analytics sounds simple until you try to compare "the same product" across two retailers and realize there's no shared ID connecting them. One site calls it "Men's Classic Leather Sneaker - White," another calls it "White Leather Trainers, Men"; the photos are shot differently, and the size and color attributes are structured differently too.</p>
             <div class="proj-tags"><span>Python</span><span>Data Validation</span><span>Elasticsearch</span></div>
         </section>
 
-        <section class="viz-section fade-in-up">
-            <h2 class="cs-section-title">Pipeline & Results</h2>
-            <p class="viz-intro">The stage-by-stage shape of the matching pipeline and the aggregate outcomes it produced &mdash; matching 3,300 SKUs across 9 Indian e-commerce platforms.</p>
-
-            <div class="glass-card viz-card">
-                <p class="viz-card-title">Architecture</p>
-                <div class="viz-pipeline">
-                    <div class="viz-pipeline-node"><i class="lni lni-list" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Input · SKU Master</span></div>
-                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-                    <div class="viz-pipeline-node"><i class="lni lni-search-alt" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Search & Discovery</span></div>
-                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-                    <div class="viz-pipeline-node"><i class="lni lni-pin" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Extraction & Matching</span></div>
-                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-                    <div class="viz-pipeline-node"><i class="lni lni-reload" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Retry & Error Handling</span></div>
-                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-                    <div class="viz-pipeline-node"><i class="lni lni-bulb" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">AI Diagnostics</span></div>
-                    <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-                    <div class="viz-pipeline-node"><i class="lni lni-bar-chart" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Output & Monitoring</span></div>
+        <section class="fade-in-up">
+            <h2 class="cs-section-title">The Build</h2>
+            <div class="cs-flow">
+                <div class="cs-flow-step cs-problem">
+                    <span class="cs-flow-num">01</span>
+                    <span class="cs-label">Problem</span>
+                    <p>A price comparison built on a title mismatch isn't comparing the same product at all. The matching layer is the unglamorous, load-bearing piece underneath every other kind of retail intelligence: pricing, assortment gaps and competitor benchmarking are all only as trustworthy as the matching beneath them.</p>
                 </div>
-                <p class="viz-source">Tech: Python · Playwright · BeautifulSoup · Groq API · ScraperAPI · Google Sheets API</p>
+                <div class="cs-flow-step">
+                    <span class="cs-flow-num">02</span>
+                    <span class="cs-label">Data</span>
+                    <p>A 3,300-SKU master list from a fashion retail client, matched against listings across 9 Indian e-commerce platforms &mdash; inconsistent titles, differently shot images, and differently structured size and color attributes on every site.</p>
+                </div>
+                <div class="cs-flow-step cs-approach">
+                    <span class="cs-flow-num">03</span>
+                    <span class="cs-label">Approach</span>
+                    <p>A pipeline that reconciles listings across competing fashion retailers despite inconsistent titles, images, and attributes, turning approximate comparisons into genuinely apples-to-apples ones.</p>
+                    <div class="viz-pipeline">
+                        <div class="viz-pipeline-node"><i class="lni lni-list" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Input · SKU Master</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-search-alt" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Search & Discovery</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-pin" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Extraction & Matching</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-reload" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Retry & Error Handling</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-bulb" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">AI Diagnostics</span></div>
+                        <span class="viz-pipeline-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+                        <div class="viz-pipeline-node"><i class="lni lni-bar-chart" style="color:var(--accent-gold);font-size:1.1rem;"></i><span class="viz-pipeline-node-label">Output & Monitoring</span></div>
+                    </div>
+                    <p class="viz-source">Tech: Python · Playwright · BeautifulSoup · Groq API · ScraperAPI · Google Sheets API</p>
+                </div>
+                <div class="cs-flow-step">
+                    <span class="cs-flow-num">04</span>
+                    <span class="cs-label">Validation</span>
+                    <blockquote class="cs-pullquote" style="margin-top:0;">A false match silently corrupts everything built on top of it. A missed match is just a gap.</blockquote>
+                    <p>That asymmetry shaped nearly every decision in the matching logic. It's tempting to tune a matcher for the highest overall accuracy, but the cost of a false positive and a false negative aren't the same, so the system deliberately errs toward caution: when it isn't confident two listings are the same product, it says so, rather than guessing. Optimizing for accuracy on paper isn't the same as optimizing for the outcomes that actually matter downstream.</p>
+                </div>
+                <div class="cs-flow-step">
+                    <span class="cs-flow-num">05</span>
+                    <span class="cs-label">Result</span>
+                    <p>Matching 3,300 SKUs across 9 Indian e-commerce platforms:</p>
+                </div>
             </div>
+        </section>
 
+        <section class="viz-section fade-in-up">
             <div class="viz-stats">
                 <div class="viz-stat"><span class="viz-stat-val">3,300</span><span class="viz-stat-label">Total SKUs</span></div>
                 <div class="viz-stat"><span class="viz-stat-val">2,872</span><span class="viz-stat-label">URLs Matched</span></div>
@@ -282,6 +300,7 @@
                     </div>
                 </div>
             </div>
+            <p class="viz-source" style="margin-top:0.5rem;"><strong>Impact:</strong> 87% of the catalog matched automatically, cutting manual reconciliation effort by roughly 68% and turning approximate cross-retailer comparisons into ones a pricing or assortment team can actually trust.</p>
         </section>
 
         <section class="cs-cta fade-in-up">
