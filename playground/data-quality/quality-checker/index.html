@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Quality Checker | Playground | Shanjai R</title>
-    <meta name="description" content="Upload a CSV and get an explained data quality score — computed entirely in your browser." />
+    <meta name="description" content="Upload a CSV and get an explained data quality score: computed entirely in your browser." />
     <link rel="icon" href="../../../assets/me/n.png">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/data-quality/quality-checker/">
@@ -22,12 +22,12 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://shanjai.in/playground/data-quality/quality-checker/">
     <meta property="og:title"       content="Data Quality Checker">
-    <meta property="og:description" content="Upload a CSV and get an explained data quality score — computed entirely in your browser.">
+    <meta property="og:description" content="Upload a CSV and get an explained data quality score: computed entirely in your browser.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Data Quality Checker">
-    <meta name="twitter:description" content="Upload a CSV and get an explained data quality score — computed entirely in your browser.">
+    <meta name="twitter:description" content="Upload a CSV and get an explained data quality score: computed entirely in your browser.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -160,7 +160,7 @@
         <section class="cs-hero fade-in-up" style="max-width:760px;">
             <span class="proj-status">🧹 Data Cleaning &amp; Quality</span>
             <h1>Data Quality Checker</h1>
-            <p class="cs-hero-lede">Upload a CSV, or try the sample — get a quality score, explained.</p>
+            <p class="cs-hero-lede">Upload a CSV, or try the sample: get a quality score, explained.</p>
         </section>
 
         <section class="fade-in-up" style="max-width:760px; margin: 0 auto; padding-top: 0;">
@@ -178,7 +178,7 @@
             <div class="glass-card pg-panel" id="pgResultsPanel" style="display:none;">
                 <div style="text-align:center; margin-bottom:1.5rem;">
                     <span class="viz-stat-label">Data Quality Score</span>
-                    <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--accent-gold);" id="pgScoreVal">—</div>
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--accent-gold);" id="pgScoreVal">–</div>
                 </div>
                 <div class="pg-detail-grid" id="pgScoreBreakdown"></div>
                 <p class="viz-card-title" style="margin:1.5rem 0 1rem;">Per-Column Detail</p>
@@ -189,7 +189,7 @@
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>The score out of 100 is not a universal industry standard — it's a weighted combination of three things this tool can actually measure: completeness (40%, how few cells are empty), uniqueness (30%, how few rows are exact duplicates), and validity (30%, how many numeric columns contain a value that looks structurally wrong, like a negative price).</p>
+                <p>The score out of 100 is not a universal industry standard: it's a weighted combination of three things this tool can actually measure: completeness (40%, how few cells are empty), uniqueness (30%, how few rows are exact duplicates), and validity (30%, how many numeric columns contain a value that looks structurally wrong, like a negative price).</p>
             </div>
 
             <details class="pg-hood">
@@ -210,7 +210,7 @@
                         <div class="pg-hood-col"><h4>Inputs</h4><ul><li>Any CSV with a header row</li></ul></div>
                         <div class="pg-hood-col"><h4>Processing</h4><ul><li>Completeness, uniqueness, validity scoring</li><li>IQR-based outlier detection</li></ul></div>
                         <div class="pg-hood-col"><h4>Output</h4><ul><li>Overall score</li><li>Per-column breakdown</li></ul></div>
-                        <div class="pg-hood-col"><h4>Technology</h4><ul><li>Vanilla JavaScript, FileReader API</li><li>No server — nothing leaves your browser</li></ul></div>
+                        <div class="pg-hood-col"><h4>Technology</h4><ul><li>Vanilla JavaScript, FileReader API</li><li>No server: nothing leaves your browser</li></ul></div>
                     </div>
                 </div>
             </details>
@@ -273,7 +273,7 @@
             document.getElementById('pgScoreVal').textContent = q.score + ' / 100';
             document.getElementById('pgScoreBreakdown').innerHTML = `
                 <div class="pg-detail-item"><span class="pg-detail-k">Completeness (40%)</span><span class="pg-detail-v">${PG.pct(q.completeness)}</span></div>
-                <div class="pg-detail-item"><span class="pg-detail-k">Uniqueness (30%)</span><span class="pg-detail-v">${PG.pct(q.uniqueness)} — ${q.duplicateCount} duplicate row(s)</span></div>
+                <div class="pg-detail-item"><span class="pg-detail-k">Uniqueness (30%)</span><span class="pg-detail-v">${PG.pct(q.uniqueness)} (${q.duplicateCount} duplicate row(s))</span></div>
                 <div class="pg-detail-item"><span class="pg-detail-k">Validity (30%)</span><span class="pg-detail-v">${PG.pct(q.validity)}</span></div>
                 <div class="pg-detail-item"><span class="pg-detail-k">Rows Analyzed</span><span class="pg-detail-v">${q.rowCount}${parsed.truncated ? ' (truncated)' : ''}</span></div>
             `;

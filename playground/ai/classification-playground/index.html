@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classification Playground | Playground | Shanjai R</title>
-    <meta name="description" content="Move a threshold and watch accuracy, precision and recall trade off in real time — an interactive demo." />
+    <meta name="description" content="Move a threshold and watch accuracy, precision and recall trade off in real time: an interactive demo." />
     <link rel="icon" href="../../../assets/me/n.png">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/ai/classification-playground/">
@@ -22,12 +22,12 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://shanjai.in/playground/ai/classification-playground/">
     <meta property="og:title"       content="Classification Playground">
-    <meta property="og:description" content="Move a threshold and watch accuracy, precision and recall trade off in real time — an interactive demo.">
+    <meta property="og:description" content="Move a threshold and watch accuracy, precision and recall trade off in real time: an interactive demo.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Classification Playground">
-    <meta name="twitter:description" content="Move a threshold and watch accuracy, precision and recall trade off in real time — an interactive demo.">
+    <meta name="twitter:description" content="Move a threshold and watch accuracy, precision and recall trade off in real time: an interactive demo.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -168,7 +168,7 @@
                 <div class="pg-slider-row">
                     <div class="pg-slider-top">
                         <span class="pg-slider-name">Predict "high demand" if price is below</span>
-                        <span class="pg-slider-val" id="pgThresholdVal">—</span>
+                        <span class="pg-slider-val" id="pgThresholdVal">–</span>
                     </div>
                     <input type="range" class="pg-slider" id="pgThreshold" min="899" max="6599" step="100" value="3500">
                 </div>
@@ -178,7 +178,7 @@
                     <span class="pg-legend-item"><span class="pg-legend-dot" style="background:var(--viz-track);border:1px solid var(--glass-border);"></span>Actual: low demand</span>
                     <span class="pg-legend-item"><span class="pg-legend-line" style="background:var(--accent-gold);"></span>Your threshold</span>
                 </div>
-                <p class="pg-demo-note"><i class="lni lni-warning"></i> "High demand" here means units_sold above the dataset's median — a label defined for this demo, not a business rule.</p>
+                <p class="pg-demo-note"><i class="lni lni-warning"></i> "High demand" here means units_sold above the dataset's median: a label defined for this demo, not a business rule.</p>
             </div>
 
             <div class="glass-card pg-panel">
@@ -189,7 +189,7 @@
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>This is the simplest possible classifier: a single threshold on one feature. Move it lower and you catch fewer high-demand products but with more confidence (higher precision); move it higher and you catch more but with more false alarms (higher recall). There's no single "best" threshold — it depends on which mistake costs more.</p>
+                <p>This is the simplest possible classifier: a single threshold on one feature. Move it lower and you catch fewer high-demand products but with more confidence (higher precision); move it higher and you catch more but with more false alarms (higher recall). There's no single "best" threshold: it depends on which mistake costs more.</p>
             </div>
             <details class="pg-hood">
                 <summary>Under the Hood</summary>
@@ -265,7 +265,7 @@
             const dots = prices.map((p, i) => {
                 const isHigh = actualHighDemand[i];
                 const color = isHigh ? 'var(--viz-good)' : 'var(--viz-track)';
-                return `<span class="pg-strip-dot" style="left:${scale(p).toFixed(1)}%; background:${color};" title="₹${p} — ${isHigh ? 'high demand' : 'low demand'}"></span>`;
+                return `<span class="pg-strip-dot" style="left:${scale(p).toFixed(1)}%; background:${color};" title="₹${p}: ${isHigh ? 'high demand' : 'low demand'}"></span>`;
             }).join('');
             const linePos = scale(threshold);
             document.getElementById('pgClassStrip').innerHTML = `
@@ -277,9 +277,9 @@
             `;
 
             // Precision is undefined (0/0), not "0%", when the threshold makes zero positive
-            // predictions — showing 0% there would read as "always wrong" instead of "made no call".
+            // predictions: showing 0% there would read as "always wrong" instead of "made no call".
             const noPositivePredictions = (evalResult.tp + evalResult.fp) === 0;
-            const precisionText = noPositivePredictions ? '— (no predictions made)' : PG.pct(evalResult.precision);
+            const precisionText = noPositivePredictions ? '– (no predictions made)' : PG.pct(evalResult.precision);
             document.getElementById('pgClassMetrics').innerHTML = `
                 <div class="pg-detail-item"><span class="pg-detail-k">Accuracy</span><span class="pg-detail-v">${PG.pct(evalResult.accuracy)}</span></div>
                 <div class="pg-detail-item"><span class="pg-detail-k">Precision</span><span class="pg-detail-v">${precisionText}</span></div>

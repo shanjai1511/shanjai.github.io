@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duplicate Detector | Playground | Shanjai R</title>
-    <meta name="description" content="Upload a CSV and find exact and near-duplicate rows, with the differing field called out — computed entirely in your browser." />
+    <meta name="description" content="Upload a CSV and find exact and near-duplicate rows, with the differing field called out: computed entirely in your browser." />
     <link rel="icon" href="../../../assets/me/n.png">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/data-quality/duplicate-detector/">
@@ -22,12 +22,12 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://shanjai.in/playground/data-quality/duplicate-detector/">
     <meta property="og:title"       content="Duplicate Detector">
-    <meta property="og:description" content="Upload a CSV and find exact and near-duplicate rows, with the differing field called out — computed entirely in your browser.">
+    <meta property="og:description" content="Upload a CSV and find exact and near-duplicate rows, with the differing field called out: computed entirely in your browser.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Duplicate Detector">
-    <meta name="twitter:description" content="Upload a CSV and find exact and near-duplicate rows, with the differing field called out — computed entirely in your browser.">
+    <meta name="twitter:description" content="Upload a CSV and find exact and near-duplicate rows, with the differing field called out: computed entirely in your browser.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -160,7 +160,7 @@
         <section class="cs-hero fade-in-up" style="max-width:760px;">
             <span class="proj-status">🧹 Data Cleaning &amp; Quality</span>
             <h1>Duplicate Detector</h1>
-            <p class="cs-hero-lede">Upload a CSV, or try the sample — find exact duplicates and near-duplicates.</p>
+            <p class="cs-hero-lede">Upload a CSV, or try the sample: find exact duplicates and near-duplicates.</p>
         </section>
 
         <section class="fade-in-up" style="max-width:760px; margin: 0 auto; padding-top: 0;">
@@ -180,14 +180,14 @@
                 <div class="pg-result-list" id="pgExactList"></div>
                 <p class="viz-card-title" style="margin:1.75rem 0 1rem;">Near-Duplicates (differ in exactly one field) <span id="pgNearCount" class="pg-meta-tag"></span></p>
                 <div class="pg-result-list" id="pgNearList"></div>
-                <p id="pgNearSkippedNote" class="pg-demo-note" style="display:none;"><i class="lni lni-warning"></i> Skipped near-duplicate search — dataset is too large for a row-by-row comparison in the browser.</p>
+                <p id="pgNearSkippedNote" class="pg-demo-note" style="display:none;"><i class="lni lni-warning"></i> Skipped near-duplicate search: dataset is too large for a row-by-row comparison in the browser.</p>
             </div>
         </section>
 
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>An exact duplicate matches on every column. A near-duplicate matches on every column except one — often a sign of a typo, a re-entry with a corrected field, or an update that should have overwritten the original row instead of adding a new one. Both are common, quiet sources of inflated counts and skewed averages.</p>
+                <p>An exact duplicate matches on every column. A near-duplicate matches on every column except one: often a sign of a typo, a re-entry with a corrected field, or an update that should have overwritten the original row instead of adding a new one. Both are common, quiet sources of inflated counts and skewed averages.</p>
             </div>
 
             <details class="pg-hood">
@@ -204,7 +204,7 @@
                         <div class="pg-hood-col"><h4>Inputs</h4><ul><li>Any CSV with a header row</li></ul></div>
                         <div class="pg-hood-col"><h4>Processing</h4><ul><li>Row-key matching</li><li>Single-column-diff matching</li></ul></div>
                         <div class="pg-hood-col"><h4>Output</h4><ul><li>Exact duplicate pairs</li><li>Near-duplicate pairs with the differing column</li></ul></div>
-                        <div class="pg-hood-col"><h4>Technology</h4><ul><li>Vanilla JavaScript, FileReader API</li><li>No server — nothing leaves your browser</li></ul></div>
+                        <div class="pg-hood-col"><h4>Technology</h4><ul><li>Vanilla JavaScript, FileReader API</li><li>No server: nothing leaves your browser</li></ul></div>
                     </div>
                 </div>
             </details>

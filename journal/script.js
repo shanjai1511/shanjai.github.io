@@ -1,4 +1,4 @@
-/* SHANJAI — Journal: mobile nav, header scroll state, search overlay. */
+/* SHANJAI Journal: mobile nav, header scroll state, search overlay. */
 (function () {
   "use strict";
 

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   Playground — shared utilities
+   Playground: shared utilities
    Plain vanilla JS, no build step, no external dependencies.
    Every experiment page includes this file and calls into
    the PG namespace. Keeps each experiment's own <script>
@@ -387,7 +387,7 @@
 
     /* ── Per-row issue detection (Find the Problem) ──
        For each row, flags missing cells, negative values in numeric columns,
-       and IQR outliers within their own column — the same signals
+       and IQR outliers within their own column: the same signals
        assessDataQuality aggregates, reported per-row instead of as a score
        so a visitor can point at a specific row and be told what's wrong
        with it (or that nothing is). */

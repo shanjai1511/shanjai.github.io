@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Playground | Playground | Shanjai R</title>
-    <meta name="description" content="Fit a line through two columns with ordinary least squares, then predict a new value — an interactive demo." />
+    <meta name="description" content="Fit a line through two columns with ordinary least squares, then predict a new value: an interactive demo." />
     <link rel="icon" href="../../../assets/me/n.png">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/ai/prediction-playground/">
@@ -22,12 +22,12 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://shanjai.in/playground/ai/prediction-playground/">
     <meta property="og:title"       content="Prediction Playground">
-    <meta property="og:description" content="Fit a line through two columns with ordinary least squares, then predict a new value — an interactive demo.">
+    <meta property="og:description" content="Fit a line through two columns with ordinary least squares, then predict a new value: an interactive demo.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Prediction Playground">
-    <meta name="twitter:description" content="Fit a line through two columns with ordinary least squares, then predict a new value — an interactive demo.">
+    <meta name="twitter:description" content="Fit a line through two columns with ordinary least squares, then predict a new value: an interactive demo.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -177,7 +177,7 @@
                 </div>
                 <div id="pgScatterWrap" style="text-align:center;"></div>
                 <p id="pgEquationText" style="text-align:center; font-size:0.95rem; color:var(--text-secondary); margin-top:1rem;"></p>
-                <p class="pg-demo-note"><i class="lni lni-warning"></i> Demonstration using a representative 20-row sample dataset — a simple linear fit, not a production ML model.</p>
+                <p class="pg-demo-note"><i class="lni lni-warning"></i> Demonstration using a representative 20-row sample dataset: a simple linear fit, not a production ML model.</p>
             </div>
 
             <div class="glass-card pg-panel">
@@ -185,14 +185,14 @@
                     <label for="pgXInput">Try a value for X</label>
                     <input type="number" id="pgXInput" class="pg-select" style="max-width:220px;">
                 </div>
-                <p style="margin-top:1rem; font-size:1rem;">Predicted Y: <strong id="pgPredictedY" style="color:var(--accent-gold); font-family:'Cormorant Garamond',serif; font-size:1.4rem;">—</strong></p>
+                <p style="margin-top:1rem; font-size:1rem;">Predicted Y: <strong id="pgPredictedY" style="color:var(--accent-gold); font-family:'Cormorant Garamond',serif; font-size:1.4rem;">–</strong></p>
             </div>
         </section>
 
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>This fits the simplest possible model — a straight line, y = slope&times;x + intercept — using ordinary least squares. R&sup2; (0 to 1) says how much of Y's variation the line actually explains; a low R&sup2; means the line is a weak predictor even if it's the best straight line available. This is a teaching tool, not a forecasting system: real prediction problems need more than one input and a lot more validation.</p>
+                <p>This fits the simplest possible model (a straight line, y = slope&times;x + intercept) using ordinary least squares. R&sup2; (0 to 1) says how much of Y's variation the line actually explains; a low R&sup2; means the line is a weak predictor even if it's the best straight line available. This is a teaching tool, not a forecasting system: real prediction problems need more than one input and a lot more validation.</p>
             </div>
 
             <details class="pg-hood">
@@ -303,7 +303,7 @@
         }
 
         function updatePrediction() {
-            if (!currentFit || xInput.value === '') { document.getElementById('pgPredictedY').textContent = '—'; return; }
+            if (!currentFit || xInput.value === '') { document.getElementById('pgPredictedY').textContent = '–'; return; }
             const x = Number(xInput.value);
             document.getElementById('pgPredictedY').textContent = currentFit.predict(x).toFixed(2);
         }

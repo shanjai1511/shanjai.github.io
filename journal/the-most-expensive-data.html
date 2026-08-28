@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Most Expensive Data Is the Data That Changes Nothing | Shanjai R</title>
-    <meta name="description" content="Shanjai R on why the costliest data isn't the data that's wrong — it's the data nobody ever acts on. Notes from data engineering and e-commerce intelligence work." />
+    <meta name="description" content="Shanjai R on why the costliest data isn't the data that's wrong: it's the data nobody ever acts on. Notes from data engineering and e-commerce intelligence work." />
     <link rel="icon" href="../assets/me/n.png">
     <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#ffffff">
@@ -23,12 +23,12 @@
     <meta property="og:type"        content="article">
     <meta property="og:url"         content="https://shanjai.in/journal/the-most-expensive-data.html">
     <meta property="og:title"       content="The Most Expensive Data Is the Data That Changes Nothing">
-    <meta property="og:description" content="Why the costliest data isn't the data that's wrong — it's the data nobody ever acts on.">
+    <meta property="og:description" content="Why the costliest data isn't the data that's wrong: it's the data nobody ever acts on.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="The Most Expensive Data Is the Data That Changes Nothing">
-    <meta name="twitter:description" content="Why the costliest data isn't the data that's wrong — it's the data nobody ever acts on.">
+    <meta name="twitter:description" content="Why the costliest data isn't the data that's wrong: it's the data nobody ever acts on.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
       "author": { "@type": "Person", "name": "Shanjai R", "url": "https://shanjai.in/" },
       "datePublished": "2026-08-16",
       "dateModified": "2026-08-20",
-      "description": "Why the costliest data isn't the data that's wrong — it's the data nobody ever acts on.",
+      "description": "Why the costliest data isn't the data that's wrong: it's the data nobody ever acts on.",
       "image": "https://shanjai.in/assets/og-preview.png",
       "mainEntityOfPage": "https://shanjai.in/journal/the-most-expensive-data.html"
     }
@@ -113,7 +113,7 @@
     <header class="jrnl-article-head">
       <div class="eyebrow"><a href="articles.html?topic=Data">Data</a></div>
       <h1>The Most Expensive Data Is the Data That Changes Nothing</h1>
-      <p class="jrnl-article-dek">Why the costliest data isn't the data that's wrong — it's the data nobody ever acts on.</p>
+      <p class="jrnl-article-dek">Why the costliest data isn't the data that's wrong: it's the data nobody ever acts on.</p>
       <div class="jrnl-byline">
         <strong>Shanjai R</strong>
         <span class="sep">&middot;</span>
@@ -131,18 +131,18 @@
       <p>Most conversations about data quality focus on whether the data is accurate. Fewer focus on whether the data was worth collecting in the first place. In practice, I've found the second question costs more than the first.</p>
 
       <h2>The field nobody looks at</h2>
-      <p>Every pipeline I've worked on has fields like this: collected on schedule, validated on schedule, stored on schedule — and never once opened in a dashboard, never once cited in a decision, never once missed when a run failed. The field isn't wrong. It's just inert. And inert data isn't free: it still has to be crawled, parsed, validated, stored and maintained, which means every unused field is a small, recurring tax that nobody notices because the invoice never arrives as a single number.</p>
+      <p>Every pipeline I've worked on has fields like this: collected on schedule, validated on schedule, stored on schedule, and never once opened in a dashboard, never once cited in a decision, never once missed when a run failed. The field isn't wrong. It's just inert. And inert data isn't free: it still has to be crawled, parsed, validated, stored and maintained, which means every unused field is a small, recurring tax that nobody notices because the invoice never arrives as a single number.</p>
       <p>That's the pattern behind one of the changes I've made repeatedly in <a href="impact.html">practice</a>: not fixing broken data, but questioning whether a field earns the cost of collecting it at all. See the <a href="impact.html">Too Much Data → Less Noise</a> case for a concrete version of this.</p>
 
       <h2>Why this is easy to miss</h2>
-      <p>Broken data announces itself — a dashboard breaks, a report looks wrong, someone complains. Data that changes nothing never announces itself, because nothing downstream depends on it closely enough to notice its absence. That asymmetry is exactly why it survives: fixing what's broken is urgent, but retiring what's unused is only ever important, and important-but-not-urgent work loses by default unless someone deliberately asks the question.</p>
+      <p>Broken data announces itself: a dashboard breaks, a report looks wrong, someone complains. Data that changes nothing never announces itself, because nothing downstream depends on it closely enough to notice its absence. That asymmetry is exactly why it survives: fixing what's broken is urgent, but retiring what's unused is only ever important, and important-but-not-urgent work loses by default unless someone deliberately asks the question.</p>
 
       <div class="jrnl-pullquote">
-        <p>&ldquo;Before adding a field, I ask what decision it changes. Not what it describes — what it changes.&rdquo;</p>
+        <p>&ldquo;Before adding a field, I ask what decision it changes. Not what it describes: what it changes.&rdquo;</p>
       </div>
 
       <h2>The question I actually ask</h2>
-      <p>Before adding a field, or defending an existing one, I ask what decision it changes. Not what it describes — what it changes. If I can't name the decision, more of that data won't make anything better; it'll just make the pipeline slower and the validation layer more brittle. This is the same instinct behind <a href="philosophy.html">starting with the decision, not the dataset</a>, and it shows up again in <a href="when-more-data-makes-a-product-worse.html">why more data can make a product worse</a>, not better.</p>
+      <p>Before adding a field, or defending an existing one, I ask what decision it changes. Not what it describes: what it changes. If I can't name the decision, more of that data won't make anything better; it'll just make the pipeline slower and the validation layer more brittle. This is the same instinct behind <a href="philosophy.html">starting with the decision, not the dataset</a>, and it shows up again in <a href="when-more-data-makes-a-product-worse.html">why more data can make a product worse</a>, not better.</p>
     </div>
 
     <nav class="jrnl-article-nav" aria-label="Article navigation">

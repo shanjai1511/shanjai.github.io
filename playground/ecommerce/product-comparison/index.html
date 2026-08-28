@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Comparison | Playground | Shanjai R</title>
-    <meta name="description" content="Compare two products side by side across price, rating and attributes — an interactive demo." />
+    <meta name="description" content="Compare two products side by side across price, rating and attributes: an interactive demo." />
     <link rel="icon" href="../../../assets/me/n.png">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/ecommerce/product-comparison/">
@@ -22,12 +22,12 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://shanjai.in/playground/ecommerce/product-comparison/">
     <meta property="og:title"       content="Product Comparison">
-    <meta property="og:description" content="Compare two products side by side across price, rating and attributes — an interactive demo.">
+    <meta property="og:description" content="Compare two products side by side across price, rating and attributes: an interactive demo.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Product Comparison">
-    <meta name="twitter:description" content="Compare two products side by side across price, rating and attributes — an interactive demo.">
+    <meta name="twitter:description" content="Compare two products side by side across price, rating and attributes: an interactive demo.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -175,13 +175,13 @@
                         <select id="pgProductB" class="pg-select"></select>
                     </div>
                 </div>
-                <p class="pg-demo-note"><i class="lni lni-warning"></i> Demonstration using representative data — not a real product catalog.</p>
+                <p class="pg-demo-note"><i class="lni lni-warning"></i> Demonstration using representative data: not a real product catalog.</p>
             </div>
 
             <div class="glass-card pg-panel">
                 <div style="text-align:center; margin-bottom:1rem;">
                     <span class="viz-stat-label">Overall Similarity</span>
-                    <div style="font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:600; color:var(--accent-gold);" id="pgSimScore">—</div>
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:600; color:var(--accent-gold);" id="pgSimScore">–</div>
                 </div>
                 <div id="pgCompareRows"></div>
             </div>
@@ -190,7 +190,7 @@
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>Each attribute is compared directly — an exact match on category, color or material, or a proximity score for price — using the same weighted scoring (40/30/15/15) as Similarity Explorer. Rating is shown for context but isn't part of the score, since two products can be equally similar in build regardless of how they were reviewed.</p>
+                <p>Each attribute is compared directly (an exact match on category, color or material, or a proximity score for price) using the same weighted scoring (40/30/15/15) as Similarity Explorer. Rating is shown for context but isn't part of the score, since two products can be equally similar in build regardless of how they were reviewed.</p>
             </div>
 
             <details class="pg-hood">
@@ -269,10 +269,10 @@
         function byId(id) { return PG_SAMPLE_PRODUCTS.find(p => p.id === id); }
 
         function row(key, a, b, match) {
-            // `match` is either a boolean (exact-match attributes → ✅/—) or a string
+            // `match` is either a boolean (exact-match attributes → ✅/–) or a string
             // (continuous scores like price proximity, shown as their own text instead
             // of a checkmark, since "68% close" isn't a yes/no match).
-            const indicator = typeof match === 'string' ? match : (match ? '✅' : '—');
+            const indicator = typeof match === 'string' ? match : (match ? '✅' : '–');
             return `
                 <div class="pg-compare-row">
                     <span class="pg-compare-val">${PG.esc(a)}</span>
@@ -285,7 +285,7 @@
             const a = byId(aEl.value), b = byId(bEl.value);
             if (a.id === b.id) {
                 document.getElementById('pgCompareRows').innerHTML = '<p style="text-align:center;color:var(--text-secondary);">Choose two different products to compare.</p>';
-                document.getElementById('pgSimScore').textContent = '—';
+                document.getElementById('pgSimScore').textContent = '–';
                 return;
             }
             const score = PG.productSimilarity(a, b);

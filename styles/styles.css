@@ -1041,12 +1041,12 @@ footer { padding: 4.5rem 2rem 2.5rem; margin-top: 2rem; border-top: 1px solid va
     .story-timeline { padding-left: 2rem; }
     .skills-editorial { gap: 1rem; }
 
-    /* Hero CTA — wrap buttons on narrow screens */
+    /* Hero CTA: wrap buttons on narrow screens */
     .hero-cta { flex-wrap: wrap; gap: 0.75rem; }
     .hero-cta .btn { flex: 1 1 auto; min-width: 120px; text-align: center; }
     .socials { width: 100%; justify-content: center; }
 
-    /* Toast — bump above floating buttons */
+    /* Toast: bump above floating buttons */
     .copy-toast { bottom: 5.5rem; max-width: 85vw; white-space: normal; text-align: center; }
 
     /* Preloader */
@@ -1645,7 +1645,7 @@ footer { padding: 4.5rem 2rem 2.5rem; margin-top: 2rem; border-top: 1px solid va
 }
 
 /* ══════════════════════════════════════════════════════
-   GALLERY — INSTAGRAM STORY HIGHLIGHTS
+   GALLERY: INSTAGRAM STORY HIGHLIGHTS
    ══════════════════════════════════════════════════════ */
 .gallery-hint {
     text-align: center; color: var(--text-secondary);
@@ -1923,7 +1923,7 @@ button.viz-pipeline-node.is-active { border-color: var(--accent-gold); backgroun
 }
 
 /* ═══════════════════════════════════════════════════════
-   Visual richness — project visuals, timeline draw-in
+   Visual richness: project visuals, timeline draw-in
    ═══════════════════════════════════════════════════════ */
 
 /* ── Skills: connecting rail between groups (interconnected stack) ── */
@@ -1975,7 +1975,7 @@ button.viz-pipeline-node.is-active { border-color: var(--accent-gold); backgroun
 }
 
 /* ═══════════════════════════════════════════════════════
-   Playground — domain-based interactive lab
+   Playground: domain-based interactive lab
    ═══════════════════════════════════════════════════════ */
 
 /* ── Breadcrumb ── */

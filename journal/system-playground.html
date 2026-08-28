@@ -58,9 +58,9 @@
     </script>
 
     <style>
-      /* System Playground — bespoke widget skin, monochrome, built on journal tokens.
+      /* System Playground: bespoke widget skin, monochrome, built on journal tokens.
          Markup IDs/classes below are load-bearing for the interactive script at the
-         bottom of this page — do not rename them without updating the script. */
+         bottom of this page; do not rename them without updating the script. */
       .viz-card{ border: 1px solid var(--line); padding: 32px; background: var(--bg); }
       .viz-card-title{
         font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
@@ -194,7 +194,7 @@
 
     <div class="jrnl-article-body">
       <div class="viz-card">
-        <p class="viz-card-title">Data Intelligence Pipeline — select a stage</p>
+        <p class="viz-card-title">Data Intelligence Pipeline: select a stage</p>
         <div class="viz-pipeline" id="tnsPipeline" role="group" aria-label="Data intelligence pipeline stages">
           <button type="button" class="viz-pipeline-node" data-stage="raw">
             <span class="viz-pipeline-node-label">Raw Data</span>
@@ -333,7 +333,7 @@
             validation: { label: 'Validation',      text: 'Detecting missing, inconsistent or unreliable information before it reaches downstream systems.' },
             analytics:  { label: 'Analytics',       text: 'Finding patterns, comparisons and changes that matter.' },
             signal:     { label: 'Business Signal', text: 'Turning analysis into something meaningful: a price violation, ranking movement, competitor change or other actionable signal.' },
-            decision:   { label: 'Decision',        text: 'The final purpose of the system — helping someone decide what to investigate, change, prioritize or do next.' }
+            decision:   { label: 'Decision',        text: 'The final purpose of the system: helping someone decide what to investigate, change, prioritize or do next.' }
         };
         const pipeline = document.getElementById('tnsPipeline');
         const panelTitle = document.getElementById('tnsPipelinePanelTitle');

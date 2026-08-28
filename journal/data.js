@@ -1,6 +1,6 @@
-/* SHANJAI — Journal article index. Used for the homepage feed,
+/* SHANJAI Journal article index. Used for the homepage feed,
    the archive, topics, related-article modules and search.
-   Slugs are bare filenames — these article pages live in /journal/
+   Slugs are bare filenames: these article pages live in /journal/
    alongside index.html, articles.html, topics.html and about.html,
    so no relative-path prefix is needed. */
 
@@ -40,7 +40,7 @@ const JRNL_ARTICLES = [
   {
     slug: "thinking-and-systems.html",
     title: "Thinking & Systems",
-    excerpt: "How I think about data, systems, products, and the problems between them — a short collection.",
+    excerpt: "How I think about data, systems, products, and the problems between them: a short collection.",
     category: "Systems",
     date: "Aug 2026",
     readTime: "2 min"
@@ -48,7 +48,7 @@ const JRNL_ARTICLES = [
   {
     slug: "knowledge-that-moves-decisions.html",
     title: "Knowledge That Moves Decisions Is More Valuable Than Knowledge Alone",
-    excerpt: "Why the value of information isn't what it describes, but what it changes — and what that means for building analytics people actually use.",
+    excerpt: "Why the value of information isn't what it describes, but what it changes, and what that means for building analytics people actually use.",
     category: "Decision Making",
     date: "Aug 2026",
     readTime: "4 min"
@@ -72,7 +72,7 @@ const JRNL_ARTICLES = [
   {
     slug: "what-i-notice-that-others-miss.html",
     title: "What I Notice That Others Miss",
-    excerpt: "Five observations from working closely with data systems — on relevance, dashboards, context, automation and signal.",
+    excerpt: "Five observations from working closely with data systems: on relevance, dashboards, context, automation and signal.",
     category: "Ideas",
     date: "Aug 2026",
     readTime: "4 min"
@@ -88,7 +88,7 @@ const JRNL_ARTICLES = [
   {
     slug: "failure-to-learning.html",
     title: "Failure → Learning",
-    excerpt: "Three honest case notes on things that technically worked but weren't right — and what they taught me.",
+    excerpt: "Three honest case notes on things that technically worked but weren't right, and what they taught me.",
     category: "Work",
     date: "Aug 2026",
     readTime: "4 min"

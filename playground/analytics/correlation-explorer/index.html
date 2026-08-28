@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Correlation Explorer | Playground | Shanjai R</title>
-    <meta name="description" content="See which numerical columns move together — an interactive correlation matrix and scatter plot." />
+    <meta name="description" content="See which numerical columns move together: an interactive correlation matrix and scatter plot." />
     <link rel="icon" href="../../../assets/me/n.png">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/analytics/correlation-explorer/">
@@ -22,12 +22,12 @@
     <meta property="og:type"        content="website">
     <meta property="og:url"         content="https://shanjai.in/playground/analytics/correlation-explorer/">
     <meta property="og:title"       content="Correlation Explorer">
-    <meta property="og:description" content="See which numerical columns move together — an interactive correlation matrix and scatter plot.">
+    <meta property="og:description" content="See which numerical columns move together: an interactive correlation matrix and scatter plot.">
     <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Correlation Explorer">
-    <meta name="twitter:description" content="See which numerical columns move together — an interactive correlation matrix and scatter plot.">
+    <meta name="twitter:description" content="See which numerical columns move together: an interactive correlation matrix and scatter plot.">
     <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -189,7 +189,7 @@
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>Correlation measures how closely two numeric columns move together, from &minus;1 (perfectly opposite) to +1 (perfectly together). <strong>Correlation does not imply causation</strong> — two things can move together because one causes the other, because a third factor drives both, or by coincidence.</p>
+                <p>Correlation measures how closely two numeric columns move together, from &minus;1 (perfectly opposite) to +1 (perfectly together). <strong>Correlation does not imply causation</strong>: two things can move together because one causes the other, because a third factor drives both, or by coincidence.</p>
             </div>
 
             <details class="pg-hood">
@@ -304,7 +304,7 @@
             const mag = Math.abs(corr);
             const strength = mag > 0.7 ? 'strong' : mag > 0.4 ? 'moderate' : mag > 0.15 ? 'weak' : 'very weak';
             const direction = corr > 0 ? 'positive' : corr < 0 ? 'negative' : 'no';
-            document.getElementById('pgCorrText').textContent = `r = ${corr.toFixed(2)} — a ${strength} ${direction} relationship.`;
+            document.getElementById('pgCorrText').textContent = `r = ${corr.toFixed(2)}, a ${strength} ${direction} relationship.`;
         }
 
         colXEl.addEventListener('change', renderScatter);

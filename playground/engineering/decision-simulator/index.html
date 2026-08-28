@@ -62,7 +62,7 @@
                             <div class="nav-mega-col">
                                 <p class="nav-mega-title">Need Data &amp; Analytics</p>
                                 <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
-                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../sara.html">SARA: Intelligence Output</a>
                                 <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
                                 <a href="../../../index.html#skills">Skills</a>
                             </div>
@@ -174,7 +174,7 @@
         <section class="fade-in-up" style="padding-top: 0;">
             <div class="pg-explain">
                 <h2>What is happening?</h2>
-                <p>Each approach has a realistic sustained request rate — slower, safer approaches make fewer requests per second but carry less risk of getting rate-limited or blocked, which resets the clock further than a purely slow-but-steady pace would. The completion time is real division (50,000 &divide; requests/sec), not a made-up estimate.</p>
+                <p>Each approach has a realistic sustained request rate: slower, safer approaches make fewer requests per second but carry less risk of getting rate-limited or blocked, which resets the clock further than a purely slow-but-steady pace would. The completion time is real division (50,000 &divide; requests/sec), not a made-up estimate.</p>
             </div>
             <details class="pg-hood">
                 <summary>Under the Hood</summary>
@@ -234,9 +234,9 @@
     <script src="../../../scripts/playground.js"></script>
     <script>
         const APPROACHES = [
-            { id: "sequential", name: "Sequential, one request at a time", rate: 2, risk: "Very low — looks exactly like a human browsing.", note: "Simplest to build and debug." },
-            { id: "threadpool", name: "Thread pool, 10 concurrent workers", rate: 15, risk: "Moderate — bursty traffic pattern can trip basic rate limiters.", note: "Needs careful shared-state handling across threads." },
-            { id: "async", name: "Async I/O, 20 concurrent with paced delay", rate: 25, risk: "Low — concurrency is real but each request is deliberately paced.", note: "More complex to write, but the best throughput-to-risk ratio here." },
+            { id: "sequential", name: "Sequential, one request at a time", rate: 2, risk: "Very low: looks exactly like a human browsing.", note: "Simplest to build and debug." },
+            { id: "threadpool", name: "Thread pool, 10 concurrent workers", rate: 15, risk: "Moderate: bursty traffic pattern can trip basic rate limiters.", note: "Needs careful shared-state handling across threads." },
+            { id: "async", name: "Async I/O, 20 concurrent with paced delay", rate: 25, risk: "Low: concurrency is real but each request is deliberately paced.", note: "More complex to write, but the best throughput-to-risk ratio here." },
         ];
         const WORKLOAD = 50000, DEADLINE_HOURS = 4;
 

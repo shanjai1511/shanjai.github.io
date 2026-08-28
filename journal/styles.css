@@ -1,5 +1,5 @@
 /* ============================================================
-   SHANJAI — Journal
+   SHANJAI Journal
    A quiet, monochrome editorial system. Medium's reading
    experience, a Zara-inspired visual identity. No gradients,
    no shadows, no color accents, no rounded SaaS chrome.
@@ -286,7 +286,7 @@ body.jrnl{
 }
 
 /* ============================================================
-   HOMEPAGE — HERO / FEATURE
+   HOMEPAGE: HERO / FEATURE
    ============================================================ */
 
 .jrnl-hero{
@@ -343,7 +343,7 @@ body.jrnl{
 }
 
 /* ============================================================
-   FEED — secondary (2-col) + latest (list)
+   FEED: secondary (2-col) + latest (list)
    ============================================================ */
 
 .jrnl-section{ padding: 60px 0; }
@@ -423,7 +423,7 @@ body.jrnl{
   letter-spacing: 0.03em;
 }
 
-/* Latest — vertical list */
+/* Latest: vertical list */
 .jrnl-list{ }
 .jrnl-list-row{
   display: grid;
