@@ -1,7 +1,7 @@
 /* Representative/synthetic demo CSV (as text, run through the real PG.parseCSV
-   the same way an uploaded file would be) — deliberately contains exact
+   the same way an uploaded file would be): deliberately contains exact
    duplicate rows (accidental double entry) and near-duplicate rows (same
-   person, one field differs — a changed signup date or a typo'd email) for
+   person, one field differs (a changed signup date or a typo'd email) for
    the Duplicate Detector to find. Not real customer/client data. */
 const PG_SAMPLE_DUPLICATES_CSV =
 `name,email,city,signup_date

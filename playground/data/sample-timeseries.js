@@ -1,4 +1,4 @@
-/* Representative/synthetic demo dataset for the Trend Analyzer — 30 daily
+/* Representative/synthetic demo dataset for the Trend Analyzer: 30 daily
    rows with a gently upward-trending order count plus realistic day-to-day
    noise (including a couple of dips), so a date-range filter produces a
    genuinely different trend line depending on the window chosen. Not real

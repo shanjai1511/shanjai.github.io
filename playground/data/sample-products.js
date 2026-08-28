@@ -1,4 +1,4 @@
-/* Representative/synthetic demo data — individual products for the Similarity
+/* Representative/synthetic demo data: individual products for the Similarity
    Explorer (product-level, distinct from Competitor Explorer's brand-level
    dataset). Not real catalog data. */
 const PG_SAMPLE_PRODUCTS = [

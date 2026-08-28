@@ -1,5 +1,5 @@
 /* Representative/synthetic demo data for the Playground's E-commerce Intelligence
-   experiments. Not real client or production data — plausible values only, for
+   experiments. Not real client or production data: plausible values only, for
    demonstrating how the scoring logic works. Loaded as a plain script (not fetch()),
    so it works identically over file://, a local server, and GitHub Pages. */
 const PG_ECOMMERCE_BRANDS = [

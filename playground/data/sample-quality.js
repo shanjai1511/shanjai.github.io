@@ -1,5 +1,5 @@
 /* Representative/synthetic demo CSV (as text, run through the real PG.parseCSV
-   the same way an uploaded file would be) — deliberately contains the kinds of
+   the same way an uploaded file would be): deliberately contains the kinds of
    problems the Data Quality Checker looks for: duplicate rows, missing values,
    a negative price, and a price outlier. Not real product/client data. */
 const PG_SAMPLE_QUALITY_CSV =

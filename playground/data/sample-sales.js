@@ -1,4 +1,4 @@
-/* Representative/synthetic demo dataset for the Correlation Explorer — 20 rows,
+/* Representative/synthetic demo dataset for the Correlation Explorer: 20 rows,
    5 numeric columns with deliberately varied relationships (price vs. units_sold
    trend downward together, ad_spend vs. units_sold trend upward together, rating
    is mostly independent of the rest) so the correlation matrix tells a real,

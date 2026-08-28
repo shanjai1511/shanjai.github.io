@@ -1,4 +1,4 @@
-/* Representative/synthetic demo data — marketplace price listings for the
+/* Representative/synthetic demo data: marketplace price listings for the
    Price Violation Detector. Not real client or production data. */
 const PG_PRICE_LISTINGS = [
     { id: 1,  brand: "Nike",   product: "Air Zoom Pegasus",  marketplace: "Amazon",   mapPrice: 6999,  listPrice: 7499,  sellingPrice: 6299 },
