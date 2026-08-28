@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSSV85L7QK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QSSV85L7QK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Bottleneck Explorer | Playground | Shanjai R</title>
+    <meta name="description" content="Adjust each pipeline stage's throughput and see which one caps the whole system — an interactive demo." />
+    <link rel="icon" href="../../../assets/me/n.png">
+    <meta name="theme-color" content="#14213D">
+    <link rel="canonical" href="https://shanjai.in/playground/engineering/system-bottleneck-explorer/">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://shanjai.in/playground/engineering/system-bottleneck-explorer/">
+    <meta property="og:title"       content="System Bottleneck Explorer">
+    <meta property="og:description" content="Adjust each pipeline stage's throughput and see which one caps the whole system — an interactive demo.">
+    <meta property="og:image"       content="https://shanjai.in/assets/og-preview.png">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="System Bottleneck Explorer">
+    <meta name="twitter:description" content="Adjust each pipeline stage's throughput and see which one caps the whole system — an interactive demo.">
+    <meta name="twitter:image"       content="https://shanjai.in/assets/og-preview.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
+    <link rel="stylesheet" href="../../../styles/styles.css">
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- ══════════ NAVIGATION ══════════ -->
+    <nav class="glass-nav" id="mainNav">
+        <div class="nav-container">
+            <a href="../../../index.html" class="logo">ASR</a>
+            <ul class="nav-links">
+                <li class="nav-dropdown nav-dropdown--mega">
+                    <a href="../../../projects/index.html" class="nav-dropdown-toggle">Start Here <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu nav-dropdown-menu--mega">
+                        <div class="nav-mega-inner">
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Hire a Data Scientist</p>
+                                <p class="nav-mega-sub">Data pipelines, automation, infrastructure and scalable processing systems.</p>
+                                <a href="../../../sara.html">Scalable Automated Retrieval Architecture</a>
+                                <a href="../../../web-scraping-pipeline.html">Modular Web Scraping Pipeline</a>
+                                <a href="../../../index.html#experience">Experience</a>
+                            </div>
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Need Data &amp; Analytics</p>
+                                <p class="nav-mega-sub">Analytics workflows, data quality, dashboards and decision-support systems.</p>
+                                <a href="../../../sara.html">SARA — Intelligence Output</a>
+                                <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
+                                <a href="../../../index.html#skills">Skills</a>
+                            </div>
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Building E-commerce Intelligence</p>
+                                <p class="nav-mega-sub">Competitive intelligence, price intelligence, search intelligence and marketplace analytics.</p>
+                                <a href="../../../price-intelligence.html">Price Intelligence &amp; Revenue Leakage</a>
+                                <a href="../../../competitor-intelligence.html">Competitor Intelligence Engine</a>
+                                <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
+                                <a href="../../../product-matching.html">Automated Product Matching Pipeline</a>
+                            </div>
+                            <div class="nav-mega-col">
+                                <p class="nav-mega-title">Understand How I Think</p>
+                                <p class="nav-mega-sub">Reflections on engineering, data, systems and decisions.</p>
+                                <a href="../../../thinking/index.html">Thinking Hub</a>
+                                <a href="../../../impact.html">What Changed Because I Worked On It</a>
+                                <a href="../../../philosophy.html">How I Think About Systems</a>
+                                <a href="../../../index.html#posts">More Writing</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../../../about/index.html">About</a></li>
+                <li><a href="../../../index.html#experience">Experience</a></li>
+                <li><a href="../../../index.html#skills">Skills</a></li>
+                <li class="nav-dropdown">
+                    <a href="../../../projects/index.html" class="nav-dropdown-toggle">Work <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="../../../sara.html">Scalable Automated Retrieval Architecture</a>
+                            <a href="../../../competitor-intelligence.html">Competitor Intelligence Engine</a>
+                            <a href="../../../product-matching.html">Automated Product Matching Pipeline</a>
+                            <a href="../../../search-intelligence.html">Search Intelligence &amp; Brand Visibility</a>
+                            <a href="../../../price-intelligence.html">Price Intelligence &amp; Revenue Leakage</a>
+                            <a href="../../../projects/index.html" class="nav-dropdown-all">View All Work</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../../../index.html#posts" class="nav-dropdown-toggle">Writing <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="https://www.linkedin.com/pulse/person-who-knows-how-company-works-has-more-leverage-than-shanjai-r-lrc4c/" target="_blank" rel="noopener noreferrer">Company Knowledge as Leverage</a>
+                            <a href="https://medium.com/@shanjai1511/the-deepest-peace-is-found-in-chaos-7f0021dbf183" target="_blank" rel="noopener noreferrer">The Deepest Peace Is Found in Chaos</a>
+                            <a href="https://www.linkedin.com/pulse/art-poking-around-how-curiosity-made-me-better-engineer-shanjai-r-xxylc/" target="_blank" rel="noopener noreferrer">The Art of Poking Around</a>
+                            <a href="https://www.linkedin.com/pulse/watchtower-without-watchman-just-architecture-shanjai-r-mu8ec/" target="_blank" rel="noopener noreferrer">A Watchtower Without a Watchman</a>
+                            <a href="https://www.linkedin.com/pulse/security-living-inside-iron-dome-shanjai-r-ssydc/" target="_blank" rel="noopener noreferrer">Not Living Inside an Iron Dome</a>
+                            <a href="../../../index.html#posts" class="nav-dropdown-all">View All Writing</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="../../../thinking/index.html" class="nav-dropdown-toggle">Thinking <i class="lni lni-chevron-down"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <div class="nav-dropdown-menu-inner">
+                            <a href="../../../thinking/index.html">Thinking Hub</a>
+                            <a href="../../../impact.html">Impact</a>
+                            <a href="../../../philosophy.html">Philosophy</a>
+                            <a href="../../../thinking-and-systems.html">Thinking &amp; Systems</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="../../../playground/index.html" class="active">Playground</a></li>
+                <li><a href="../../../now/index.html">Now</a></li>
+                <li><a href="../../../index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="../../../projects/index.html" class="mobile-link">Start Here</a></li>
+            <li><a href="../../../about/index.html"      class="mobile-link">About</a></li>
+            <li><a href="../../../projects/index.html"     class="mobile-link">Work</a></li>
+            <li><a href="../../../thinking/index.html" class="mobile-link">Thinking</a></li>
+            <li><a href="../../../playground/index.html" class="mobile-link">Playground</a></li>
+            <li><a href="../../../now/index.html"       class="mobile-link">Now</a></li>
+            <li><a href="../../../index.html#contact"      class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="pg-crumb" style="max-width:760px;margin:6.5rem auto 0;padding:0 2rem;">
+            <a href="../../../playground/index.html">Playground</a><span class="pg-crumb-sep">/</span>
+            <a href="../../../playground/engineering/index.html">Engineering &amp; Systems</a><span class="pg-crumb-sep">/</span>
+            <span class="pg-crumb-current">System Bottleneck Explorer</span>
+        </div>
+
+        <section class="cs-hero fade-in-up" style="max-width:760px;">
+            <span class="proj-status">⚙️ Engineering &amp; Systems</span>
+            <h1>System Bottleneck Explorer</h1>
+            <p class="cs-hero-lede">Set a throughput for each pipeline stage. See which one caps the whole system.</p>
+        </section>
+
+        <section class="fade-in-up" style="max-width:760px; margin: 0 auto; padding-top: 0;">
+            <div class="glass-card pg-panel">
+                
+                <div class="pg-slider-row" id="pgSliderRow0">
+                    <div class="pg-slider-top">
+                        <span class="pg-slider-name">URL Collector</span>
+                        <span class="pg-slider-val" id="pgSliderVal0">180 / min</span>
+                    </div>
+                    <input type="range" class="pg-slider" id="pgSlider0" min="10" max="300" step="5" value="180">
+                </div>
+                <div class="pg-slider-row" id="pgSliderRow1">
+                    <div class="pg-slider-top">
+                        <span class="pg-slider-name">File Fetcher</span>
+                        <span class="pg-slider-val" id="pgSliderVal1">60 / min</span>
+                    </div>
+                    <input type="range" class="pg-slider" id="pgSlider1" min="10" max="300" step="5" value="60">
+                </div>
+                <div class="pg-slider-row" id="pgSliderRow2">
+                    <div class="pg-slider-top">
+                        <span class="pg-slider-name">Data Extractor</span>
+                        <span class="pg-slider-val" id="pgSliderVal2">120 / min</span>
+                    </div>
+                    <input type="range" class="pg-slider" id="pgSlider2" min="10" max="300" step="5" value="120">
+                </div>
+                <div class="pg-slider-row" id="pgSliderRow3">
+                    <div class="pg-slider-top">
+                        <span class="pg-slider-name">Validation</span>
+                        <span class="pg-slider-val" id="pgSliderVal3">150 / min</span>
+                    </div>
+                    <input type="range" class="pg-slider" id="pgSlider3" min="10" max="300" step="5" value="150">
+                </div>
+                <div class="pg-slider-row" id="pgSliderRow4">
+                    <div class="pg-slider-top">
+                        <span class="pg-slider-name">Storage</span>
+                        <span class="pg-slider-val" id="pgSliderVal4">90 / min</span>
+                    </div>
+                    <input type="range" class="pg-slider" id="pgSlider4" min="10" max="300" step="5" value="90">
+                </div>
+                <div class="pg-slider-row" id="pgSliderRow5">
+                    <div class="pg-slider-top">
+                        <span class="pg-slider-name">Analytics</span>
+                        <span class="pg-slider-val" id="pgSliderVal5">200 / min</span>
+                    </div>
+                    <input type="range" class="pg-slider" id="pgSlider5" min="10" max="300" step="5" value="200">
+                </div>
+            </div>
+
+            <div class="glass-card pg-panel">
+                <div style="text-align:center; margin-bottom:1rem;">
+                    <span class="viz-stat-label">System Throughput</span>
+                    <div style="font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:600; color:var(--accent-gold);" id="pgThroughputVal">—</div>
+                </div>
+                <div class="pg-detail-grid">
+                    <div class="pg-detail-item"><span class="pg-detail-k">Bottleneck Stage</span><span class="pg-detail-v" id="pgBottleneckStage">—</span></div>
+                    <div class="pg-detail-item"><span class="pg-detail-k">Time to process 10,000 items</span><span class="pg-detail-v" id="pgTimeEstimate">—</span></div>
+                </div>
+                <p class="pg-demo-note"><i class="lni lni-warning"></i> A simplified model — treats each stage as a straight-line throughput with no queuing, retries or parallelism, to isolate the bottleneck idea.</p>
+            </div>
+        </section>
+
+        <section class="fade-in-up" style="padding-top: 0;">
+            <div class="pg-explain">
+                <h2>What is happening?</h2>
+                <p>A pipeline can only move as fast as its slowest stage — the system throughput is the <em>minimum</em> of the six stage throughputs, not their average. Speeding up a stage that isn't the bottleneck changes nothing; the whole point of finding the bottleneck first is that it's the only place extra capacity actually helps.</p>
+            </div>
+
+            <details class="pg-hood">
+                <summary>Under the Hood</summary>
+                <div class="pg-hood-body">
+                    <div class="pg-hood-flow">
+                        <span>Six stage throughputs (items/min)</span>
+                        <span class="pg-hood-arrow">↓</span>
+                        <span>System throughput = min(all six)</span>
+                        <span class="pg-hood-arrow">↓</span>
+                        <span>Bottleneck stage highlighted, batch time estimated</span>
+                    </div>
+                    <div class="pg-hood-cols">
+                        <div class="pg-hood-col"><h4>Inputs</h4><ul><li>Six adjustable throughput sliders</li></ul></div>
+                        <div class="pg-hood-col"><h4>Processing</h4><ul><li>Min-of-stages bottleneck rule</li></ul></div>
+                        <div class="pg-hood-col"><h4>Output</h4><ul><li>System throughput</li><li>Bottleneck stage</li><li>Time estimate</li></ul></div>
+                        <div class="pg-hood-col"><h4>Technology</h4><ul><li>Vanilla JavaScript</li></ul></div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section class="cs-cta fade-in-up">
+            <h2>Explore another experiment</h2>
+            <p>More Playground experiments are on the way.</p>
+            <div class="cs-cta-actions">
+                <a href="../../../playground/engineering/index.html" class="btn btn-ghost">&larr; Back to Engineering &amp; Systems</a>
+                <a href="../../../playground/index.html" class="btn btn-primary">All Domains</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <blockquote class="footer-statement">Build quietly. Think deeply. Ship things that matter.</blockquote>
+            <div class="footer-bottom">
+                <div class="footer-id">
+                    <span class="footer-name">Shanjai R</span>
+                    <span class="footer-title">Data Scientist · Data Analytics · Data Infrastructure · E-commerce Intelligence</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/shanjai/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" ><i class="lni lni-linkedin-original"></i></a>
+                    <a href="https://github.com/shanjai1511"       target="_blank" rel="noopener noreferrer" aria-label="GitHub"   ><i class="lni lni-github-original"></i></a>
+                    <a href="https://medium.com/@shanjai1511"      target="_blank" rel="noopener noreferrer" aria-label="Medium"   ><i class="lni lni-medium"></i></a>
+                    <a href="https://www.instagram.com/r.shanjai/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="lni lni-instagram-original"></i></a>
+                    <a href="mailto:shanjai1511@gmail.com"                          aria-label="Email"   ><i class="lni lni-envelope"></i></a>
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="../../../about/index.html">About</a>
+                <a href="../../../projects/index.html">Work</a>
+                <a href="../../../playground/index.html">Playground</a>
+                <a href="../../../now/index.html">Now</a>
+            </nav>
+            <p class="footer-copy">&copy; 2024–<span id="footerYear"></span> Shanjai R</p>
+        </div>
+    </footer>
+
+    <button type="button" class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="lni lni-chevron-up"></i>
+    </button>
+
+    <script src="../../../scripts/playground.js"></script>
+    <script>
+        const STAGE_NAMES = ['URL Collector', 'File Fetcher', 'Data Extractor', 'Validation', 'Storage', 'Analytics'];
+        const sliders = STAGE_NAMES.map((_, i) => document.getElementById('pgSlider' + i));
+
+        function render() {
+            const values = sliders.map(s => Number(s.value));
+            sliders.forEach((s, i) => { document.getElementById('pgSliderVal' + i).textContent = values[i] + ' / min'; });
+            const minVal = Math.min(...values);
+            const bottleneckIdx = values.indexOf(minVal);
+            STAGE_NAMES.forEach((_, i) => {
+                document.getElementById('pgSliderRow' + i).classList.toggle('is-bottleneck', i === bottleneckIdx);
+            });
+            document.getElementById('pgThroughputVal').textContent = minVal + ' items / min';
+            document.getElementById('pgBottleneckStage').textContent = STAGE_NAMES[bottleneckIdx];
+            const minutes = 10000 / minVal;
+            const hours = minutes / 60;
+            document.getElementById('pgTimeEstimate').textContent = hours >= 1 ? hours.toFixed(1) + ' hours' : minutes.toFixed(0) + ' minutes';
+        }
+
+        sliders.forEach(s => s.addEventListener('input', render));
+        render();
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const overlay   = document.getElementById('mobileOverlay');
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            mobileNav.classList.toggle('open', open);
+            overlay.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+        hamburger.addEventListener('click', () => toggleMenu(!hamburger.classList.contains('open')));
+        overlay.addEventListener('click', () => toggleMenu(false));
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => toggleMenu(false)));
+
+        const progressBar  = document.getElementById('scrollProgress');
+        const mainNav      = document.getElementById('mainNav');
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            const s = window.scrollY;
+            const m = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (m > 0 ? Math.min(s / m * 100, 100) : 0) + '%';
+            mainNav.classList.toggle('scrolled', s > 60);
+            scrollTopBtn.classList.toggle('visible', s > 400);
+        }, { passive: true });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+        const io = new IntersectionObserver((entries, obs) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.07 });
+        document.querySelectorAll('.fade-in-up').forEach(el => io.observe(el));
+    </script>
+</body>
+</html>
