@@ -624,8 +624,7 @@
                 <div class="s-rule"></div>
             </div>
             <div class="awards-row">
-                <div class="glass-card award-card tilt-card">
-                    <div class="tilt-shine"></div>
+                <div class="glass-card award-card">
                     <div class="award-top">
                         <span class="award-emoji">🚀</span>
                         <span class="award-times">×1</span>
@@ -633,8 +632,7 @@
                     <h3>Emerging Leader</h3>
                     <p>Awarded for impeccable ownership of the 42signals product, driving multiple client engagements, leading new explorations, and demonstrating strong leadership initiative.</p>
                 </div>
-                <div class="glass-card award-card tilt-card">
-                    <div class="tilt-shine"></div>
+                <div class="glass-card award-card">
                     <div class="award-top">
                         <span class="award-emoji">🏆</span>
                         <span class="award-times">×2</span>
@@ -642,8 +640,7 @@
                     <h3>Stretch Award</h3>
                     <p>Recognized for going above and beyond on key projects, consistently exceeding expectations and delivery targets.</p>
                 </div>
-                <div class="glass-card award-card tilt-card">
-                    <div class="tilt-shine"></div>
+                <div class="glass-card award-card">
                     <div class="award-top">
                         <span class="award-emoji">⭐</span>
                         <span class="award-times">×5</span>
@@ -1646,24 +1643,6 @@
         });
     });
 
-    // ─── 3D card tilt ─────────────────────────────────────
-    (function () {
-        const TILT = 7;
-        document.querySelectorAll('.tilt-card').forEach(card => {
-            let r = null;
-            card.addEventListener('mouseenter', () => { r = card.getBoundingClientRect(); });
-            card.addEventListener('mousemove', e => {
-                if (!r) r = card.getBoundingClientRect();
-                const x = (e.clientX - r.left) / r.width  - 0.5;
-                const y = (e.clientY - r.top)  / r.height - 0.5;
-                card.style.transform = `perspective(900px) rotateY(${x * TILT}deg) rotateX(${-y * TILT}deg) translateZ(6px)`;
-                card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
-                card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
-            });
-            card.addEventListener('mouseleave', () => { r = null; card.style.transform = ''; });
-        });
-    })();
-
     // ─── Image lightbox ────────────────────────────────────
     (function () {
         const overlay  = document.getElementById('lbOverlay');
@@ -1801,5 +1780,8 @@
         });
     })();
     </script>
+    <script>window.CB_ROOT = "";</script>
+    <script src="scripts/chatbot-data.js"></script>
+    <script src="scripts/chatbot.js"></script>
 </body>
 </html>

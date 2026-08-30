@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="../../../styles/styles.css">
 </head>
 
-<body>
+<body class="pg-page">
 
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="glow-orb orb-1"></div>
@@ -151,6 +151,64 @@
     </div>
 
     <main>
+        <div class="pg-sidebar-overlay" id="pgSidebarOverlay"></div>
+        <div class="pg-layout">
+            <nav class="pg-sidebar" id="pgSidebar" aria-label="Playground navigation">
+                <a href="../../index.html" class="pg-sidebar-home"><i class="lni lni-arrow-left"></i> All Domains</a>
+                <div class="pg-sidebar-domain">
+                    <a href="../../ecommerce/index.html" class="pg-sidebar-domain-title">🛒 E-commerce Intelligence</a>
+                    <ul class="pg-sidebar-list">
+                        <li><a href="../../ecommerce/competitor-explorer/index.html">Competitor Explorer</a></li>
+                        <li><a href="../../ecommerce/price-violation-detector/index.html">Price Violation Detector</a></li>
+                        <li><a href="../../ecommerce/product-comparison/index.html">Product Comparison</a></li>
+                        <li><a href="../../ecommerce/market-position-analyzer/index.html">Market Position Analyzer</a></li>
+                    </ul>
+                </div>
+                <div class="pg-sidebar-domain">
+                    <a href="../../data-quality/index.html" class="pg-sidebar-domain-title">🧹 Data Cleaning &amp; Quality</a>
+                    <ul class="pg-sidebar-list">
+                        <li><a href="../../data-quality/quality-checker/index.html">Data Quality Checker</a></li>
+                        <li><a href="../../data-quality/find-the-problem/index.html">Find the Problem</a></li>
+                        <li><a href="../../data-quality/duplicate-detector/index.html">Duplicate Detector</a></li>
+                        <li><a href="../../data-quality/missing-value-explorer/index.html">Missing Value Explorer</a></li>
+                        <li><a href="../../data-quality/outlier-detective/index.html">Outlier Detective</a></li>
+                    </ul>
+                </div>
+                <div class="pg-sidebar-domain">
+                    <a href="../../analytics/index.html" class="pg-sidebar-domain-title">📊 Data Analytics</a>
+                    <ul class="pg-sidebar-list">
+                        <li><a href="../../analytics/analyze-my-data/index.html">Analyze My Data</a></li>
+                        <li><a href="../../analytics/chart-builder/index.html">Chart Builder</a></li>
+                        <li><a href="../../analytics/correlation-explorer/index.html">Correlation Explorer</a></li>
+                        <li><a href="../../analytics/distribution-explorer/index.html">Distribution Explorer</a></li>
+                        <li><a href="../../analytics/trend-analyzer/index.html">Trend Analyzer</a></li>
+                    </ul>
+                </div>
+                <div class="pg-sidebar-domain">
+                    <a href="../../ai/index.html" class="pg-sidebar-domain-title">🤖 AI &amp; Machine Learning</a>
+                    <ul class="pg-sidebar-list">
+                        <li><a href="../../ai/ask-the-dataset/index.html">Ask the Dataset</a></li>
+                        <li><a href="../../ai/prediction-playground/index.html">Prediction Playground</a></li>
+                        <li><a href="../../ai/classification-playground/index.html">Classification Playground</a></li>
+                        <li><a href="../../ai/similarity-explorer/index.html">Similarity Explorer</a></li>
+                    </ul>
+                </div>
+                <div class="pg-sidebar-domain">
+                    <a href="../../engineering/index.html" class="pg-sidebar-domain-title">⚙️ Engineering &amp; Systems</a>
+                    <ul class="pg-sidebar-list">
+                        <li><a href="../../engineering/pipeline-visualizer/index.html">Pipeline Visualizer</a></li>
+                        <li><a href="../../engineering/decision-simulator/index.html">Engineering Decision Simulator</a></li>
+                        <li><a href="../../engineering/system-bottleneck-explorer/index.html">System Bottleneck Explorer</a></li>
+                        <li><a href="../../engineering/architecture-explorer/index.html">Architecture Explorer</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="pg-content">
+                <button type="button" class="pg-sidebar-toggle" id="pgSidebarToggle" aria-expanded="false" aria-controls="pgSidebar">
+                    <span><i class="lni lni-list"></i> Browse Playground</span>
+                    <i class="lni lni-chevron-down"></i>
+                </button>
+
         <div class="pg-crumb" style="max-width:760px;margin:6.5rem auto 0;padding:0 2rem;">
             <a href="../../../playground/index.html">Playground</a><span class="pg-crumb-sep">/</span>
             <a href="../../../playground/engineering/index.html">Engineering &amp; Systems</a><span class="pg-crumb-sep">/</span>
@@ -199,6 +257,8 @@
             </div>
         </section>
 
+                </div><!-- /pg-content -->
+        </div><!-- /pg-layout -->
     </main>
 
     <footer>
@@ -287,5 +347,9 @@
         }, { threshold: 0.07 });
         document.querySelectorAll('.fade-in-up').forEach(el => io.observe(el));
     </script>
+    <script src="../../../scripts/pg-sidebar.js"></script>
+    <script>window.CB_ROOT = "../../../";</script>
+    <script src="../../../scripts/chatbot-data.js"></script>
+    <script src="../../../scripts/chatbot.js"></script>
 </body>
 </html>
