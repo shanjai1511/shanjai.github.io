@@ -22,6 +22,8 @@
     --nav-height:    76px;
     --radius-lg:     4px;
     --radius-md:     3px;
+    --radius-sm:     2px;
+    --radius-full:   100px;
     --shadow-sm:     0 2px 10px rgba(10,20,40,0.07);
     --shadow-md:     0 8px 28px rgba(10,20,40,0.10);
     --shadow-hover:  0 20px 48px rgba(10,20,40,0.14);
@@ -41,6 +43,34 @@
     --viz-critical:#d03b3b;
     --viz-track:   rgba(20,33,61,0.07);
     --viz-surface: var(--bg-secondary);
+
+    /* ── Spacing scale (8px-adjacent, matches the rhythm already in informal use) ── */
+    --space-1:  0.25rem;
+    --space-2:  0.5rem;
+    --space-3:  0.75rem;
+    --space-4:  1rem;
+    --space-5:  1.5rem;
+    --space-6:  2rem;
+    --space-7:  2.5rem;
+    --space-8:  3rem;
+    --space-9:  3.5rem;
+    --space-10: 4rem;
+    --space-11: 5rem;
+    --space-12: 6rem;
+
+    /* ── Type scale (formalizes the clusters already in use across the file) ── */
+    --text-xs:      0.68rem;  /* meta / fine print */
+    --text-sm:      0.78rem;  /* eyebrow / label / nav */
+    --text-base:    0.95rem;  /* body copy */
+    --text-md:      1.05rem;  /* lede / emphasized body */
+    --text-lg:      1.3rem;   /* sub-heading */
+    --text-xl:      1.6rem;   /* logo / small heading */
+    --text-2xl:     2.5rem;   /* section h2 */
+    --text-3xl:     3.6rem;   /* case-study h1 */
+    --text-display: 5.8rem;   /* hero name */
+
+    /* ── Technical accent (reuses the existing data-viz gold — no new color) ── */
+    --accent-technical: var(--viz-1);
 }
 
 /* ── Reset ── */
@@ -89,6 +119,32 @@ a { color: var(--text-primary); text-decoration: none; transition: var(--transit
     0%, 100% { transform: translate(0,0) scale(1); }
     33%  { transform: translate(18px,-18px) scale(1.05); }
     66%  { transform: translate(-12px,14px) scale(0.96); }
+}
+
+/* ── Pill primitive (new, additive — for new markup only, existing badge
+   classes like .proj-status/.pg-badge/.edu-year are untouched) ── */
+.pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: var(--text-xs); font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; white-space: nowrap;
+    padding: 0.3rem 0.75rem; border-radius: var(--radius-full);
+    border: 1px solid var(--glass-border); color: var(--text-secondary);
+    background: var(--bg-secondary);
+}
+.pill--outline { background: transparent; }
+.pill--technical { color: var(--accent-technical); border-color: rgba(169,131,46,0.35); background: rgba(169,131,46,0.07); }
+
+/* ── Technical / data-motif background accents (new, additive) ──
+   Very low-opacity SVG marks: coordinate ticks + connector lines.
+   Meant to read as "almost invisible until you look closer" — never a
+   replacement for the existing dot-grid/glow-orb ambient system. */
+.data-tick {
+    position: absolute; pointer-events: none; z-index: 0;
+    color: var(--accent-technical); opacity: 0.16;
+}
+.data-connector {
+    position: absolute; pointer-events: none; z-index: 0;
+    stroke: var(--text-primary); opacity: 0.08;
 }
 
 /* ── Navigation ── */
@@ -219,15 +275,25 @@ main { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
 section { padding: 56px 0; }
 
 /* ── Section header ── */
-.section-header { margin-bottom: 3rem; text-align: center; }
-.section-header h2 { font-size: 2.5rem; font-weight: 600; }
+.section-header { margin-bottom: var(--space-8); text-align: center; }
+.section-header h2 { font-size: var(--text-2xl); font-weight: 600; }
 .s-eyebrow {
-    font-size: 0.75rem; font-weight: 700; letter-spacing: 3px;
+    font-size: var(--text-sm); font-weight: 700; letter-spacing: 3px;
     text-transform: uppercase; color: var(--accent-gold);
-    margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+    margin-bottom: var(--space-3); display: flex; align-items: center; justify-content: center; gap: 0.6rem;
 }
 .s-eyebrow span { color: var(--text-secondary); opacity: 0.5; }
-.s-rule { width: 56px; height: 1px; background: var(--accent-gold); margin: 1.1rem auto 0; }
+.s-rule {
+    width: 56px; height: 1px; background: var(--accent-gold);
+    margin: 1.1rem auto 0; position: relative;
+}
+/* small flanking coordinate-tick motif — restrained, reads as a technical detail on closer look */
+.s-rule::before, .s-rule::after {
+    content: ''; position: absolute; top: -3px; width: 1px; height: 7px;
+    background: var(--accent-technical); opacity: 0.35;
+}
+.s-rule::before { left: -14px; }
+.s-rule::after { right: -14px; }
 
 /* ── Hero ── */
 .hero { display: flex; flex-direction: column; padding-top: var(--nav-height); position: relative; }
@@ -260,7 +326,7 @@ section { padding: 56px 0; }
 .greeting { font-size: 0.95rem; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 3px; text-transform: uppercase; }
 
 .hero-name {
-    font-family: 'Cormorant Garamond', serif; font-size: 5.8rem; font-weight: 600;
+    font-family: 'Cormorant Garamond', serif; font-size: var(--text-display); font-weight: 600;
     line-height: 1.05; letter-spacing: 0; margin-bottom: 1rem;
 }
 .gradient-text {
@@ -269,7 +335,7 @@ section { padding: 56px 0; }
 }
 
 .hero-role {
-    font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600;
+    font-family: 'Inter', sans-serif; font-size: var(--text-md); font-weight: 600;
     color: var(--text-primary); margin-bottom: 0.5rem; display: block;
 }
 .hero-role-edu { font-weight: 500; color: var(--text-secondary); }
@@ -332,6 +398,16 @@ section { padding: 56px 0; }
     background-image: radial-gradient(circle, rgba(20,33,61,0.4) 1.5px, transparent 1.5px);
     background-size: 11px 11px; z-index: 1; pointer-events: none;
 }
+/* a real, non-decorative coordinate readout — Coimbatore's actual lat/long,
+   matching the location already shown in the hero meta line */
+.photo-coord {
+    position: absolute; top: -12px; left: -12px; z-index: 2;
+    font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.4px; color: var(--accent-technical);
+    background: var(--bg-primary); border: 1px solid var(--glass-border);
+    padding: 0.3rem 0.6rem; border-radius: var(--radius-sm);
+    pointer-events: none;
+}
 .hero-photo { width: 100%; height: auto; border-radius: var(--radius-lg); object-fit: cover; box-shadow: var(--shadow-md); display: block; position: relative; z-index: 0; filter: grayscale(0.15); }
 .photo-glow { display: none; }
 
@@ -371,6 +447,8 @@ section { padding: 56px 0; }
 .tl-item { position: relative; margin-bottom: 1.75rem; opacity: 0; transform: translateX(-18px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .tl-item.tl-visible { opacity: 1; transform: translateX(0); }
 .tl-dot { position: absolute; left: -2.5rem; top: 1.5rem; width: 14px; height: 14px; background: var(--accent-gold); border-radius: 50%; border: 3px solid var(--bg-primary); box-shadow: 0 0 0 2px var(--accent-gold); z-index: 1; }
+/* faint axis-tick reading off each dot, echoing the number-line motif used in Playground */
+.tl-dot::before { content: ''; position: absolute; top: 50%; right: calc(100% + 5px); width: 10px; height: 1px; background: var(--accent-technical); opacity: 0.4; transform: translateY(-50%); }
 .tl-card { padding: 1.5rem 1.75rem; }
 .tl-year { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.45rem; }
 .tl-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
@@ -541,6 +619,19 @@ section { padding: 56px 0; }
 }
 .proj-summary--lg { font-size: 1.02rem; max-width: 760px; margin-bottom: 0.5rem; }
 
+/* Problem / Approach / System / Outcome micro-grid — replaces a dense summary
+   paragraph with a scannable shape of the work, on the flagship project card */
+.proj-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--glass-border); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.4rem; }
+.proj-flow-item { background: var(--bg-secondary); padding: 1.1rem 1.15rem; }
+.proj-flow-label { display: block; font-size: var(--text-xs); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-technical); margin-bottom: 0.4rem; }
+.proj-flow-text { font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); }
+@media (max-width: 900px) {
+    .proj-flow { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+    .proj-flow { grid-template-columns: 1fr; }
+}
+
 /* Client work (confidential, no case-study page) */
 .projects-compact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .project-card--compact { display: block; padding: 2.5rem; }
@@ -575,6 +666,11 @@ section { padding: 56px 0; }
     .proj-ext-link { width: 44px; height: 44px; }
 }
 .proj-ext-link:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); transform: translateY(-2px); }
+/* Lighter-touch outcome line for the compact project cards — one concrete
+   "so what", pulled from each case study's own Result/Impact section */
+.proj-outcome { font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); margin: 0 0 1.1rem; padding-left: 0.8rem; border-left: 2px solid var(--accent-technical); }
+.proj-outcome strong { color: var(--text-primary); font-weight: 700; }
+
 .proj-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
 .proj-tags span { background: rgba(28,27,23,0.05); color: var(--text-secondary); padding: 0.28rem 0.75rem; border-radius: var(--radius-md); font-size: 0.75rem; font-weight: 600; }
 .project-body p { color: var(--text-secondary); font-size: 0.97rem; line-height: 1.78; }
@@ -597,6 +693,12 @@ section { padding: 56px 0; }
 .cs-back:hover { color: var(--accent-gold); }
 .cs-hero { max-width: 860px; margin: 0 auto; padding-bottom: 3rem; }
 .cs-hero h1 { font-size: 3.6rem; margin: 0.9rem 0 0.35rem; }
+/* small trailing tick off the status badge — the same restrained technical
+   accent used on the homepage, now reaching every page that uses .cs-hero
+   (every Playground page and every case study) */
+.cs-hero .proj-status { position: relative; }
+.cs-hero .proj-status::after { content: ''; position: absolute; top: 50%; left: calc(100% + 10px); width: 18px; height: 1px; background: var(--accent-technical); opacity: 0.4; transform: translateY(-50%); }
+@media (max-width: 560px) { .cs-hero .proj-status::after { display: none; } }
 .cs-hero-sub { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 1.75rem; }
 .cs-hero-lede {
     font-family: 'Cormorant Garamond', serif; font-weight: 500;
@@ -705,16 +807,28 @@ section { padding: 56px 0; }
 
 /* ── Featured Posts ── */
 .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.more-writing { max-width: 860px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--glass-border); }
-.more-writing-list { display: flex; flex-direction: column; gap: 0; }
+.more-writing { max-width: 860px; margin: var(--space-8) auto 0; padding-top: var(--space-6); border-top: 1px solid var(--glass-border); }
+.more-writing-list { display: flex; flex-direction: column; gap: 0; counter-reset: mw-item; }
 .more-writing-list a {
-    font-size: 0.95rem; color: var(--text-secondary);
-    padding: 0.75rem 0; border-bottom: 1px solid var(--glass-border);
-    transition: color 0.2s ease;
+    display: flex; align-items: center; gap: 0.9rem;
+    font-size: var(--text-base); color: var(--text-secondary);
+    padding: 0.85rem 0.6rem; border-bottom: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    transition: color 0.2s ease, background-color 0.2s ease, padding-left 0.2s ease;
+}
+.more-writing-list a::before {
+    counter-increment: mw-item; content: counter(mw-item, decimal-leading-zero);
+    font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.5px;
+    color: var(--accent-technical); flex-shrink: 0;
+}
+.more-writing-list a::after {
+    content: '→'; margin-left: auto; flex-shrink: 0;
+    opacity: 0; transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .more-writing-list a:last-child { border-bottom: none; }
-.more-writing-list a:hover { color: var(--accent-gold); }
-.more-writing-list a::after { content: ' →'; }
+.more-writing-list a:hover { color: var(--accent-gold); background: var(--bg-secondary); padding-left: 0.9rem; }
+.more-writing-list a:hover::after { opacity: 1; transform: translateX(0); }
 
 .post-card {
     padding: 0; display: flex; flex-direction: column;
@@ -1866,6 +1980,41 @@ button.viz-pipeline-node:focus-visible { border-color: var(--accent-gold); backg
 button.viz-pipeline-node:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
 button.viz-pipeline-node.is-active { border-color: var(--accent-gold); background: var(--accent-gold-light); box-shadow: inset 0 0 0 1px var(--accent-gold); }
 
+/* Problem→Approach→System→Outcome progress rail — sits above the detailed
+   6-step Problem/Data/Approach/Validation/Result/Impact flow on case-study
+   pages, giving the higher-level frame without discarding the detail below */
+.cs-rail { display: flex; align-items: center; justify-content: center; max-width: 620px; margin: 0 auto var(--space-9); flex-wrap: wrap; row-gap: 0.75rem; }
+.cs-rail-item { display: inline-flex; align-items: center; gap: 0.5rem; font-size: var(--text-xs); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); flex-shrink: 0; transition: color 0.2s ease; }
+.cs-rail-item:hover, .cs-rail-item:focus-visible { color: var(--accent-gold); }
+.cs-rail-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bg-primary); border: 1px solid var(--text-secondary); flex-shrink: 0; transition: var(--transition); }
+.cs-rail-item:hover .cs-rail-dot, .cs-rail-item:focus-visible .cs-rail-dot { background: var(--accent-technical); border-color: var(--accent-technical); }
+.cs-rail-line { flex: 1 1 auto; height: 1px; background: var(--glass-border); margin: 0 0.85rem; min-width: 16px; }
+@media (max-width: 640px) { .cs-rail-line { display: none; } }
+.cs-anchor { scroll-margin-top: calc(var(--nav-height) + 24px); }
+
+/* Hover-based technical explanation — opt-in via [data-tip] on any element,
+   a real demonstration of what something does, not decoration */
+[data-tip] { position: relative; cursor: help; }
+[data-tip]:focus-visible { outline: 2px solid var(--accent-technical); outline-offset: 2px; }
+[data-tip]::after {
+    content: attr(data-tip);
+    position: absolute; bottom: calc(100% + 9px); left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    width: max-content; max-width: 190px; text-align: left;
+    background: var(--text-primary); color: #F4F5F3;
+    font-size: 0.68rem; font-weight: 500; line-height: 1.45;
+    padding: 0.55rem 0.75rem; border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 5;
+}
+[data-tip]:hover::after, [data-tip]:focus-visible::after {
+    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.viz-pipeline-node[data-tip]:hover, .viz-pipeline-node[data-tip]:focus-visible { border-color: var(--accent-technical); background: rgba(169,131,46,0.06); }
+.pg-domain-exp-chip[data-tip]:hover, .pg-domain-exp-chip[data-tip]:focus-visible { border-color: var(--accent-technical); color: var(--accent-technical); }
+
 /* Editorial cards: subtle hover (insights, failure cases) */
 .wc-item { transition: background 0.3s ease; }
 .wc-item:hover { background: var(--bg-secondary); }
@@ -1991,6 +2140,7 @@ button.viz-pipeline-node.is-active { border-color: var(--accent-gold); backgroun
 .pg-featured-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-gold); margin-bottom: 0.5rem; }
 .pg-featured h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
 .pg-featured p { font-size: 0.95rem; color: var(--text-secondary); max-width: 480px; }
+.pg-featured p.pg-featured-meta { font-size: var(--text-xs); font-weight: 600; color: var(--accent-technical); text-transform: uppercase; letter-spacing: 0.6px; margin-top: 0.6rem; max-width: none; }
 
 /* ── Surprise Me ── */
 .pg-surprise { text-align: center; margin: 2.5rem 0; }
