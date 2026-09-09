@@ -2324,7 +2324,7 @@ body.pg-page footer { padding-left: 282px; }
 .cb-toggle:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
 .cb-toggle:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 3px; }
 
-.cb-panel { position: fixed; bottom: calc(2rem + 68px); left: 2rem; width: 360px; max-width: calc(100vw - 2.5rem); height: 500px; max-height: calc(100vh - 8rem); background: var(--bg-primary); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(10,20,40,0.22); display: flex; flex-direction: column; z-index: 951; opacity: 0; transform: translateY(16px) scale(0.98); pointer-events: none; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease); overflow: hidden; }
+.cb-panel { position: fixed; bottom: calc(2rem + 68px); left: 2rem; width: 360px; max-width: calc(100vw - 2.5rem); height: 620px; max-height: calc(100vh - 8rem); background: var(--bg-primary); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(10,20,40,0.22); display: flex; flex-direction: column; z-index: 951; opacity: 0; transform: translateY(16px) scale(0.98); pointer-events: none; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease); overflow: hidden; }
 
 /* On Playground pages the sidebar already owns the left 240px column
    (desktop only — it's an off-screen drawer on mobile) — shift the
