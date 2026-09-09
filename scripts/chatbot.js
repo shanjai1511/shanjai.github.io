@@ -69,7 +69,7 @@
             <form class="cb-input-row" id="cbForm">
                 <label for="cbInput" class="sr-only">Type a question</label>
                 <input type="text" id="cbInput" placeholder="Ask a question…" autocomplete="off">
-                <button type="submit" aria-label="Send"><i class="lni lni-paper-plane"></i></button>
+                <button type="submit" aria-label="Send"><i class="lni lni-arrow-right"></i></button>
             </form>
         </div>
     `;
