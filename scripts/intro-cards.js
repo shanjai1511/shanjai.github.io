@@ -157,7 +157,7 @@
     deck.addEventListener("focusout", startAutoAdvance);
 
     function scrollToContent() {
-        const target = document.getElementById("about");
+        const target = document.getElementById("home");
         if (target) target.scrollIntoView({ behavior: "smooth" });
     }
 
