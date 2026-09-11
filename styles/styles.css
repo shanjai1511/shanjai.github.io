@@ -69,7 +69,7 @@
     --text-3xl:     3.6rem;   /* case-study h1 */
     --text-display: 5.8rem;   /* hero name */
 
-    /* ── Technical accent (reuses the existing data-viz gold — no new color) ── */
+    /* ── Technical accent (reuses the existing data-viz gold - no new color) ── */
     --accent-technical: var(--viz-1);
 }
 
@@ -121,7 +121,7 @@ a { color: var(--text-primary); text-decoration: none; transition: var(--transit
     66%  { transform: translate(-12px,14px) scale(0.96); }
 }
 
-/* ── Pill primitive (new, additive — for new markup only, existing badge
+/* ── Pill primitive (new, additive - for new markup only, existing badge
    classes like .proj-status/.pg-badge/.edu-year are untouched) ── */
 .pill {
     display: inline-flex; align-items: center; gap: 0.4rem;
@@ -136,7 +136,7 @@ a { color: var(--text-primary); text-decoration: none; transition: var(--transit
 
 /* ── Technical / data-motif background accents (new, additive) ──
    Very low-opacity SVG marks: coordinate ticks + connector lines.
-   Meant to read as "almost invisible until you look closer" — never a
+   Meant to read as "almost invisible until you look closer" - never a
    replacement for the existing dot-grid/glow-orb ambient system. */
 .data-tick {
     position: absolute; pointer-events: none; z-index: 0;
@@ -287,7 +287,7 @@ section { padding: 56px 0; }
     width: 56px; height: 1px; background: var(--accent-gold);
     margin: 1.1rem auto 0; position: relative;
 }
-/* small flanking coordinate-tick motif — restrained, reads as a technical detail on closer look */
+/* small flanking coordinate-tick motif - restrained, reads as a technical detail on closer look */
 .s-rule::before, .s-rule::after {
     content: ''; position: absolute; top: -3px; width: 1px; height: 7px;
     background: var(--accent-technical); opacity: 0.35;
@@ -398,7 +398,7 @@ section { padding: 56px 0; }
     background-image: radial-gradient(circle, rgba(20,33,61,0.4) 1.5px, transparent 1.5px);
     background-size: 11px 11px; z-index: 1; pointer-events: none;
 }
-/* a real, non-decorative coordinate readout — Coimbatore's actual lat/long,
+/* a real, non-decorative coordinate readout - Coimbatore's actual lat/long,
    matching the location already shown in the hero meta line */
 .photo-coord {
     position: absolute; top: -12px; left: -12px; z-index: 2;
@@ -619,7 +619,7 @@ section { padding: 56px 0; }
 }
 .proj-summary--lg { font-size: 1.02rem; max-width: 760px; margin-bottom: 0.5rem; }
 
-/* Problem / Approach / System / Outcome micro-grid — replaces a dense summary
+/* Problem / Approach / System / Outcome micro-grid - replaces a dense summary
    paragraph with a scannable shape of the work, on the flagship project card */
 .proj-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--glass-border); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.4rem; }
 .proj-flow-item { background: var(--bg-secondary); padding: 1.1rem 1.15rem; }
@@ -666,7 +666,7 @@ section { padding: 56px 0; }
     .proj-ext-link { width: 44px; height: 44px; }
 }
 .proj-ext-link:hover { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); transform: translateY(-2px); }
-/* Lighter-touch outcome line for the compact project cards — one concrete
+/* Lighter-touch outcome line for the compact project cards - one concrete
    "so what", pulled from each case study's own Result/Impact section */
 .proj-outcome { font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); margin: 0 0 1.1rem; padding-left: 0.8rem; border-left: 2px solid var(--accent-technical); }
 .proj-outcome strong { color: var(--text-primary); font-weight: 700; }
@@ -693,7 +693,7 @@ section { padding: 56px 0; }
 .cs-back:hover { color: var(--accent-gold); }
 .cs-hero { max-width: 860px; margin: 0 auto; padding-bottom: 3rem; }
 .cs-hero h1 { font-size: 3.6rem; margin: 0.9rem 0 0.35rem; }
-/* small trailing tick off the status badge — the same restrained technical
+/* small trailing tick off the status badge - the same restrained technical
    accent used on the homepage, now reaching every page that uses .cs-hero
    (every Playground page and every case study) */
 .cs-hero .proj-status { position: relative; }
@@ -1980,7 +1980,7 @@ button.viz-pipeline-node:focus-visible { border-color: var(--accent-gold); backg
 button.viz-pipeline-node:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
 button.viz-pipeline-node.is-active { border-color: var(--accent-gold); background: var(--accent-gold-light); box-shadow: inset 0 0 0 1px var(--accent-gold); }
 
-/* Problem→Approach→System→Outcome progress rail — sits above the detailed
+/* Problem→Approach→System→Outcome progress rail - sits above the detailed
    6-step Problem/Data/Approach/Validation/Result/Impact flow on case-study
    pages, giving the higher-level frame without discarding the detail below */
 .cs-rail { display: flex; align-items: center; justify-content: center; max-width: 620px; margin: 0 auto var(--space-9); flex-wrap: wrap; row-gap: 0.75rem; }
@@ -1992,7 +1992,7 @@ button.viz-pipeline-node.is-active { border-color: var(--accent-gold); backgroun
 @media (max-width: 640px) { .cs-rail-line { display: none; } }
 .cs-anchor { scroll-margin-top: calc(var(--nav-height) + 24px); }
 
-/* Hover-based technical explanation — opt-in via [data-tip] on any element,
+/* Hover-based technical explanation - opt-in via [data-tip] on any element,
    a real demonstration of what something does, not decoration */
 [data-tip] { position: relative; cursor: help; }
 [data-tip]:focus-visible { outline: 2px solid var(--accent-technical); outline-offset: 2px; }
@@ -2272,7 +2272,7 @@ input[type="range"].pg-slider:focus-visible { outline: 2px solid var(--accent-go
    Every Playground page (landing, domain, experiment) shares this same
    tree so a visitor always knows where they are and can reach any of the
    22 experiments without backtracking through the domain page. The
-   sidebar is truly fixed to the viewport (not sticky) — it never moves
+   sidebar is truly fixed to the viewport (not sticky) - it never moves
    as the page scrolls; only its own list scrolls internally if it's
    taller than the screen. ── */
 .pg-layout { padding: 0 2rem 0 282px; }
@@ -2293,7 +2293,7 @@ input[type="range"].pg-slider:focus-visible { outline: 2px solid var(--accent-go
 .pg-content { max-width: 100%; }
 
 /* The footer (and anything else outside <main>) isn't part of .pg-layout,
-   so it never gets the sidebar's reserved space — without this, the fixed
+   so it never gets the sidebar's reserved space - without this, the fixed
    sidebar sits on top of and hides the left edge of the footer once the
    page is scrolled all the way down. */
 body.pg-page footer { padding-left: 282px; }
@@ -2314,9 +2314,9 @@ body.pg-page footer { padding-left: 282px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
 /* ═══════════════════════════════════════════════════════
-   Chatbot — Ask about Shanjai
+   Chatbot - Ask about Shanjai
    A floating, rule-based FAQ widget present site-wide. No
-   external API, no network request — pure client-side keyword
+   external API, no network request - pure client-side keyword
    matching against a fixed knowledge base built from real site
    content, disclosed as such in the panel itself.
    ═══════════════════════════════════════════════════════ */
@@ -2327,7 +2327,7 @@ body.pg-page footer { padding-left: 282px; }
 .cb-panel { position: fixed; bottom: calc(2rem + 68px); left: 2rem; width: 360px; max-width: calc(100vw - 2.5rem); height: 620px; max-height: calc(100vh - 8rem); background: var(--bg-primary); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(10,20,40,0.22); display: flex; flex-direction: column; z-index: 951; opacity: 0; transform: translateY(16px) scale(0.98); pointer-events: none; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease); overflow: hidden; }
 
 /* On Playground pages the sidebar already owns the left 240px column
-   (desktop only — it's an off-screen drawer on mobile) — shift the
+   (desktop only - it's an off-screen drawer on mobile) - shift the
    widget clear of it there instead of sitting on top of the nav tree. */
 @media (min-width: 1025px) {
     body.pg-page .cb-toggle { left: calc(240px + 1.5rem); }
