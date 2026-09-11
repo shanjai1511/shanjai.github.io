@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════
-   Playground — persistent sidebar behavior
+   Playground - persistent sidebar behavior
    Shared across every Playground page (landing, domain,
    experiment). Marks the current page in the sidebar tree at
-   runtime by comparing resolved URLs — works identically under
+   runtime by comparing resolved URLs - works identically under
    file://, a local server, and the hosted site, with no need to
    bake a different "active" variant of the sidebar per page.
    ═══════════════════════════════════════════════════════ */

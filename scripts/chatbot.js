@@ -1,11 +1,11 @@
 /* ═══════════════════════════════════════════════════════
-   Chatbot widget — Ask about Shanjai
+   Chatbot widget - Ask about Shanjai
    Self-contained: injects its own DOM into every page that
    loads this script (after chatbot-data.js). No markup needed
    per-page. Root-relative links in the knowledge base are
    resolved against window.CB_ROOT, which each page sets to its
    own "up to site root" prefix right before loading this file.
-   Rule-based keyword matching only — no external API, no cost,
+   Rule-based keyword matching only - no external API, no cost,
    no network request, works identically under file:// and hosted.
    ═══════════════════════════════════════════════════════ */
 (function () {
@@ -26,7 +26,7 @@
     }
 
     // Hand-built line-art robot-face icon (no icon-font match existed for this
-    // style, so this is an inline SVG rather than a new external dependency) —
+    // style, so this is an inline SVG rather than a new external dependency) -
     // rounded head, two antennae, dot eyes, a small smile, and a speech-bubble
     // tail. Uses currentColor so it inherits whatever it's placed in.
     const ICON_ROBOT = `
@@ -121,7 +121,7 @@
         return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
-    // Word-boundary matching, not plain substring search — a naive .includes()
+    // Word-boundary matching, not plain substring search - a naive .includes()
     // check would match "yo" (a greeting keyword) inside the word "you", or
     // "hi" inside "which", firing on nearly every question. \b anchors each
     // keyword (single word or multi-word phrase) to real word edges instead.
@@ -163,7 +163,7 @@
         toggleIcon.innerHTML = ICON_CLOSE;
         if (!greeted) {
             greeted = true;
-            addMessage("bot", "<p>Hi! I'm a quick FAQ assistant — ask me about Shanjai's background, skills, projects, education, or how to get in touch.</p>");
+            addMessage("bot", "<p>Hi! I'm a quick FAQ assistant - ask me about Shanjai's background, skills, projects, education, or how to get in touch.</p>");
             renderQuick();
         }
         window.setTimeout(() => input.focus(), 150);
