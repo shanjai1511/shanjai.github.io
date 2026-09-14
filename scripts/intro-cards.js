@@ -74,31 +74,37 @@
     overlay.setAttribute("aria-label", "A quick introduction to Shanjai R");
     overlay.setAttribute("aria-hidden", "true");
 
+    const refTag = (i) => `${String(i + 1).padStart(2, "0")}/${String(CARDS.length).padStart(2, "0")}`;
+
     const cardsHtml = CARDS.map((c, i) => `
         <div class="ic-card${i === 0 ? " is-active" : ""}" data-index="${i}" aria-hidden="${i === 0 ? "false" : "true"}">
+            <span class="ic-card-ref">N&deg; ${refTag(i)}</span>
             <span class="ic-card-mark"><i class="lni ${c.icon}"></i></span>
             <div class="ic-card-eyebrow">${esc(c.eyebrow)}</div>
             <h3 class="ic-card-title">${esc(c.title)}</h3>
             <p class="ic-card-body">${esc(c.body)}</p>
-            ${c.cta ? `<button type="button" class="ic-card-cta" id="icCta">${esc(c.cta)} ${ICON_ARROW_R}</button>` : ""}
+            ${c.cta ? `<button type="button" class="ic-card-cta btn btn-primary" id="icCta">${esc(c.cta)} ${ICON_ARROW_R}</button>` : ""}
         </div>
     `).join("");
 
-    const dotsHtml = CARDS.map((_, i) => `<button type="button" class="ic-dot${i === 0 ? " is-active" : ""}" data-dot="${i}" aria-label="Card ${i + 1} of ${CARDS.length}"></button>`).join("");
+    const tabsHtml = CARDS.map((_, i) => `<button type="button" class="ic-tab${i === 0 ? " is-active" : ""}" data-tab="${i}" aria-label="Card ${i + 1} of ${CARDS.length}">${String(i + 1).padStart(2, "0")}</button>`).join("");
 
     overlay.innerHTML = `
+        <div class="ic-bubbles" id="icBubbles" aria-hidden="true"></div>
         <div class="ic-modal">
             <button type="button" class="ic-close" id="icClose" aria-label="Close intro">${ICON_CLOSE}</button>
             <div class="ic-stage">
-                <div class="ic-deck" id="icDeck">${cardsHtml}</div>
-                <div class="ic-nav">
-                    <button type="button" class="ic-arrow" id="icPrev" aria-label="Previous card">${ICON_ARROW_L}</button>
-                    <div class="ic-dots" id="icDots">${dotsHtml}</div>
-                    <button type="button" class="ic-arrow" id="icNext" aria-label="Next card">${ICON_ARROW_R}</button>
+                <div class="ic-deck" id="icDeck">
+                    <div class="ic-ghost ic-ghost-1" aria-hidden="true"></div>
+                    <div class="ic-ghost ic-ghost-2" aria-hidden="true"></div>
+                    ${cardsHtml}
                 </div>
-            </div>
-            <div class="ic-footer">
-                <button type="button" class="ic-replay" id="icReplay">${ICON_REPLAY} Replay</button>
+                <div class="ic-panel">
+                    <button type="button" class="ic-arrow ic-prev" id="icPrev" aria-label="Previous card">${ICON_ARROW_L}</button>
+                    <div class="ic-tabs" id="icTabs">${tabsHtml}</div>
+                    <button type="button" class="ic-arrow ic-next" id="icNext" aria-label="Next card">${ICON_ARROW_R}</button>
+                    <button type="button" class="ic-replay" id="icReplay" aria-label="Replay from the start">${ICON_REPLAY}</button>
+                </div>
             </div>
         </div>
     `;
@@ -106,7 +112,7 @@
 
     const deck = document.getElementById("icDeck");
     const cardEls = Array.from(deck.querySelectorAll(".ic-card"));
-    const dotEls = Array.from(document.getElementById("icDots").children);
+    const tabEls = Array.from(document.getElementById("icTabs").children);
     const prevBtn = document.getElementById("icPrev");
     const nextBtn = document.getElementById("icNext");
     const closeBtn = document.getElementById("icClose");
@@ -114,20 +120,83 @@
 
     const state = { index: 0, timer: null, lastFocused: null };
 
+    // ── Floating bubbles: scattered across the whole screen behind
+    // the card, each drifting on its own loop and popping/respawning
+    // at a random spot + size + delay, independently of the others. ──
+    const BUBBLE_COUNT = 14;
+    const bubblesEl = document.getElementById("icBubbles");
+    const bubbles = [];
+    let bubblesActive = false;
+    const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function randomizeBubble(el) {
+        el.style.setProperty("--size", Math.round(rand(20, 54)) + "px");
+        el.style.setProperty("--x", rand(4, 96).toFixed(1) + "%");
+        el.style.setProperty("--y", rand(4, 94).toFixed(1) + "%");
+        el.style.setProperty("--dx", rand(-28, 28).toFixed(1) + "px");
+        el.style.setProperty("--dy", rand(-32, 32).toFixed(1) + "px");
+        el.style.setProperty("--dur", rand(5, 10).toFixed(2) + "s");
+        el.style.setProperty("--max-opacity", rand(0.5, 0.9).toFixed(2));
+    }
+
+    function cycleBubble(el) {
+        if (!bubblesActive) return;
+        randomizeBubble(el);
+        void el.offsetWidth; // restart the enter transition from scale(0)
+        el.classList.add("is-in");
+        el.__timer = setTimeout(() => popBubble(el), rand(2600, 6200));
+    }
+
+    function popBubble(el) {
+        if (!bubblesActive) return;
+        el.classList.remove("is-in");
+        el.classList.add("is-popping");
+        el.__timer = setTimeout(() => {
+            el.classList.remove("is-popping");
+            cycleBubble(el);
+        }, 320);
+    }
+
+    function startBubbles() {
+        if (bubblesActive || REDUCE_MOTION || !bubblesEl) return;
+        bubblesActive = true;
+        if (!bubbles.length) {
+            for (let i = 0; i < BUBBLE_COUNT; i++) {
+                const el = document.createElement("span");
+                el.className = "ic-bubble";
+                bubblesEl.appendChild(el);
+                bubbles.push(el);
+            }
+        }
+        bubbles.forEach((el, i) => { el.__timer = setTimeout(() => cycleBubble(el), i * 180); });
+    }
+
+    function stopBubbles() {
+        bubblesActive = false;
+        bubbles.forEach(el => {
+            if (el.__timer) clearTimeout(el.__timer);
+            el.classList.remove("is-in", "is-popping");
+        });
+    }
+
     function render(prevIndex) {
         cardEls.forEach((el, i) => {
             el.classList.toggle("is-active", i === state.index);
             el.classList.toggle("is-leaving", i === prevIndex && i !== state.index);
             el.setAttribute("aria-hidden", i === state.index ? "false" : "true");
         });
-        dotEls.forEach((el, i) => el.classList.toggle("is-active", i === state.index));
+        tabEls.forEach((el, i) => el.classList.toggle("is-active", i === state.index));
         prevBtn.disabled = state.index === 0;
         nextBtn.disabled = state.index === CARDS.length - 1;
     }
 
     function goTo(i, userTriggered) {
         const prevIndex = state.index;
-        state.index = Math.max(0, Math.min(CARDS.length - 1, i));
+        const clamped = Math.max(0, Math.min(CARDS.length - 1, i));
+        if (clamped === prevIndex && userTriggered !== "force") return;
+        state.index = clamped;
         render(prevIndex);
         if (userTriggered) restartAutoAdvance();
     }
@@ -149,7 +218,7 @@
 
     prevBtn.addEventListener("click", () => goTo(state.index - 1, true));
     nextBtn.addEventListener("click", () => goTo(state.index + 1, true));
-    dotEls.forEach((el, i) => el.addEventListener("click", () => goTo(i, true)));
+    tabEls.forEach((el, i) => el.addEventListener("click", () => goTo(i, true)));
 
     deck.addEventListener("mouseenter", stopAutoAdvance);
     deck.addEventListener("mouseleave", startAutoAdvance);
@@ -177,6 +246,7 @@
         closeBtn.focus();
         goTo(0);
         startAutoAdvance();
+        startBubbles();
         try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (err) { /* private mode etc. */ }
     }
 
@@ -185,6 +255,7 @@
         overlay.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
         stopAutoAdvance();
+        stopBubbles();
         if (state.lastFocused && typeof state.lastFocused.focus === "function") {
             state.lastFocused.focus();
         }
