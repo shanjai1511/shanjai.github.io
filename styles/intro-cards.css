@@ -57,45 +57,31 @@
 .ic-close:hover { background: var(--accent-gold-light); border-color: var(--accent-gold); }
 .ic-close:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
 
-/* ── Floating bubbles: drift around the whole screen behind the
-   card and pop/respawn at random - driven by JS (see
-   intro-cards.js), which sets each bubble's size, position and
-   drift distance via inline custom properties. One consistent
-   translucent soap-bubble treatment for all of them - a glassy
-   radial gradient, a thin rim, and a highlight speck - rather
-   than flat colored balls. ── */
+/* ── Floating balloons: each one rises from below the bottom
+   edge to above the top edge, swaying gently side to side, then
+   loops back to a new random spot at the bottom - driven by JS
+   (see intro-cards.js), which sets size, x-position, sway
+   distance and rise duration via inline custom properties. ── */
 .ic-bubbles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
 
 .ic-bubble {
-    position: absolute; left: var(--x, 50%); top: var(--y, 50%);
-    width: var(--size, 24px); height: var(--size, 24px); border-radius: 50%;
+    position: absolute; left: var(--x, 50%); top: var(--y, 108%);
+    width: var(--size, 32px); height: var(--size, 32px);
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
-    animation: icDrift var(--dur, 7s) ease-in-out infinite;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease, top var(--dur, 10s) linear;
+    animation: icSway 3.6s ease-in-out infinite;
     animation-play-state: paused;
-    background:
-        radial-gradient(circle at 68% 74%, rgba(169,131,46,0.16) 0%, rgba(169,131,46,0) 40%),
-        radial-gradient(circle at 32% 28%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 10%, rgba(255,255,255,0.04) 32%, rgba(255,255,255,0.02) 58%, rgba(255,255,255,0.22) 82%, rgba(255,255,255,0.42) 100%);
-    border: 1px solid rgba(255,255,255,0.55);
-    box-shadow:
-        inset -3px -3px 6px rgba(20,33,61,0.18),
-        inset 2px 2px 5px rgba(255,255,255,0.6),
-        0 6px 16px rgba(10,20,40,0.3);
 }
-.ic-bubble::after {
-    content: ''; position: absolute; top: 17%; left: 22%; width: 26%; height: 15%;
-    border-radius: 50%; background: rgba(255,255,255,0.9); filter: blur(1px); transform: rotate(-30deg);
-}
+.ic-bubble img { width: 100%; height: 100%; display: block; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(10,20,40,0.28)); }
 .ic-bubble.is-in { transform: translate(-50%, -50%) scale(1); opacity: var(--max-opacity, 0.85); animation-play-state: running; }
-.ic-bubble.is-popping { transform: translate(-50%, -50%) scale(1.5); opacity: 0; transition: transform 0.32s ease-out, opacity 0.32s ease-out; }
 
-@keyframes icDrift {
-    0%, 100% { margin: 0; }
-    50%      { margin-left: var(--dx, 12px); margin-top: var(--dy, -16px); }
+@keyframes icSway {
+    0%, 100% { margin-left: 0; }
+    50%      { margin-left: var(--dx, 14px); }
 }
 @media (prefers-reduced-motion: reduce) {
-    .ic-bubble { animation: none; }
+    .ic-bubble { animation: none; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease; }
 }
 
 /* ── Deck: perspective wrapper for the flip transition ── */
