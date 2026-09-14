@@ -90,7 +90,6 @@
     const tabsHtml = CARDS.map((_, i) => `<button type="button" class="ic-tab${i === 0 ? " is-active" : ""}" data-tab="${i}" aria-label="Card ${i + 1} of ${CARDS.length}">${String(i + 1).padStart(2, "0")}</button>`).join("");
 
     overlay.innerHTML = `
-        <div class="ic-bubbles" id="icBubbles" aria-hidden="true"></div>
         <div class="ic-modal">
             <button type="button" class="ic-close" id="icClose" aria-label="Close intro">${ICON_CLOSE}</button>
             <div class="ic-stage">
@@ -119,73 +118,6 @@
     const replayBtn = document.getElementById("icReplay");
 
     const state = { index: 0, timer: null, lastFocused: null };
-
-    // ── Floating balloons: each rises from below the bottom edge to
-    // above the top edge of the screen, swaying gently, then loops
-    // back to a new random spot at the bottom - independently of
-    // the others (its own size/speed/x-position each time). ──
-    const BUBBLE_COUNT = 14;
-    const bubblesEl = document.getElementById("icBubbles");
-    const bubbles = [];
-    let bubblesActive = false;
-    const REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const BALLOON_IMG = `<img src="assets/image-removebg-preview.png" alt="" draggable="false">`;
-
-    function rand(min, max) { return Math.random() * (max - min) + min; }
-
-    function cycleBubble(el) {
-        if (!bubblesActive) return;
-
-        // Jump to a fresh spot just below the bottom edge, instantly
-        // (transition disabled for this one write, then restored).
-        el.classList.remove("is-in");
-        el.style.transition = "none";
-        el.style.setProperty("--size", Math.round(rand(18, 88)) + "px");
-        el.style.setProperty("--x", rand(4, 96).toFixed(1) + "%");
-        el.style.setProperty("--dx", rand(-20, 20).toFixed(1) + "px");
-        const dur = rand(9, 17);
-        el.style.setProperty("--dur", dur.toFixed(2) + "s");
-        el.style.setProperty("--max-opacity", rand(0.55, 0.9).toFixed(2));
-        el.style.setProperty("--y", (106 + rand(0, 12)).toFixed(1) + "%");
-        void el.offsetWidth; // flush the instant jump before re-enabling transitions
-        el.style.transition = "";
-        el.classList.add("is-in");
-
-        // Kick off the rise to above the top edge on the next frame,
-        // so the browser has committed the bottom position first.
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                if (!bubblesActive) return;
-                el.style.setProperty("--y", "-18%");
-            });
-        });
-
-        el.__timer = setTimeout(() => cycleBubble(el), dur * 1000);
-    }
-
-    function startBubbles() {
-        if (bubblesActive || REDUCE_MOTION || !bubblesEl) return;
-        bubblesActive = true;
-        if (!bubbles.length) {
-            for (let i = 0; i < BUBBLE_COUNT; i++) {
-                const el = document.createElement("span");
-                el.className = "ic-bubble";
-                el.innerHTML = BALLOON_IMG;
-                bubblesEl.appendChild(el);
-                bubbles.push(el);
-            }
-        }
-        bubbles.forEach((el, i) => { el.__timer = setTimeout(() => cycleBubble(el), i * 260); });
-    }
-
-    function stopBubbles() {
-        bubblesActive = false;
-        bubbles.forEach(el => {
-            if (el.__timer) clearTimeout(el.__timer);
-            el.classList.remove("is-in");
-        });
-    }
 
     function render(prevIndex) {
         cardEls.forEach((el, i) => {
@@ -252,7 +184,6 @@
         closeBtn.focus();
         goTo(0);
         startAutoAdvance();
-        startBubbles();
         try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (err) { /* private mode etc. */ }
     }
 
@@ -261,7 +192,6 @@
         overlay.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
         stopAutoAdvance();
-        stopBubbles();
         if (state.lastFocused && typeof state.lastFocused.focus === "function") {
             state.lastFocused.focus();
         }
