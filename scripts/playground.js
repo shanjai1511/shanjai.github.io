@@ -424,6 +424,35 @@
         });
     };
 
+    /* ── Loading state ──
+       Shows a brief spinner on the button that triggered a computation,
+       even when that computation is synchronous and near-instant - a
+       double requestAnimationFrame lets the browser paint the spinner
+       before the (potentially blocking) work runs, and a minimum
+       visible duration stops it from being an imperceptible flash. */
+    PG.withLoading = function (btn, workFn) {
+        if (!btn) { workFn(); return; }
+        const originalHTML = btn.innerHTML;
+        const originalDisabled = btn.disabled;
+        btn.disabled = true;
+        btn.innerHTML = '<span class="pg-spin" aria-hidden="true"></span>Working…';
+        const start = performance.now();
+        const MIN_MS = 380;
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                try {
+                    workFn();
+                } finally {
+                    const wait = Math.max(0, MIN_MS - (performance.now() - start));
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.disabled = originalDisabled;
+                    }, wait);
+                }
+            });
+        });
+    };
+
     /* ── Small helpers ── */
     PG.clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     PG.pct = v => Math.round(v * 100) + "%";
