@@ -7,6 +7,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
         gtag('config', 'G-QSSV85L7QK');
     </script>
 
@@ -15,6 +21,9 @@
     <title>The Most Expensive Data Is the Data That Changes Nothing | Shanjai R</title>
     <meta name="description" content="Shanjai R on why the costliest data isn't the data that's wrong: it's the data nobody ever acts on. Notes from data engineering and e-commerce intelligence work." />
     <link rel="icon" href="../assets/me/n.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     <link rel="manifest" href="../manifest.json">
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://shanjai.in/the-most-expensive-data.html">
@@ -59,6 +68,8 @@
       ]
     }
     </script>
+    <link rel="stylesheet" href="../styles/cookie-consent.css">
+    <link rel="stylesheet" href="../styles/sticky-cta.css">
 </head>
 
 <body class="jrnl">
@@ -215,5 +226,7 @@
     <script>window.CB_ROOT = "../";</script>
     <script src="../scripts/chatbot-data.js"></script>
     <script src="../scripts/chatbot.js"></script>
+    <script src="../scripts/cookie-consent.js"></script>
+    <script src="../scripts/sticky-cta.js"></script>
 </body>
 </html>

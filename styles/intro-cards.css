@@ -179,7 +179,7 @@
 }
 
 @media (max-width: 480px) {
-    .ic-launcher { top: auto; bottom: 1.25rem; right: 0; transform: translateX(calc(100% - 34px)); padding: 0.7rem 0.6rem; }
+    .ic-launcher { top: auto; bottom: calc(1.25rem + 66px); right: 0; transform: translateX(calc(100% - 34px)); padding: 0.7rem 0.6rem; }
     .ic-launcher:hover, .ic-launcher:focus-visible { transform: translateX(0); }
     .ic-modal { width: 100%; }
     .ic-deck { min-height: 380px; }

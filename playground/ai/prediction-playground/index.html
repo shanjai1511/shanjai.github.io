@@ -7,6 +7,12 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
         gtag('config', 'G-QSSV85L7QK');
     </script>
 
@@ -15,6 +21,10 @@
     <title>Prediction Playground | Playground | Shanjai R</title>
     <meta name="description" content="Fit a line through two columns with ordinary least squares, then predict a new value: an interactive demo." />
     <link rel="icon" href="../../../assets/me/n.png">
+    <link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicon-16x16.png">
+    <link rel="manifest" href="../../../manifest.json">
     <meta name="theme-color" content="#14213D">
     <link rel="canonical" href="https://shanjai.in/playground/ai/prediction-playground/">
     <meta name="robots" content="index, follow">
@@ -35,6 +45,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
     <link rel="stylesheet" href="../../../styles/styles.css">
+    <link rel="stylesheet" href="../../../styles/cookie-consent.css">
+    <link rel="stylesheet" href="../../../styles/sticky-cta.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Prediction Playground",
+      "url": "https://shanjai.in/playground/ai/prediction-playground/",
+      "description": "Fit a line through two columns with ordinary least squares, then predict a new value: an interactive demo.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any (runs in a web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Shanjai R",
+        "url": "https://shanjai.in/"
+      }
+    }
+    </script>
 </head>
 
 <body class="pg-page">
@@ -309,6 +344,8 @@
                 <a href="../../../projects/index.html">Work</a>
                 <a href="../../../playground/index.html">Playground</a>
                 <a href="../../../now/index.html">Now</a>
+                <a href="../../../privacy.html">Privacy</a>
+                <a href="../../../terms.html">Terms</a>
             </nav>
             <p class="footer-copy">&copy; 2024–<span id="footerYear"></span> Shanjai R</p>
         </div>
@@ -410,5 +447,7 @@
     <script>window.CB_ROOT = "../../../";</script>
     <script src="../../../scripts/chatbot-data.js"></script>
     <script src="../../../scripts/chatbot.js"></script>
+    <script src="../../../scripts/cookie-consent.js"></script>
+    <script src="../../../scripts/sticky-cta.js"></script>
 </body>
 </html>

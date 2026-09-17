@@ -2152,6 +2152,14 @@ button.viz-pipeline-node.is-active { border-color: var(--accent-gold); backgroun
 .pg-panel { padding: 2rem 2.25rem; margin-bottom: 2rem; }
 .pg-field { display: flex; flex-direction: column; gap: 0.5rem; max-width: 340px; }
 .pg-field label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-secondary); }
+/* ── Loading state: a brief spinner on the button that triggered a
+   Playground computation, so instant client-side work still gives
+   visible feedback that something happened. See PG.withLoading(). ── */
+.pg-spin { display: inline-block; width: 13px; height: 13px; margin-right: 0.5rem; vertical-align: -2px; border: 2px solid rgba(20,33,61,0.25); border-top-color: var(--text-primary); border-radius: 50%; animation: pgSpin 0.7s linear infinite; }
+.btn-primary .pg-spin { border-color: rgba(255,255,255,0.4); border-top-color: #fff; }
+@keyframes pgSpin { to { transform: rotate(360deg); } }
+.btn[disabled] { opacity: 0.72; cursor: wait; }
+
 .pg-select { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--text-primary); background: var(--bg-primary); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 0.75rem 1rem; cursor: pointer; }
 .pg-select:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 2px; }
 .pg-demo-note { font-size: 0.72rem; color: var(--text-secondary); opacity: 0.8; margin-top: 1rem; display: flex; align-items: center; gap: 0.4rem; }
@@ -2373,6 +2381,6 @@ body.pg-page footer { padding-left: 282px; }
 .cb-input-row button:hover { opacity: 0.88; }
 
 @media (max-width: 480px) {
-    .cb-toggle, body.pg-page .cb-toggle { left: 1.25rem; bottom: 1.25rem; width: 52px; height: 52px; }
-    .cb-panel, body.pg-page .cb-panel { left: 0.75rem; right: 0.75rem; bottom: 5rem; width: auto; max-width: none; height: min(72vh, 560px); }
+    .cb-toggle, body.pg-page .cb-toggle { left: 1.25rem; bottom: calc(1.25rem + 66px); width: 52px; height: 52px; }
+    .cb-panel, body.pg-page .cb-panel { left: 0.75rem; right: 0.75rem; bottom: calc(5rem + 66px); width: auto; max-width: none; height: min(72vh, 560px); }
 }
